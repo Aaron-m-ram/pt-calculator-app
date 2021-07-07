@@ -8,7 +8,7 @@
             "type": "pwa-chrome",
             "request": "launch",
             "name": "Open index.html",
-            "file": "/Users/grid/development/repos/pt-calculator-app/index.html"
+            "file": "/Users/aaron/Desktop/Dev/PT calc/pt-calculator-app/index.html"
         }
     ]
 }

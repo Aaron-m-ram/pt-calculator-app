@@ -1,13 +1,4 @@
-/* const persons = {
-    Age: Number,
-    Gender: Boolean,
-    RunTime: TimeRanges,
-    PushUps: Number,
-    SitUps: Number,
-    RunWaiver: Boolean,
-    PushUpWaiver: Boolean,
-    SitUpWaiver: Boolean
-}; */
+
 
 let Age = AgeGetter;
 let Gender = GenderGetter;
@@ -16,43 +7,40 @@ let SitUps = SitUpsGetter;
 
 function AgeGetter(Age) {
     if (Age < 25) {
-        console.log('17_24');
+        return '17_24';
     } else if (Age <= 29 && Age >= 25) {
-        console.log('25_29');
+        return '25_29';
     } else if (Age <= 34 && Age >= 30) {
-        console.log('30_34');
+        return '30_34';
     } else if (Age <= 39 && Age >= 35) {
-        console.log('35_39');
+        return '35_39';
     } else if (Age <= 44 && Age >= 40) {
-        console.log('40_44');
+        return '40_44';
     } else if (Age <= 49 && Age >= 45) {
-        console.log('45_49');
+        return '45_49';
     } else if (Age <= 54 && Age >= 50) {
-        console.log('50_54');
+        return '50_54';
     } else if (Age <= 59 && Age >= 55) {
-        console.log('55_59');
+        return '55_59';
     } else if (Age >= 60) {
-        console.log('60+');
+        return '60+';
     } 
 }
 
 function GenderGetter(Gender) {
     if (Gender === true) {
-        console.log('Male');
+        return 'Male';
     } else if (Gender === false) {
-        console.log('Female');
-    } else {
-        return;
+        return 'Female';
     }
 }
 
-function PushUpsGetter(PushUps, PushUpWaiver, TotalScore) {
+function PushUpsGetter(PushUps, PushUpWaiver) {
     if (PushUpWaiver == true){
         console.log('Push up Waiver');
-        waiver(true,false,false,TotalScore);
         return 0.0;
     } else if (PushUps < 30) {
-        console.log('Auto Fail Pushups ' + TotalScore)
+        console.log('Auto Fail Pushups ')
         return 0.0;
     } else if (PushUps == 30) {
         return 1.0
@@ -135,13 +123,12 @@ function PushUpsGetter(PushUps, PushUpWaiver, TotalScore) {
     }
 };
 
-function SitUpsGetter(SitUps, SitUpWaiver, TotalScore){
+function SitUpsGetter(SitUps, SitUpWaiver){
     if (SitUpWaiver == true){
         console.log('Sit up Waiver');
-        waiver(false, true, false, TotalScore);
         return 0.0;
     } else if (SitUps < 39) {
-        console.log('Auto Fail Situps ' + TotalScore);
+        console.log('Auto Fail Situps ');
         return 0.0;
     } else if (SitUps == 39) {
         return 3.0;
@@ -186,28 +173,22 @@ function SitUpsGetter(SitUps, SitUpWaiver, TotalScore){
     }
 }
 
-function RunTimeGetter(RunTime, RunWaiver, TotalScore){
+function RunTimeGetter(RunTime, RunWaiver){
     if (RunWaiver == true){
         console.log('Run Waiver');
-        waiver(false, false, true, TotalScore);
         return 0.0;
     } else if (RunTime > '1551') {
-        console.log('Auto Fail Run ' + TotalScore)
+        console.log('Auto Fail Run ');
     } else if (RunTime == '0912') {
         return 60.0;
     }
 }
 
-function TotalScore(PushUpsGetter, SitUpsGetter, RunTimeGetter){
-    TotalScore = PushUpsGetter + SitUpsGetter + RunTimeGetter;
-    return TotalScore;
-};
-
-/*function waiver(PushUpWaiver, SitUpWaiver, RunWaiver, TotalScore){
+function FinalScore(PushUpsGetter, PushUpWaiver, SitUpsGetter, SitUpWaiver, RunTimeGetter, RunWaiver){
+    var TotalScore = PushUpsGetter + SitUpsGetter + RunTimeGetter;
     if (SitUpWaiver == true && PushUpWaiver == false && RunWaiver == false) {
-        TScore = (TotalScore / 80) * 100
-        console.log(typeof TScore);
-        return TScore;
+        TotalScore = (TotalScore/ 80) * 100
+        return TotalScore;
     } else if (SitUpWaiver == true && PushUpWaiver == true && RunWaiver == false) {
         TotalScore = (TotalScore / 60) * 100
         return TotalScore;
@@ -227,37 +208,10 @@ function TotalScore(PushUpsGetter, SitUpsGetter, RunTimeGetter){
         TotalScore = (TotalScore / 40) * 100
         return TotalScore;
     }
-}*/
+    return TotalScore;
+};
 
-AgeGetter(21);
-GenderGetter(true);
-TotalScore(PushUpsGetter(50,false, TotalScore), SitUpsGetter(0,true, TotalScore), RunTimeGetter('0912',false,TotalScore));
-console.log(TotalScore);
+console.log(AgeGetter(21))
+console.log(GenderGetter(true))
+console.log(FinalScore(PushUpsGetter(50, false), false, SitUpsGetter(0,true), true, RunTimeGetter("0912", false), false));
 
-function waiver(PushUpWaiver, SitUpWaiver, RunWaiver, TotalScore){
-    if (SitUpWaiver == true && PushUpWaiver == false && RunWaiver == false) {
-        TScore = (TotalScore / 80) * 100
-        console.log(typeof TScore);
-        return TScore;
-    } else if (SitUpWaiver == true && PushUpWaiver == true && RunWaiver == false) {
-        TScore = (TotalScore / 60) * 100
-        return TScore;
-    } else if (SitUpWaiver == true && PushUpWaiver == true && RunWaiver == true) {
-        TScore = (TotalScore / 0) * 100
-        return TScore;
-    } else if (SitUpWaiver == true && PushUpWaiver == false && RunWaiver == true) {
-        TScore = (TotalScore / 20) * 100
-        return TScore;
-    } else if (SitUpWaiver == false && PushUpWaiver == true && RunWaiver == false) {
-        TScore = (TotalScore / 80) * 100
-        return TScore;
-    } else if (SitUpWaiver == false && PushUpWaiver == true && RunWaiver == true) {
-        TScore = (TotalScore / 20) * 100
-        return TScore;
-    } else if (SitUpWaiver == false && PushUpWaiver == false && RunWaiver == true) {
-        TScore = (TotalScore / 40) * 100
-        return TScore;
-    }
-}
-
-console.log(TScore)

@@ -4,6 +4,7 @@ let Age = AgeGetter;
 let Gender = GenderGetter;
 let PushUps = PushUpsGetter;
 let SitUps = SitUpsGetter;
+let RunTime = RunTimeGetter;
 
 function AgeGetter(Age) {
     if (Age < 25) {
@@ -215,3 +216,11 @@ console.log(AgeGetter(21))
 console.log(GenderGetter(true))
 console.log(FinalScore(PushUpsGetter(50, false), false, SitUpsGetter(0,true), true, RunTimeGetter("0912", false), false));
 
+export {
+    AgeGetter,
+    GenderGetter,
+    PushUpsGetter,
+    SitUpsGetter,
+    RunTimeGetter,
+    FinalScore
+};

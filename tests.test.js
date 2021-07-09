@@ -48,61 +48,9 @@ describe("SitUpsGetter", () => {
   it("returns 3 points when given 39 situps", () => {
     expect(SitUpsGetter(39, false)).toBe(3);
   });
-  it("returns 6 points when given 40 situps", () => {
-    expect(SitUpsGetter(40, false)).toBe(6);
-  });
-  it("returns 9 points when given 41 situps", () => {
-    expect(SitUpsGetter(41, false)).toBe(9);
-  });
-  it("returns 12 points when given 42 situps", () => {
-    expect(SitUpsGetter(42, false)).toBe(12);
-  });
-  it("returns 12.6 points when given 43 situps", () => {
-    expect(SitUpsGetter(43, false)).toBe(12.6);
-  });
-  it("returns 13 points when given 44 situps", () => {
-    expect(SitUpsGetter(44, false)).toBe(13);
-  });
-  it("returns 14 points when given 45 situps", () => {
-    expect(SitUpsGetter(45, false)).toBe(14);
-  });
-  it("returns 15 points when given 46 situps", () => {
-    expect(SitUpsGetter(46, false)).toBe(15);
-  });
-  it("returns 16 points when given 47 situps", () => {
-    expect(SitUpsGetter(47, false)).toBe(16);
-  });
-  it("returns 16.6 points when given 48 situps", () => {
-    expect(SitUpsGetter(48, false)).toBe(16.6);
-  });
-  it("returns 17 points when given 49 situps", () => {
-    expect(SitUpsGetter(49, false)).toBe(17);
-  });
-  it("returns 17.4 points when given 50 situps", () => {
-    expect(SitUpsGetter(50, false)).toBe(17.4);
-  });
-  it("returns 17.6 points when given 51 situps", () => {
-    expect(SitUpsGetter(51, false)).toBe(17.6);
-  });
-  it("returns 18 points when given 52 situps", () => {
-    expect(SitUpsGetter(52, false)).toBe(18);
-  });
-  it("returns 18.4 points when given 53 situps", () => {
-    expect(SitUpsGetter(53, false)).toBe(18.4);
-  });
-  it("returns 18.8 points when given 54 situps", () => {
-    expect(SitUpsGetter(54, false)).toBe(18.8);
-  });
-  it("returns 19 points when given 55 situps", () => {
-    expect(SitUpsGetter(55, false)).toBe(19);
-  });
-  it("returns 19.4 points when given 56 situps", () => {
-    expect(SitUpsGetter(56, false)).toBe(19.4);
-  });
   it("returns 19.7 points when given 57 situps", () => {
     expect(SitUpsGetter(57, false)).toBe(19.7);
   });
-
   it("returns 20 points when given 58 situps", () => {
     expect(SitUpsGetter(58, false)).toBe(20);
   });
@@ -130,61 +78,34 @@ describe("SitUpsGetter", () => {
 describe("AgeGetter", () => {
   it("returns 17_24 when given a range between 17 and 24", () => {
     expect(ageGetter(17)).toBe("17-24");
-    expect(ageGetter(18)).toBe("17-24");
-    expect(ageGetter(19)).toBe("17-24");
-    expect(ageGetter(20)).toBe("17-24");
-    expect(ageGetter(21)).toBe("17-24");
-    expect(ageGetter(22)).toBe("17-24");
-    expect(ageGetter(23)).toBe("17-24");
     expect(ageGetter(24)).toBe("17-24");
   });
   it("returns 25_29 when given a range between 25 and 29", () => {
     expect(ageGetter(25)).toBe("25-29");
-    expect(ageGetter(26)).toBe("25-29");
-    expect(ageGetter(27)).toBe("25-29");
-    expect(ageGetter(28)).toBe("25-29");
     expect(ageGetter(29)).toBe("25-29");
   });
   it("returns 30_34 when given a range between 30 and 34", () => {
     expect(ageGetter(30)).toBe("30-34");
-    expect(ageGetter(31)).toBe("30-34");
-    expect(ageGetter(32)).toBe("30-34");
-    expect(ageGetter(33)).toBe("30-34");
     expect(ageGetter(34)).toBe("30-34");
   });
   it("returns 35_39 when given a range between 35 and 39", () => {
     expect(ageGetter(35)).toBe("35-39");
-    expect(ageGetter(36)).toBe("35-39");
-    expect(ageGetter(37)).toBe("35-39");
-    expect(ageGetter(38)).toBe("35-39");
     expect(ageGetter(39)).toBe("35-39");
   });
   it("returns 40_44 when given a range between 40 and 44", () => {
     expect(ageGetter(40)).toBe("40-44");
-    expect(ageGetter(41)).toBe("40-44");
-    expect(ageGetter(42)).toBe("40-44");
-    expect(ageGetter(43)).toBe("40-44");
     expect(ageGetter(44)).toBe("40-44");
   });
   it("returns 45_49 when given a range between 45 and 49", () => {
     expect(ageGetter(45)).toBe("45-49");
-    expect(ageGetter(46)).toBe("45-49");
-    expect(ageGetter(47)).toBe("45-49");
-    expect(ageGetter(48)).toBe("45-49");
     expect(ageGetter(49)).toBe("45-49");
   });
   it("returns 50_54 when given a range between 50 and 54", () => {
     expect(ageGetter(50)).toBe("50-54");
-    expect(ageGetter(51)).toBe("50-54");
-    expect(ageGetter(52)).toBe("50-54");
-    expect(ageGetter(53)).toBe("50-54");
     expect(ageGetter(54)).toBe("50-54");
   });
   it("returns 55_59 when given a range between 55 and 59", () => {
     expect(ageGetter(55)).toBe("55-59");
-    expect(ageGetter(56)).toBe("55-59");
-    expect(ageGetter(57)).toBe("55-59");
-    expect(ageGetter(58)).toBe("55-59");
     expect(ageGetter(59)).toBe("55-59");
   });
   it("returns 60+ when given an age above 59", () => {

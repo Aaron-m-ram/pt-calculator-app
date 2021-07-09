@@ -1,3 +1,5 @@
+import _ from "lodash";
+
 function GenderGetter(Gender) {
   if (Gender === true) {
     return "Male";
@@ -6,39 +8,37 @@ function GenderGetter(Gender) {
     return "Female";
   }
 }
-// let Age = AgeGetter;
-// let Gender = GenderGetter;
-// let PushUps = PushUpsGetter;
-// let SitUps = SitUpsGetter;
-// let RunTime = RunTimeGetter;
+
 function AgeGetter(Age) {
+  let ageRange;
   if (Age < 25) {
-    return "17_24";
+    ageRange = "17_24";
   }
-  if (Age <= 29 && Age >= 25) {
-    return "25_29";
+  if (_.inRange(Age, 25, 30)) {
+    ageRange = "25_29";
   }
-  if (Age <= 34 && Age >= 30) {
-    return "30_34";
+  if (_.inRange(Age, 30, 35)) {
+    ageRange = "30_34";
   }
-  if (Age <= 39 && Age >= 35) {
-    return "35_39";
+  if (_.inRange(Age, 35, 40)) {
+    ageRange = "35_39";
   }
-  if (Age <= 44 && Age >= 40) {
-    return "40_44";
+  if (_.inRange(Age, 40, 45)) {
+    ageRange = "40_44";
   }
-  if (Age <= 49 && Age >= 45) {
-    return "45_49";
+  if (_.inRange(Age, 45, 50)) {
+    ageRange = "45_49";
   }
-  if (Age <= 54 && Age >= 50) {
-    return "50_54";
+  if (_.inRange(Age, 50, 55)) {
+    ageRange = "50_54";
   }
-  if (Age <= 59 && Age >= 55) {
-    return "55_59";
+  if (_.inRange(Age, 55, 60)) {
+    ageRange = "55_59";
   }
   if (Age >= 60) {
-    return "60+";
+    ageRange = "60+";
   }
+  return ageRange;
 }
 
 const pushUpsGetter = (pushUpsInput, pushUpWaiver) => {

@@ -4,7 +4,8 @@
   "description": "",
   "main": "Form.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --watchAll",
+    "test-coverage": "jest --coverage",
     "start": "http-server ./",
     "dev-start": "git fetch && git pull origin master && npm install"
   },

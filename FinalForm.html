@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PT Calculator</title>
+</head>
+<body>
+  <form id="Gender"
+        name="Gender">
+    <div class="form-row align-items-center">
+      <div class="col-auto my-1">
+        <label class="mr-sm-2"
+             for="inlineFormCustomSelect">Gender</label> <select class="custom-select mr-sm-2"
+             id="inlineFormCustomSelect">
+          <option selected>
+            Choose...
+          </option>
+          <option value="1">
+            Female
+          </option>
+          <option value="2">
+            Male
+          </option>
+        </select>
+      </div>
+    </div>
+  </form>
+  <form id="input age"
+        name="input age"
+        onsubmit="return false">
+    <div class="form-group">
+      <label for="exampleAge">Age</label> <input aria-describedby="ageeHelp"
+           class="form-control"
+           id="exampleInputAge"
+           min="0"
+           placeholder="Enter your age"
+           type="number">
+    </div>
+  </form>
+  <form id="input name"
+        name="input name"
+        onsubmit="return false">
+    <div class="form-group">
+      <label for="exampleRunTime1">Run Time</label> <input aria-describedby="RunTimeHelp"
+           class="form-control"
+           id="exampleInputRunTime"
+           min="00:01"
+           placeholder="Enter Run Time"
+           type="text">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputSitUps">Sit Ups</label> <input class="form-control"
+           id="exampleInputSitUps"
+           min="0"
+           placeholder="Enter Sit Ups"
+           type="number">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputpPushUps">Push Ups</label> <input class="form-control"
+           id="exampleInputPushUps"
+           min="0"
+           placeholder="Enter Push Ups"
+           type="number">
+    </div>
+    <div class="col-auto my-1">
+      <button class="btn btn-primary"
+           id="SubmitBtn"
+           type="submit">Submit</button>
+    </div>
+    <script src="Form.js"></script>
+  </form>
+</body>
+</html>

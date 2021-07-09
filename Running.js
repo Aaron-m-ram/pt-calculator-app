@@ -1,43 +1,28 @@
 import _ from "lodash";
 
-function GenderGetter(Gender) {
-  if (Gender === true) {
-    return "Male";
-  }
-  if (Gender === false) {
-    return "Female";
-  }
+function genderGetter(genderInput) {
+  return genderInput ? "male" : "female";
 }
 
-function AgeGetter(Age) {
+function ageGetter(ageInput) {
   let ageRange;
-  if (Age < 25) {
-    ageRange = "17_24";
-  }
-  if (_.inRange(Age, 25, 30)) {
-    ageRange = "25_29";
-  }
-  if (_.inRange(Age, 30, 35)) {
-    ageRange = "30_34";
-  }
-  if (_.inRange(Age, 35, 40)) {
-    ageRange = "35_39";
-  }
-  if (_.inRange(Age, 40, 45)) {
-    ageRange = "40_44";
-  }
-  if (_.inRange(Age, 45, 50)) {
-    ageRange = "45_49";
-  }
-  if (_.inRange(Age, 50, 55)) {
-    ageRange = "50_54";
-  }
-  if (_.inRange(Age, 55, 60)) {
-    ageRange = "55_59";
-  }
-  if (Age >= 60) {
-    ageRange = "60+";
-  }
+
+  const ageRangeMap = [
+    { ageArray: [17, 25], ageRangeString: "17-24" },
+    { ageArray: [25, 30], ageRangeString: "25-29" },
+    { ageArray: [30, 35], ageRangeString: "30-34" },
+    { ageArray: [35, 40], ageRangeString: "35-39" },
+    { ageArray: [40, 45], ageRangeString: "40-44" },
+    { ageArray: [45, 50], ageRangeString: "45-49" },
+    { ageArray: [50, 55], ageRangeString: "50-54" },
+    { ageArray: [55, 60], ageRangeString: "55-59" },
+    { ageArray: [60, 100], ageRangeString: "60+" },
+  ];
+
+  ageRange = ageRangeMap.find((obj) =>
+    _.inRange(ageInput, obj.ageArray[0], obj.ageArray[1])
+  ).ageRangeString;
+
   return ageRange;
 }
 
@@ -192,8 +177,8 @@ function FinalScore(
 }
 
 export {
-  AgeGetter,
-  GenderGetter,
+  ageGetter,
+  genderGetter,
   pushUpsGetter,
   SitUpsGetter,
   RunTimeGetter,

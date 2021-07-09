@@ -1,11 +1,21 @@
 import { describe, expect, it } from "@jest/globals";
 import {
+  genderGetter,
+  ageGetter,
   pushUpsGetter,
-  AgeGetter,
   SitUpsGetter,
   RunTimeGetter,
   FinalScore,
 } from "./Running";
+
+describe("genderGetter", () => {
+  it('returns "male" for true', () => {
+    expect(genderGetter(true)).toMatch("male");
+  });
+  it('returns "female" for false', () => {
+    expect(genderGetter(false)).toMatch("female");
+  });
+});
 
 describe("PushUpsGetter", () => {
   it("returns 1 point when given 30 pushups", () => {
@@ -119,66 +129,66 @@ describe("SitUpsGetter", () => {
 // create a test suite to test the AgeGetter
 describe("AgeGetter", () => {
   it("returns 17_24 when given a range between 17 and 24", () => {
-    expect(AgeGetter(17)).toBe("17_24");
-    expect(AgeGetter(18)).toBe("17_24");
-    expect(AgeGetter(19)).toBe("17_24");
-    expect(AgeGetter(20)).toBe("17_24");
-    expect(AgeGetter(21)).toBe("17_24");
-    expect(AgeGetter(22)).toBe("17_24");
-    expect(AgeGetter(23)).toBe("17_24");
-    expect(AgeGetter(24)).toBe("17_24");
+    expect(ageGetter(17)).toBe("17-24");
+    expect(ageGetter(18)).toBe("17-24");
+    expect(ageGetter(19)).toBe("17-24");
+    expect(ageGetter(20)).toBe("17-24");
+    expect(ageGetter(21)).toBe("17-24");
+    expect(ageGetter(22)).toBe("17-24");
+    expect(ageGetter(23)).toBe("17-24");
+    expect(ageGetter(24)).toBe("17-24");
   });
   it("returns 25_29 when given a range between 25 and 29", () => {
-    expect(AgeGetter(25)).toBe("25_29");
-    expect(AgeGetter(26)).toBe("25_29");
-    expect(AgeGetter(27)).toBe("25_29");
-    expect(AgeGetter(28)).toBe("25_29");
-    expect(AgeGetter(29)).toBe("25_29");
+    expect(ageGetter(25)).toBe("25-29");
+    expect(ageGetter(26)).toBe("25-29");
+    expect(ageGetter(27)).toBe("25-29");
+    expect(ageGetter(28)).toBe("25-29");
+    expect(ageGetter(29)).toBe("25-29");
   });
   it("returns 30_34 when given a range between 30 and 34", () => {
-    expect(AgeGetter(30)).toBe("30_34");
-    expect(AgeGetter(31)).toBe("30_34");
-    expect(AgeGetter(32)).toBe("30_34");
-    expect(AgeGetter(33)).toBe("30_34");
-    expect(AgeGetter(34)).toBe("30_34");
+    expect(ageGetter(30)).toBe("30-34");
+    expect(ageGetter(31)).toBe("30-34");
+    expect(ageGetter(32)).toBe("30-34");
+    expect(ageGetter(33)).toBe("30-34");
+    expect(ageGetter(34)).toBe("30-34");
   });
   it("returns 35_39 when given a range between 35 and 39", () => {
-    expect(AgeGetter(35)).toBe("35_39");
-    expect(AgeGetter(36)).toBe("35_39");
-    expect(AgeGetter(37)).toBe("35_39");
-    expect(AgeGetter(38)).toBe("35_39");
-    expect(AgeGetter(39)).toBe("35_39");
+    expect(ageGetter(35)).toBe("35-39");
+    expect(ageGetter(36)).toBe("35-39");
+    expect(ageGetter(37)).toBe("35-39");
+    expect(ageGetter(38)).toBe("35-39");
+    expect(ageGetter(39)).toBe("35-39");
   });
   it("returns 40_44 when given a range between 40 and 44", () => {
-    expect(AgeGetter(40)).toBe("40_44");
-    expect(AgeGetter(41)).toBe("40_44");
-    expect(AgeGetter(42)).toBe("40_44");
-    expect(AgeGetter(43)).toBe("40_44");
-    expect(AgeGetter(44)).toBe("40_44");
+    expect(ageGetter(40)).toBe("40-44");
+    expect(ageGetter(41)).toBe("40-44");
+    expect(ageGetter(42)).toBe("40-44");
+    expect(ageGetter(43)).toBe("40-44");
+    expect(ageGetter(44)).toBe("40-44");
   });
   it("returns 45_49 when given a range between 45 and 49", () => {
-    expect(AgeGetter(45)).toBe("45_49");
-    expect(AgeGetter(46)).toBe("45_49");
-    expect(AgeGetter(47)).toBe("45_49");
-    expect(AgeGetter(48)).toBe("45_49");
-    expect(AgeGetter(49)).toBe("45_49");
+    expect(ageGetter(45)).toBe("45-49");
+    expect(ageGetter(46)).toBe("45-49");
+    expect(ageGetter(47)).toBe("45-49");
+    expect(ageGetter(48)).toBe("45-49");
+    expect(ageGetter(49)).toBe("45-49");
   });
   it("returns 50_54 when given a range between 50 and 54", () => {
-    expect(AgeGetter(50)).toBe("50_54");
-    expect(AgeGetter(51)).toBe("50_54");
-    expect(AgeGetter(52)).toBe("50_54");
-    expect(AgeGetter(53)).toBe("50_54");
-    expect(AgeGetter(54)).toBe("50_54");
+    expect(ageGetter(50)).toBe("50-54");
+    expect(ageGetter(51)).toBe("50-54");
+    expect(ageGetter(52)).toBe("50-54");
+    expect(ageGetter(53)).toBe("50-54");
+    expect(ageGetter(54)).toBe("50-54");
   });
   it("returns 55_59 when given a range between 55 and 59", () => {
-    expect(AgeGetter(55)).toBe("55_59");
-    expect(AgeGetter(56)).toBe("55_59");
-    expect(AgeGetter(57)).toBe("55_59");
-    expect(AgeGetter(58)).toBe("55_59");
-    expect(AgeGetter(59)).toBe("55_59");
+    expect(ageGetter(55)).toBe("55-59");
+    expect(ageGetter(56)).toBe("55-59");
+    expect(ageGetter(57)).toBe("55-59");
+    expect(ageGetter(58)).toBe("55-59");
+    expect(ageGetter(59)).toBe("55-59");
   });
   it("returns 60+ when given an age above 59", () => {
-    expect(AgeGetter(60)).toBe("60+");
+    expect(ageGetter(60)).toBe("60+");
   });
 });
 
@@ -239,6 +249,18 @@ describe("FinalScore", () => {
         SitUpsGetter(0, true),
         true,
         RunTimeGetter("0912", true),
+        true
+      )
+    ).toBe(100);
+  });
+  it("max score, only pushups and run waiver", () => {
+    expect(
+      FinalScore(
+        pushUpsGetter(0, true),
+        true,
+        SitUpsGetter(58, false),
+        false,
+        RunTimeGetter("", true),
         true
       )
     ).toBe(100);

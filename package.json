@@ -9,7 +9,7 @@
     "dev-start": "git fetch && git pull origin master && npm install",
     "coverage": "jest --coverage --watchAll",
     "coverage-open": "open ./coverage/lcov-report/index.html",
-    "git-acp": "git add . && git commit -m $npm_config_message && git push origin $npm_config_branch"
+    "git-push": "git add . && git commit -m $npm_config_message && git push origin $npm_config_branch"
   },
   "keywords": [],
   "author": "",

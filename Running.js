@@ -107,73 +107,48 @@ const pushUpsGetter = (pushUpsInput, pushUpWaiver) => {
   return pushUpsScore;
 };
 
-function SitUpsGetter(SitUps, SitUpWaiver) {
+function SitUpsGetter(sitUpInput, SitUpWaiver) {
+  let sitUpsScore;
   if (SitUpWaiver) {
-    return 0.0;
+    return 0;
   }
-  if (SitUps < 39) {
-    return 0.0;
+  const sitUpCountToScore = [
+    { count: 39, score: 3.0 },
+    { count: 40, score: 6.0 },
+    { count: 41, score: 9.0 },
+    { count: 42, score: 12.0 },
+    { count: 43, score: 12.6 },
+    { count: 44, score: 13.0 },
+    { count: 45, score: 14.0 },
+    { count: 46, score: 15.0 },
+    { count: 47, score: 16.0 },
+    { count: 48, score: 16.6 },
+    { count: 49, score: 17.0 },
+    { count: 50, score: 17.4 },
+    { count: 51, score: 17.6 },
+    { count: 52, score: 18.0 },
+    { count: 53, score: 18.4 },
+    { count: 54, score: 18.8 },
+    { count: 55, score: 19.0 },
+    { count: 56, score: 19.4 },
+    { count: 57, score: 19.7 },
+    { count: 58, score: 20.0 },
+  ];
+  if (
+    sitUpInput < 39 ||
+    sitUpInput === undefined ||
+    sitUpInput == null ||
+    SitUpWaiver
+  ) {
+    sitUpsScore = 0;
+  } else if (sitUpInput >= 58) {
+    sitUpsScore = 20;
+  } else {
+    sitUpsScore = sitUpCountToScore.find(
+      (obj) => obj.count === sitUpInput
+    ).score;
   }
-  if (SitUps === 39) {
-    return 3.0;
-  }
-  if (SitUps === 40) {
-    return 6.0;
-  }
-  if (SitUps === 41) {
-    return 9.0;
-  }
-  if (SitUps === 42) {
-    return 12.0;
-  }
-  if (SitUps === 43) {
-    return 12.6;
-  }
-  if (SitUps === 44) {
-    return 13.0;
-  }
-  if (SitUps === 45) {
-    return 14.0;
-  }
-  if (SitUps === 46) {
-    return 15.0;
-  }
-  if (SitUps === 47) {
-    return 16.0;
-  }
-  if (SitUps === 48) {
-    return 16.6;
-  }
-  if (SitUps === 49) {
-    return 17.0;
-  }
-  if (SitUps === 50) {
-    return 17.4;
-  }
-  if (SitUps === 51) {
-    return 17.6;
-  }
-  if (SitUps === 52) {
-    return 18.0;
-  }
-  if (SitUps === 53) {
-    return 18.4;
-  }
-  if (SitUps === 54) {
-    return 18.8;
-  }
-  if (SitUps === 55) {
-    return 19.0;
-  }
-  if (SitUps === 56) {
-    return 19.4;
-  }
-  if (SitUps === 57) {
-    return 19.7;
-  }
-  if (SitUps >= 58) {
-    return 20.0;
-  }
+  return sitUpsScore;
 }
 
 function RunTimeGetter(RunTime, RunWaiver) {

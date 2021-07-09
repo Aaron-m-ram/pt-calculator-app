@@ -1,5 +1,5 @@
 // Submit button click //
-var format = 'mm:ss'
+var format = 'mm:ss' //Test for showing push
 
 
 var inputBTN = document.getElementById("SubmitBtn");

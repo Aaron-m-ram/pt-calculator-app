@@ -183,16 +183,124 @@ describe("AgeGetter", () => {
 });
 
 describe("FinalScore", () => {
-  it("test", () => {
+  it("max score, no waivers", () => {
     expect(
       FinalScore(
-        pushUpsGetter(50, false),
+        pushUpsGetter(67, false),
+        false,
+        SitUpsGetter(58, false),
+        false,
+        RunTimeGetter("0912", false),
+        false
+      )
+    ).toBe(100);
+  });
+  it("max score, only run waiver", () => {
+    expect(
+      FinalScore(
+        pushUpsGetter(67, false),
+        false,
+        SitUpsGetter(58, false),
+        false,
+        RunTimeGetter("", true),
+        true
+      )
+    ).toBe(100);
+  });
+  it("max score, only situps waiver", () => {
+    expect(
+      FinalScore(
+        pushUpsGetter(67, false),
         false,
         SitUpsGetter(0, true),
         true,
         RunTimeGetter("0912", false),
         false
       )
-    ).toBe(96);
+    ).toBe(100);
+  });
+  it("max score, only pushup waiver", () => {
+    expect(
+      FinalScore(
+        pushUpsGetter(0, true),
+        true,
+        SitUpsGetter(58, false),
+        false,
+        RunTimeGetter("0912", false),
+        false
+      )
+    ).toBe(100);
+  });
+  it("max score, only situps and run waiver", () => {
+    expect(
+      FinalScore(
+        pushUpsGetter(67, false),
+        false,
+        SitUpsGetter(0, true),
+        true,
+        RunTimeGetter("0912", true),
+        true
+      )
+    ).toBe(100);
+  });
+  it("max score, only situps and pushup waiver", () => {
+    expect(
+      FinalScore(
+        pushUpsGetter(0, true),
+        true,
+        SitUpsGetter(0, true),
+        true,
+        RunTimeGetter("0912", false),
+        false
+      )
+    ).toBe(100);
+  });
+  it("max score, all waivers", () => {
+    expect(
+      FinalScore(
+        pushUpsGetter(0, true),
+        true,
+        SitUpsGetter(0, true),
+        true,
+        RunTimeGetter("", true),
+        true
+      )
+    ).toBe(100);
+  });
+  it("80 points, no waivers", () => {
+    expect(
+      FinalScore(
+        pushUpsGetter(35, false),
+        false,
+        SitUpsGetter(41, false),
+        false,
+        RunTimeGetter("0912", false),
+        false
+      )
+    ).toBe(80);
+  });
+  it("80 points, only situps waiver", () => {
+    expect(
+      FinalScore(
+        pushUpsGetter(35, false),
+        false,
+        SitUpsGetter(0, true),
+        true,
+        RunTimeGetter("0912", false),
+        false
+      )
+    ).toBe(88.75);
+  });
+  it("80 points, only pushups waiver", () => {
+    expect(
+      FinalScore(
+        pushUpsGetter(0, true),
+        true,
+        SitUpsGetter(41, false),
+        false,
+        RunTimeGetter("0912", false),
+        false
+      )
+    ).toBe(86.25);
   });
 });

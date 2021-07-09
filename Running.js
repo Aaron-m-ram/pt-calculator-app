@@ -198,49 +198,23 @@ function FinalScore(
 ) {
   let TotalScore =
     handlePushUpsGetter + handleSitUpsGetter + handleRunTimeGetter;
-  if (handleSitUpWaiver && !handlePushUpWaiver && !handleRunWaiver) {
-    TotalScore = (TotalScore / 80) * 100;
-    return TotalScore;
-  }
-  if (handleSitUpWaiver && handlePushUpWaiver && !handleRunWaiver) {
+  if (handlePushUpWaiver && handleSitUpWaiver && handleRunWaiver) {
+    TotalScore = 100;
+  } else if (handlePushUpWaiver && handleSitUpWaiver) {
     TotalScore = (TotalScore / 60) * 100;
-    return TotalScore;
-  }
-  if (handleSitUpWaiver && handlePushUpWaiver && handleRunWaiver) {
-    TotalScore = (TotalScore / 0) * 100;
-    return TotalScore;
-  }
-  if (handleSitUpWaiver && !handlePushUpWaiver && handleRunWaiver) {
+  } else if (handlePushUpWaiver && handleRunWaiver) {
     TotalScore = (TotalScore / 20) * 100;
-    return TotalScore;
-  }
-  if (handlePushUpWaiver && !handleSitUpWaiver && !handleRunWaiver) {
-    TotalScore = (TotalScore / 80) * 100;
-    return TotalScore;
-  }
-  if (!handleSitUpWaiver && handlePushUpWaiver && handleRunWaiver) {
+  } else if (handleRunWaiver && handleSitUpWaiver) {
     TotalScore = (TotalScore / 20) * 100;
-    return TotalScore;
-  }
-  if (!handleSitUpWaiver && !handlePushUpWaiver && handleRunWaiver) {
+  } else if (handleRunWaiver) {
     TotalScore = (TotalScore / 40) * 100;
-    return TotalScore;
+  } else if (handlePushUpWaiver) {
+    TotalScore = (TotalScore / 80) * 100;
+  } else if (handleSitUpWaiver) {
+    TotalScore = (TotalScore / 80) * 100;
   }
   return TotalScore;
 }
-
-// console.log(AgeGetter(21));
-// console.log(GenderGetter(true));
-// console.log(
-//   FinalScore(
-//     PushUpsGetter(50, false),
-//     false,
-//     SitUpsGetter(0, true),
-//     true,
-//     RunTimeGetter("0912", false),
-//     false
-//   )
-// );
 
 export {
   AgeGetter,

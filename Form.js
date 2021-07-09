@@ -7,6 +7,21 @@ inputBTN.addEventListener('click', myfunction);
 
 // takes input for runtime, situps and pushups then adds them to array // 
 
+function myFunc(){
+    var y = document.getElementById("input age");
+     var text = [];
+     var j;
+     for (j = 0; j < y.length ;j++) {
+       text.push(y.elements[j].value);
+     };
+
+     // turns age from string to number //
+
+    var ageNum = parseInt(text[0]);
+    //console.log(ageNum);
+    return ageNum;
+};
+
 function myfunction(){
    var x = document.getElementById("input name");
     var text = [];
@@ -14,8 +29,10 @@ function myfunction(){
     for (i = 0; i < x.length -1 ;i++) {
       text.push(x.elements[i].value);
       //console.log(text[])
-    }
+    };
 
+    
+    console.log(myFunc());
     var runBtnCheck = document.getElementById("btncheck1").checked;
     var sitBtnCheck = document.getElementById("btncheck2").checked;
     var pushBtnCheck = document.getElementById("btncheck3").checked;

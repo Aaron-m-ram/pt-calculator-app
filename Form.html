@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>PT Calculator</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+    </head>
+    <body><form>
+    <div class="form-row align-items-center">
+      <div class="col-auto my-1">
+        <label class="mr-sm-2" for="inlineFormCustomSelect">Gender</label>
+        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+          <option selected>Choose...</option>
+          <option value="1">Female</option>
+          <option value="2">Male</option>
+        </select>
+      </div>
+      </div>
+  </form>
+<form id="input name" onsubmit="return false">
+    <div class="form-group">
+      <label for="Time">Run Time</label>
+      <label for="minuteTime"> Minutes: </label>
+      <input type="number" class="form-control" id="exampleInputRunTime" aria-describedby="RunTimeHelp" placeholder="Min"
+      min=0 max=60>
+      <label for="secondsTimes">Seconds: </label>
+      <input type="number" class="form-control" id="exampleInputRunTime" aria-describedby="RunTimeHelp" placeholder="Sec"
+      min=0 max=60>
+      <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+      <label class="btn btn-outline-primary" for="btncheck1">Waiver</label>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputSitUps">Sit Ups</label>
+      <input type="number" class="form-control" id="exampleInputSitUps" placeholder="Enter Sit Ups"
+      min=0>
+      <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+      <label class="btn btn-outline-primary" for="btncheck2">Waiver</label>
+    </div>
+    
+    <div class="form-group">
+        <label for="exampleInputSitUps">Push Ups</label>
+        <input type="number" class="form-control" id="exampleInputSitUps" placeholder="Enter Push Ups"
+        min=0>
+        <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
+        <label class="btn btn-outline-primary" for="btncheck3">Waiver</label>
+      </div>
+
+      <div class="col-auto my-1">
+        <button type="submit" class="btn btn-primary" id="SubmitBtn">Submit</button>
+      </div>
+
+</body>
+<script type="module" src="Form.js"></script>
+</html>
+
+<!-- <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+  <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+  <label class="btn btn-outline-primary" for="btncheck1">Checkbox 1</label>
+
+  <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+  <label class="btn btn-outline-primary" for="btncheck2">Checkbox 2</label>
+
+  <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
+  <label class="btn btn-outline-primary" for="btncheck3">Checkbox 3</label>
+</div> -->

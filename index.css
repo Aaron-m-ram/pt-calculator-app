@@ -82,9 +82,15 @@ h1{
 }
 
 /* Waiver both the text and the boxes - not working for some reason*/
-#9,#12,#15{
+/* #9,#12,#15{
   margin-top: 10px;
   float: right;
+} */
+
+#waiver9, #waiver12, #waiver15{
+  /* float: right; */
+  text-align: right;
+  color:aqua;
 }
 
 #SubmitBtn{

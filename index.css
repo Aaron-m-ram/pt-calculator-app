@@ -1,24 +1,115 @@
+
 body {
-    font: 14px "Gothic", Futura, sans-serif;
-    margin: 20px;
+    font: 16px "Gothic", Futura, sans-serif;
+    margin: 10px;
+    background: rgb(107, 107, 107);
+    /* color: pink; */
   }
-  .grid-container{
-    display: grid;
-    grid-template-columns: auto auto auto;
-    align-content: center;
-    border: 5px solid green;
-    /* align-content: center; */
-  }
-  .grid-item {
-    /* background-color: indianred; */
-    border: 2px solid pink;
-    text-align: center;
+h1{
+  text-align: center;
+}
+.grid-container{
+  margin: auto;
+  width: 500px;
+  height: 550px;
+  display:grid;
+  grid-template-columns: auto 210px auto;
+  /* align-content: center; */
+  border: 5px solid #025172;
+  background-color: #025172;
+  /* align-content: center; */
+}
+.grid-item {
+  /* background-color: indianred; */
+  border: 5px solid #025172;
+  /* text-align: left; */
 
 
-  }
+}
+
+
+.label{
+  margin-top: 10px;
+  float: right;
+  color: whitesmoke;
+  font-weight: bolder;
+}
+
+.input{
+  /* text-align: center; */
+  float: left;
+}
+
+.input{
+  padding: 9px; 
+  border: solid 1px #282f8a; 
+  outline: 0; 
+  background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #59abb9), to(#FFFFFF)); 
+  background: -moz-linear-gradient(top, #FFFFFF, #59abb9 1px, #FFFFFF 25px); 
+  box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
+  -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
+  -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
+  border-radius:1300px;
+  width:150px;
+}
+
+/* I need the boxes smaller for time that is why there are two inputs */
+.inputTime{
+  padding: 9px; 
+  border: solid 1px #282f8a; 
+  outline: 0; 
+  background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #59abb9), to(#FFFFFF)); 
+  background: -moz-linear-gradient(top, #FFFFFF, #59abb9 1px, #FFFFFF 25px); 
+  box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
+  -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
+  -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
+  border-radius:1300px;
+  width:75px;
+}
+
+#Gender-Select{
+  padding: 9px; 
+  /* border: solid 1px #282f8a; */ 
+  outline: 0; 
+  background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #025172), to(#FFFFFF)); 
+  background: -moz-linear-gradient(top, #FFFFFF, #59abb9 1px, #FFFFFF 25px); 
+  box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
+  -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
+  -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
+  border-radius:1300px;
+  width:150px;
+
+}
+
+/* Waiver both the text and the boxes - not working for some reason*/
+#9,#12,#15{
+  margin-top: 10px;
+  float: right;
+}
+
+#SubmitBtn{
+  padding:20px 60px;
+  outline: none;
+  background-color: #2771ae;
+  border: none;
+  border-radius:5px;
+  box-shadow: 0 9px #95a5a6;
+}
+
+#SubmitBtn:hover{
+  background-color: #1d5f96;
+}
+
+#SubmitBtn:active {
+  background-color: #1d5f96;
+  box-shadow: 0 5px #95a5a6;
+  transform: translateY(4px);
+}
+
+
 
   
-  ol, ul {
+/*   ol, ul {
     padding-left: 30px;
   }
   
@@ -63,4 +154,4 @@ body {
   .game-info {
     margin-left: 20px;
   }
-  
+   */

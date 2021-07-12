@@ -8,7 +8,7 @@
             "type": "pwa-chrome",
             "request": "launch",
             "name": "Open Form.html",
-            "file": "/Users/grid/Desktop/Dev/pt calc/pt-calculator-app/Form.html"
+            "file": "/Users/aaron/Desktop/Dev/PT calc/pt-calculator-app/Form.html"
         }
     ]
 }

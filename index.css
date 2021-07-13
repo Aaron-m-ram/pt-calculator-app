@@ -3,8 +3,16 @@ body {
     font: 16px "Gothic", Futura, sans-serif;
     margin: 10px;
     background: rgb(107, 107, 107);
+    /* color: white; */
     /* color: pink; */
-  }
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;*/
+
+}
+
+
 h1{
   text-align: center;
 }
@@ -13,34 +21,160 @@ h1{
   width: 500px;
   height: 550px;
   display:grid;
-  grid-template-columns: auto 210px auto;
+  grid-template-columns: auto 179px auto;
   /* align-content: center; */
   border: 5px solid #025172;
   background-color: #025172;
   /* align-content: center; */
 }
-.grid-item {
-  /* background-color: indianred; */
-  border: 5px solid #025172;
-  /* text-align: left; */
+ .grid-item {
+  /* border: 5px solid #025172; */
+  border: 3px solid #025172;
+ /*  background-color: indianred;
+  text-align: left; */
+ }
 
+/* ************************* */  
 
+/* /* this is .group on the other one 
+#waiver15{
+    display: flex;
+    align-items: center;
+    margin-bottom: 2em;
 }
+
+input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+/* this is label in other 
+#cb1 {
+  position: relative;
+  margin-right: 1em;
+  padding-left: 2em;
+  padding-right: 1em;
+  line-height: 2;
+  cursor: pointer;
+}
+
+#cb1:before{
+  box-sizing: border-box;
+  content: " ";
+  position: absolute;
+  top: 0.3em;
+  left: 0;
+  display: block;
+  width: 1.4em;
+  height: 1.4em;
+  /*color below is for the outline of the checkbox
+  border: 2px solid black;
+  border-radius: .25em;
+  z-index: -1;
+}
+
+/*Checkbox checked
+#cb1:checked + #cb1 {
+  padding-left: 5px;
+  color: black;
+}
+
+#cb1:checked + #cb1:before {
+    top: 0;
+    width: 100%;
+    height: 2em;
+    background: black;
+}
+/*Transition
+#cb1, #cb1::before {
+  -webkit-transition: .25s all ease;
+  -o-transition: .25s all ease;
+  transition: .25s all ease;
+}
+ */
+/* body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #85808095;
+  color: black;
+} */
+.grid-item.waiver {
+  display: flex;
+  align-items: center;
+}
+input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.waiverLabel {
+  position: relative;
+  margin-top: 10px;
+  margin-right: 1em;
+  padding-left: 2em;
+  padding-right: 1em;
+  line-height: 2;
+  cursor: pointer;
+  color: white;
+}
+.waiverLabel:before {
+  box-sizing: border-box;
+  content: " ";
+  position: absolute;
+  top: auto;
+  left: 0;
+  display: block;
+  width: 1.4em;
+  height: 1.4em;
+  border: 2px solid black;
+  border-radius: 0.25em;
+  z-index: 1;
+}
+/* Checked */
+input[type="checkbox"]:checked + .waiverLabel {
+  padding-left: 1em;
+  background: #99050abf;
+  color: white;
+  border-radius: 0.25em;
+  margin-bottom: 10px;
+}
+input[type="checkbox"]:checked + .waiverLabel:before {
+  width: 100%;
+  height: 2em;
+}
+/* Transition */
+.waiverLabel, .waiverLabel::before {
+  -webkit-transition: 0.25s all ease;
+  -o-transition: 0.25s all ease;
+  transition: 0.25s all ease;
+}
+
+/* ************************** */
+
+
+
 
 
 .label{
-  margin-top: 10px;
+  margin-top: 30px;
   float: right;
   color: whitesmoke;
   font-weight: bolder;
 }
 
-.input{
+
+
+
+.input {
   /* text-align: center; */
   float: left;
 }
 
 .input{
+  margin-top: 25px;
   padding: 9px; 
   border: solid 1px #282f8a; 
   outline: 0; 
@@ -49,13 +183,14 @@ h1{
   box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
   -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
   -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
-  border-radius:1300px;
+  border-radius:13px;
   width:150px;
 }
 
 /* I need the boxes smaller for time that is why there are two inputs */
 .inputTime{
   padding: 9px; 
+  margin-top: 25px;
   border: solid 1px #282f8a; 
   outline: 0; 
   background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #59abb9), to(#FFFFFF)); 
@@ -63,12 +198,13 @@ h1{
   box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
   -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
   -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
-  border-radius:1300px;
-  width:75px;
+  border-radius:13px;
+  width:62px;
 }
 
 #Gender-Select{
   padding: 9px; 
+  margin-top: 25px;
   /* border: solid 1px #282f8a; */ 
   outline: 0; 
   background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #025172), to(#FFFFFF)); 
@@ -76,8 +212,8 @@ h1{
   box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
   -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
   -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
-  border-radius:1300px;
-  width:150px;
+  border-radius:13px;
+  width:173px;
 
 }
 
@@ -87,11 +223,11 @@ h1{
   float: right;
 } */
 
-#waiver9, #waiver12, #waiver15{
-  /* float: right; */
+/* #waiver9, #waiver12, #waiver15{
+  float: right;
   text-align: right;
-  color:aqua;
-}
+  color: black;
+} */
 
 #SubmitBtn{
   padding:20px 60px;
@@ -111,53 +247,8 @@ h1{
   box-shadow: 0 5px #95a5a6;
   transform: translateY(4px);
 }
-
-
-
-  
-/*   ol, ul {
-    padding-left: 30px;
-  }
-  
-  .board-row:after {
-    clear: both;
-    content: "";
-    display: table;
-  }
-  
-  .status {
-    margin-bottom: 10px;
-  }
-  
-  .square {
-    background: #fff;
-    border: 1px solid #999;
-    float: left;
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 34px;
-    height: 34px;
-    margin-right: -1px;
-    margin-top: -1px;
-    padding: 0;
-    text-align: center;
-    width: 34px;
-  }
-  
-  .square:focus {
-    outline: none;
-  }
-  
-  .kbd-navigation .square:focus {
-    background: #ddd;
-  }
-  
-  .game {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .game-info {
-    margin-left: 20px;
-  }
-   */
+/* #waiver15{
+  display: flex;
+  align-items: center;
+  margin-bottom: 2em;
+} */

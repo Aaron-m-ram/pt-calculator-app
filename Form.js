@@ -311,4 +311,4 @@ function finalScore(PushUpsGetter, SitUpsGetter, RunTimeGetter, waiver){
         return TotalScore;
     }
     return TotalScore;
-}// Scoresheets //
+};

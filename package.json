@@ -5,7 +5,7 @@
   "main": "Form.js",
   "scripts": {
     "test": "jest --watchAll",
-    "test1": "jest",
+    "applesauce": "jest --env=jsdom",
     "start": "http-server ./",
     "dev-start": "git fetch && git pull origin master && npm install",
     "coverage": "jest --coverage --watchAll",
@@ -25,6 +25,7 @@
     "prettier": "2.3.2"
   },
   "dependencies": {
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "moment": "^2.29.1"
   }
 }

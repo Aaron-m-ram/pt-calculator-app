@@ -1,3 +1,6 @@
+
+
+ 
 /* This is not tested for out stuff you need  */
 
 
@@ -13,7 +16,7 @@ import {
 
 describe("ageGetter", () => {
     it('returns "17_24" when give a number below 25', () => {
-        expect(ageGetter(17).tobe('17_24'))
+        expect(ageGetter(17)).toBe('17_24');
     });
 });
 

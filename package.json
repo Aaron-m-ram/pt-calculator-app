@@ -4,11 +4,27 @@
   "description": "",
   "main": "Form.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "http-server ./"
+    "test": "jest --watchAll",
+    "test1": "jest",
+    "start": "http-server ./",
+    "dev-start": "git fetch && git pull origin master && npm install",
+    "coverage": "jest --coverage --watchAll",
+    "coverage-open": "open ./coverage/lcov-report/index.html",
+    "git-push": "git add . && git commit -m $npm_config_message && git push origin $npm_config_branch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "@babel/cli": "^7.14.5",
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "eslint": "^7.30.0",
+    "jest": "^27.0.6",
+    "prettier": "2.3.2"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
 }

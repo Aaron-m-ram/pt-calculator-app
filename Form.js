@@ -1,4 +1,5 @@
 /* VARIABLES */
+import moment from 'moment';
 var format = 'mm:ss' //format for moments
 var boundariesArr = [
     moment('09:13', format), //59.5 w
@@ -26,10 +27,19 @@ var boundariesArr = [
 ]; //the boundaries for  17-24
 var listOfScores = [60,59.5,59.0,58.5,58.0,57.5,57.0,56.5,56.0,55.5,55.0,54.5,54.0,53.5,52,50.5,49.0,46.5,44.0,41.0,38.0,35.0, 0]; //scores for 17-24
 
-/* Submit button listener */
-var inputBTN = document.getElementById("SubmitBtn");
-inputBTN.addEventListener('click', myfunction);
 
+/************************
+   Needs to be in this format to be able to run jest
+   after the whole page loads. If it is not like this
+   then jest will break
+*************************/
+document.addEventListener('DOMContentLoaded', function () {
+
+    var inputBTN = document.getElementById("SubmitBtn");
+    inputBTN.addEventListener('click', myfunction);
+
+});
+/* Submit button listener */
 // takes input for runtime, situps and pushups then adds them to array // 
 function myfunction(){
 

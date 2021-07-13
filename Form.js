@@ -5,8 +5,46 @@ var format = 'mm:ss' //Test for showing push
 var inputBTN = document.getElementById("SubmitBtn");
 inputBTN.addEventListener('click', myfunction);
 
-// takes input for runtime, situps and pushups then adds them to array // 
+// Takes input for age //
+function myFunc(){
+    var y = document.getElementById("input age");
+     var text = [];
+     var j;
+     for (j = 0; j < y.length ;j++) {
+       text.push(y.elements[j].value);
+     };
 
+     // turns age from string to number //
+    var ageNum = parseInt(text[0]);
+    //console.log(ageNum);
+    //return ageNum;
+    console.log(ageGetter(ageNum));
+};
+
+// Puts age into age group //
+function ageGetter(Age) {
+    if (Age < 25) {
+        return '17_24';
+    } else if (Age <= 29 && Age >= 25) {
+        return '25_29';
+    } else if (Age <= 34 && Age >= 30) {
+        return '30_34';
+    } else if (Age <= 39 && Age >= 35) {
+        return '35_39';
+    } else if (Age <= 44 && Age >= 40) {
+        return '40_44';
+    } else if (Age <= 49 && Age >= 45) {
+        return '45_49';
+    } else if (Age <= 54 && Age >= 50) {
+        return '50_54';
+    } else if (Age <= 59 && Age >= 55) {
+        return '55_59';
+    } else if (Age >= 60) {
+        return '60+';
+    } 
+};
+
+// takes input for runtime, situps and pushups then adds them to array // 
 function myfunction(){
    var x = document.getElementById("input name");
     var text = [];
@@ -14,8 +52,12 @@ function myfunction(){
     for (i = 0; i < x.length -1 ;i++) {
       text.push(x.elements[i].value);
       //console.log(text[])
-    }
+    };
 
+    // calls funtion to parse the age //
+    myFunc();
+
+    // checks if waiver box is checked //
     var runBtnCheck = document.getElementById("btncheck1").checked;
     var sitBtnCheck = document.getElementById("btncheck2").checked;
     var pushBtnCheck = document.getElementById("btncheck3").checked;

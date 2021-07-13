@@ -1,7 +1,22 @@
 body {
-    font: 14px "Century Gothic", Futura, sans-serif;
+    font: 14px "Gothic", Futura, sans-serif;
     margin: 20px;
   }
+  .grid-container{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-content: center;
+    border: 5px solid green;
+    /* align-content: center; */
+  }
+  .grid-item {
+    /* background-color: indianred; */
+    border: 2px solid pink;
+    text-align: left;
+
+
+  }
+
   
   ol, ul {
     padding-left: 30px;

@@ -39,5 +39,5 @@ function returningScore(runScore, runScoreSheet){
 };
 
 var testInput = moment("15:51", format);
-console.log("testing new thing: " +returningScore(testInput, mRtScoreSheet17_24 ));
+// console.log("testing new thing: " +returningScore(testInput, mRtScoreSheet17_24 ));
 

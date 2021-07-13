@@ -395,7 +395,7 @@ let mRtScoreSheet30_34 = [
   {timeR: moment('10:11', format), points: 59},
   {timeR: moment('10:24', format), points: 58.5},
   {timeR: moment('10:38', format), points: 58},
-  {timeR: moment('10:52', format), points: 57.5}
+  {timeR: moment('10:52', format), points: 57.5},
   {timeR: moment('11:07', format), points: 57},
   {timeR: moment('11:23', format), points: 56.5},
   {timeR: moment('11:39', format), points: 56},
@@ -574,8 +574,8 @@ let mRtScoreSheet40_44 = [
   {timeR: moment('14:26', format), points: 52},
   {timeR: moment('14:53', format), points: 50.5},
   {timeR: moment('15:21', format), points: 48},
-  {timeR: moment('15:51', format), points: 45.5}
-  {timeR: moment('16:23', format), points: 43}
+  {timeR: moment('15:51', format), points: 45.5},
+  {timeR: moment('16:23', format), points: 43},
   {timeR: moment('16:58', format), points: 40.5},
   {timeR: moment('17:35', format), points: 38},
   {timeR: moment('18:15', format), points: 35},
@@ -663,7 +663,7 @@ let mRtScoreSheet45_49 = [
   {timeR: moment('16:23', format), points: 46.5},
   {timeR: moment('16:58', format), points: 44},
   {timeR: moment('17:35', format), points: 41},
-  {timeR: moment('18:15', format), points: 38}
+  {timeR: moment('18:15', format), points: 38},
   {timeR: moment('18:57', format), points: 35},
   {timeR: moment('59:59', format), points: 0}
  
@@ -743,7 +743,7 @@ let mRtScoreSheet50_54 = [
   {timeR: moment('16:23', format), points: 50.5},
   {timeR: moment('16:58', format), points: 48},
   {timeR: moment('17:35', format), points: 45.5},
-  {timeR: moment('18:15', format), points: 43}
+  {timeR: moment('18:15', format), points: 43},
   {timeR: moment('18:57', format), points: 40.5},
   {timeR: moment('19:44', format), points: 38},
   {timeR: moment('20:34', format), points: 35},

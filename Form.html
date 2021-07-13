@@ -60,44 +60,61 @@
       <input type="checkbox" name="cb" id="RunTimeWaiver" />
       <label class="waiverLabel"for="RunTimeWaiver">Waiver</label>
     </div> 
-
     <div class="grid-item" id="10">
+      <label class="label">
+        Walk Time:    
+      </label> 
+    </div>
+
+    <div class="grid-item" id="11">
+      <!-- <label class="timeLabel">  MM:</label> -->
+      <input class="inputTime" type="number" id="minutesInput" placeholder="Min" min=0 max=60>
+      <!-- <label class="timeLabel">  SS:</label> -->
+      <input class="inputTime" type="number" id="secondsInput" placeholder="Sec" min=0 max=60>
+    </div>
+
+    <div class="grid-item waiver" id="waiver12">
+      <input type="checkbox" name="cb" id="WalkTimeWaiver" />
+      <label class="waiverLabel"for="WalkTimeWaiver">Waiver</label>
+    </div> 
+
+    <div class="grid-item" id="13">
       <label class="label">
         Sit Ups:
       </label>
     </div>
 
-    <div class="grid-item" id="11">
+    <div class="grid-item" id="14">
       <input class="input" type="number"  id="sitUpsInput" placeholder="Enter Sit Ups" min=0>
     </div>
 
-    <div class="grid-item waiver" id="waiver12">
+    <div class="grid-item waiver" id="waiver15">
       <input type="checkbox" name="cb" id="SitUpWaiver" />
       <label class="waiverLabel"for="SitUpWaiver">Waiver</label>
     </div>
 
-    <div class="grid-item" id="13">
+    <div class="grid-item" id="16">
       <label class="label">
         Push Ups:
       </label>
     </div>
 
-    <div class="grid-item" id="14">
+    <div class="grid-item" id="17">
       <input class="input" type="number" id="pushUpInput" placeholder="Enter Push Ups" min=0>
     </div>
 
-    <div class="grid-item waiver" id="waiver15">
+    <div class="grid-item waiver" id="waiver18">
       <input type="checkbox" name="cb" id="PushUpWaiver" />
       <label class="waiverLabel"for="PushUpWaiver">Waiver</label>
     </div>
 
-    <div class="grid-item" id="16"></div>
+    <div class="grid-item" id="19"></div>
 
-    <div class="grid-item"id="17">
+    <div class="grid-item"id="20">
       <button type="submit" id="SubmitBtn">Submit</button>
     </div>
     
-    <div class="grid-item" id="18"></div> 
+    <div class="grid-item" id="21"></div> 
      
   </div>
 </body>
@@ -105,16 +122,3 @@
 <script type="module" src="sharpe_refactor.js"></script>
 <script type="module" src="ramirez_refactor.js"></script>
 </html>
-
-
-
-<!--<div>
-  <h1>Pure CSS Fancy Checkbox/Radio</h1>
-  
-  <h2>Checkbox</h2>
-  <div class="group">
-    <input type="checkbox" name="cb" id="cb1" />
-    <label for="cb1">Check this</label>
-  </div>
-
-</div>-->

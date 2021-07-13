@@ -80,27 +80,6 @@ function myfunction(){
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Puts age into age group //
 function ageGetter(inputAge) {
     if (inputAge < 25) {
@@ -124,13 +103,13 @@ function ageGetter(inputAge) {
     } 
 };
 
-function GenderGetter(Gender) {
+/* function GenderGetter(Gender) {
     if (Gender === true) {
         return 'Male';
     } else if (Gender === false) {
         return 'Female';
     }
-}
+} */
 function PushUpsGetter(PushUps) {
     //add PushUpWaiver as Param
     //if (PushUpWaiver == true){
@@ -312,3 +291,12 @@ function finalScore(PushUpsGetter, SitUpsGetter, RunTimeGetter, waiver){
     }
     return TotalScore;
 }// Scoresheets //
+
+export {
+    boundariesArr,
+    ageGetter,
+    //GenderGetter,
+    PushUpsGetter,
+    SitUpsGetter
+    //finalScore
+};

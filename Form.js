@@ -312,4 +312,3 @@ function finalScore(PushUpsGetter, SitUpsGetter, RunTimeGetter, waiver){
     }
     return TotalScore;
 }// Scoresheets //
- m17ScoreSheet 

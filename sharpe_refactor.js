@@ -1,4 +1,4 @@
-import _ from "lodash";
+/* import _ from "lodash";
 
 function genderGetter(genderInput) {
   return genderInput ? "male" : "female";
@@ -26,7 +26,7 @@ function ageGetter(ageInput) {
   return ageRange;
 }
 
-const pushUpsGetter = (pushUpsInput, pushUpScoreSheet) => {
+const pushUpsGetter1 = (pushUpsInput, pushUpScoreSheet) => {
   let pushUpsScore;
 
   
@@ -140,14 +140,16 @@ function FinalScore(
 export {
   ageGetter,
   genderGetter,
-  pushUpsGetter,
+  pushUpsGetter1,
   SitUpsGetter,
   RunTimeGetter,
   FinalScore,
-};
+}; */
 
 
+var format = 'mm:ss'; 
 
+// SCORESHEETS //
 let mPuScoreSheet17_24 = [
   {count: 30, points: 1}, {count: 31, points: 4}, {count: 32, points: 7}, {count: 33, points: 10}, {count: 34, points: 10.6}, {count: 35, points: 11}, {count: 36, points: 11.6}, {count: 37, points: 12}, {count: 38, points: 12.6}, {count: 39, points: 13}, {count: 40, points: 13.6}, {count: 41, points: 14}, {count: 42, points: 14.4}, {count: 43, points: 14.6}, {count: 44, points: 15}, {count: 45, points: 15.4}, {count: 46, points: 15.6}, {count: 47, points: 16}, {count: 48, points: 16.2}, {count: 49, points: 16.6}, {count: 50, points: 16.8}, {count: 51, points: 17}, {count: 52, points: 17.2}, {count: 53, points: 17.4}, {count: 54, points: 17.6}, {count: 55, points: 17.7}, {count: 56, points: 17.8}, {count: 57, points: 18}, {count: 58, points: 18.2}, {count: 59, points: 18.4}, {count: 60, points: 18.6}, {count: 61, points: 18.8}, {count: 62, points: 19}, {count: 63, points: 19.2}, {count: 64, points: 19.4}, {count: 65, points: 19.6}, {count: 66, points: 19.8}, {count: 67, points: 20},
 ];
@@ -1329,3 +1331,95 @@ let fSuScoreSheet60 = [
   {count: 31, points: 20},
 
 ];
+
+//FUNCTIONS FOR GETTING POINTS OF PUSHUPS //
+function pushUpsGetter(pushUps, scoreSheet) {
+
+  for(var i = 0; i<scoreSheet.length; i++){
+    if(pushUps == scoreSheet[i].count){
+      return scoreSheet[i].points
+    }
+  }
+};
+
+// FUNCTION FOR GETTING POINTS OF SITUPS // 
+function sitUpsGetter(sitUps, scoreSheet){
+  console.log(sitUpsGetter)
+
+  for(var i = 0; i<scoreSheet.length; i++){
+    if(sitUps == scoreSheet[i].count) {
+      return scoreSheet[i].points
+    }
+  }
+};
+
+// TEST //
+console.log(sitUpsGetter(55, mSuScoreSheet17_24));
+
+function ageGetter(inputAge, inputGender) {
+  var scoreSheetArr = [];
+  
+ if(inputGender == 'male') {
+    if (inputAge < 25) {
+      scoreSheetArr.push(mPuScoreSheet17_24, mSuScoreSheet17_24);
+        return scoreSheetArr;
+    } else if (inputAge <= 29 && inputAge >= 25) {
+      scoreSheetArr.push(mPuScoreSheet25_29, mSuScoreSheet25_29)
+        return scoreSheetArr;
+    } else if (inputAge <= 34 && inputAge >= 30) {
+      scoreSheetArr.push(mPuScoreSheet30_34, mSuScoreSheet30_34)
+        return scoreSheetArr;
+    } else if (inputAge <= 39 && inputAge >= 35) {
+      scoreSheetArr.push(mPuScoreSheet35_39, mSuScoreSheet35_39)
+        return scoreSheetArr;
+    } else if (inputAge <= 44 && inputAge >= 40) {
+      scoreSheetArr.push(mPuScoreSheet40_44, mSuScoreSheet40_44)
+        return scoreSheetArr;
+    } else if (inputAge <= 49 && inputAge >= 45) {
+      scoreSheetArr.push(mPuScoreSheet45_49, mSuScoreSheet45_49)
+        return scoreSheetArr;
+    } else if (inputAge <= 54 && inputAge >= 50) {
+      scoreSheetArr.push(mPuScoreSheet50_54, mSuScoreSheet50_54)
+        return scoreSheetArr;
+    } else if (inputAge <= 59 && inputAge >= 55) {
+      scoreSheetArr.push(mPuScoreSheet55_59, mSuScoreSheet55_59)
+        return scoreSheetArr;
+    } else if (inputAge >= 60) {
+      scoreSheetArr.push(mPuScoreSheet60, mSuScoreSheet60)
+        return scoreSheetArr;
+    }
+  } else {
+      if (inputAge < 25) {
+    scoreSheetArr.push(fPuScoreSheet17_24, fSuScoreSheet17_24);
+      return scoreSheetArr;
+  } else if (inputAge <= 29 && inputAge >= 25) {
+    scoreSheetArr.push(fPuScoreSheet25_29, fSuScoreSheet25_29)
+      return scoreSheetArr;
+  } else if (inputAge <= 34 && inputAge >= 30) {
+    scoreSheetArr.push(fPuScoreSheet30_34, fSuScoreSheet30_34)
+      return scoreSheetArr;
+  } else if (inputAge <= 39 && inputAge >= 35) {
+    scoreSheetArr.push(fPuScoreSheet35_39, fSuScoreSheet35_39)
+      return scoreSheetArr;
+  } else if (inputAge <= 44 && inputAge >= 40) {
+    scoreSheetArr.push(fPuScoreSheet40_44, fSuScoreSheet40_44)
+      return scoreSheetArr;
+  } else if (inputAge <= 49 && inputAge >= 45) {
+    scoreSheetArr.push(fPuScoreSheet45_49, fSuScoreSheet45_49)
+      return scoreSheetArr;
+  } else if (inputAge <= 54 && inputAge >= 50) {
+    scoreSheetArr.push(fPuScoreSheet50_54, fSuScoreSheet50_54)
+      return scoreSheetArr;
+  } else if (inputAge <= 59 && inputAge >= 55) {
+    scoreSheetArr.push(fPuScoreSheet55_59, fSuScoreSheet55_59)
+      return scoreSheetArr;
+  } else if (inputAge >= 60) {
+    scoreSheetArr.push(fPuScoreSheet60, fSuScoreSheet60)
+      return scoreSheetArr;
+  };
+
+};
+
+};
+
+console.log(ageGetter(34, 'female'));

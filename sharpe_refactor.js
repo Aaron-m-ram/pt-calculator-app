@@ -151,16 +151,94 @@ var format = 'mm:ss';
 
 // SCORESHEETS //
 let mPuScoreSheet17_24 = [
-  {count: 30, points: 1}, {count: 31, points: 4}, {count: 32, points: 7}, {count: 33, points: 10}, {count: 34, points: 10.6}, {count: 35, points: 11}, {count: 36, points: 11.6}, {count: 37, points: 12}, {count: 38, points: 12.6}, {count: 39, points: 13}, {count: 40, points: 13.6}, {count: 41, points: 14}, {count: 42, points: 14.4}, {count: 43, points: 14.6}, {count: 44, points: 15}, {count: 45, points: 15.4}, {count: 46, points: 15.6}, {count: 47, points: 16}, {count: 48, points: 16.2}, {count: 49, points: 16.6}, {count: 50, points: 16.8}, {count: 51, points: 17}, {count: 52, points: 17.2}, {count: 53, points: 17.4}, {count: 54, points: 17.6}, {count: 55, points: 17.7}, {count: 56, points: 17.8}, {count: 57, points: 18}, {count: 58, points: 18.2}, {count: 59, points: 18.4}, {count: 60, points: 18.6}, {count: 61, points: 18.8}, {count: 62, points: 19}, {count: 63, points: 19.2}, {count: 64, points: 19.4}, {count: 65, points: 19.6}, {count: 66, points: 19.8}, {count: 67, points: 20},
+  {count: 30, points: 1},
+  {count: 31, points: 4},
+  {count: 32, points: 7},
+  {count: 33, points: 10},
+  {count: 34, points: 10.6},
+  {count: 35, points: 11},
+  {count: 36, points: 11.6},
+  {count: 37, points: 12},
+  {count: 38, points: 12.6},
+  {count: 39, points: 13},
+  {count: 40, points: 13.6},
+  {count: 41, points: 14},
+  {count: 42, points: 14.4},
+  {count: 43, points: 14.6},
+  {count: 44, points: 15},
+  {count: 45, points: 15.4},
+  {count: 46, points: 15.6},
+  {count: 47, points: 16},
+  {count: 48, points: 16.2},
+  {count: 49, points: 16.6},
+  {count: 50, points: 16.8},
+  {count: 51, points: 17},
+  {count: 52, points: 17.2},
+  {count: 53, points: 17.4},
+  {count: 54, points: 17.6},
+  {count: 55, points: 17.7},
+  {count: 56, points: 17.8},
+  {count: 57, points: 18},
+  {count: 58, points: 18.2},
+  {count: 59, points: 18.4},
+  {count: 60, points: 18.6},
+  {count: 61, points: 18.8},
+  {count: 62, points: 19},
+  {count: 63, points: 19.2},
+  {count: 64, points: 19.4},
+  {count: 65, points: 19.6},
+  {count: 66, points: 19.8},
+  {count: 67, points: 20},
 ];
 
 let mSuScoreSheet17_24 = [
-  {count: 39, points: 3}, {count: 40, points: 6}, {count: 41, points: 9}, {count: 42, points: 12}, {count: 43, points: 12.6}, {count: 44, points: 13}, {count: 45, points: 14}, {count: 46, points: 15}, {count: 47, points: 16}, {count: 48, points: 16.6}, {count: 49, points: 17}, {count: 50, points: 17.4}, {count: 51, points: 17.6}, {count: 52, points: 18}, {count: 53, points: 18.4}, {count: 54, points: 18.8}, {count: 55, points: 19}, {count: 56, points: 19.4}, {count: 57, points: 19.7}, {count: 58, points: 20},
+  {count: 39, points: 3},
+  {count: 40, points: 6},
+  {count: 41, points: 9},
+  {count: 42, points: 12},
+  {count: 43, points: 12.6},
+  {count: 44, points: 13},
+  {count: 45, points: 14},
+  {count: 46, points: 15},
+  {count: 47, points: 16},
+  {count: 48, points: 16.6},
+  {count: 49, points: 17},
+  {count: 50, points: 17.4},
+  {count: 51, points: 17.6},
+  {count: 52, points: 18},
+  {count: 53, points: 18.4},
+  {count: 54, points: 18.8},
+  {count: 55, points: 19},
+  {count: 56, points: 19.4},
+  {count: 57, points: 19.7},
+  {count: 58, points: 20},
  ];
-
-let mRtScoreSheet17_24 = [
- moment('09:13', format), moment('09:35', format), moment('09:46', format), moment('09:59', format), moment('10:11', format), moment('10:24', format), moment('10:38', format), moment('10:52', format), moment('11:07', format), moment('11:23', format), moment('11:39', format), moment('11:57', format), moment('12:15', format), moment('12:34', format), moment('12:54', format), moment('13:15', format), moment('13:37', format), moment('14:01', format), moment('14:26', format), moment('14:53', format), moment('15:21', format), moment('15:51', format)
- ];
+ 
+ var mRtScoreSheet17_24 = [
+  {timeR: moment('09:13', format), points: 60},
+  {timeR: moment('09:35', format), points: 59.5},
+  {timeR: moment('09:46', format), points: 59},
+  {timeR: moment('09:59', format), points: 58.5},
+  {timeR: moment('10:11', format), points: 58},
+  {timeR: moment('10:24', format), points: 57.5},
+  {timeR: moment('10:38', format), points: 57},
+  {timeR: moment('10:52', format), points: 56.5},
+  {timeR: moment('11:07', format), points: 56},
+  {timeR: moment('11:23', format), points: 55.5},
+  {timeR: moment('11:39', format), points: 55},
+  {timeR: moment('11:57', format), points: 54.5},
+  {timeR: moment('12:15', format), points: 54},
+  {timeR: moment('12:34', format), points: 53.5},
+  {timeR: moment('12:54', format), points: 52},
+  {timeR: moment('13:15', format), points: 50.5},
+  {timeR: moment('13:37', format), points: 49},
+  {timeR: moment('14:01', format), points: 46.5},
+  {timeR: moment('14:26', format), points: 44},
+  {timeR: moment('14:53', format), points: 41},
+  {timeR: moment('15:21', format), points: 38},
+  {timeR: moment('15:51', format), points: 35},
+  {timeR: moment('59:59', format), points: 0}
+];
 
 let mPuScoreSheet25_29 = [
   {count: 27, points: 1},
@@ -225,27 +303,29 @@ let mSuScoreSheet25_29 = [
 ];
 
 let mRtScoreSheet25_29 = [
-moment('09:23', format),
-moment('09:46', format),
-moment('09:59', format),
-moment('10:11', format),
-moment('10:24', format),
-moment('10:38', format),
-moment('10:52', format),
-moment('11:07', format),
-moment('11:23', format),
-moment('11:39', format),
-moment('11:57', format),
-moment('12:15', format),
-moment('12:34', format),
-moment('12:54', format),
-moment('13:15', format),
-moment('13:37', format),
-moment('14:01', format),
-moment('14:26', format),
-moment('14:53', format),
-moment('15:21', format),
-moment('15:51', format)
+{timeR: moment('09:23', format), points: 60},
+{timeR: moment('09:46', format), points: 59.5},
+{timeR: moment('09:59', format), points: 59},
+{timeR: moment('10:11', format), points: 58.5},
+{timeR: moment('10:24', format), points: 58},
+{timeR: moment('10:38', format), points: 57.5},
+{timeR: moment('10:52', format), points: 57},
+{timeR: moment('11:07', format), points: 56.5},
+{timeR: moment('11:23', format), points: 56},
+{timeR: moment('11:39', format), points: 55.5},
+{timeR: moment('11:57', format), points: 55},
+{timeR: moment('12:15', format), points: 54.5},
+{timeR: moment('12:34', format), points: 54},
+{timeR: moment('12:54', format), points: 53.5},
+{timeR: moment('13:15', format), points: 52},
+{timeR: moment('13:37', format), points: 50.5},
+{timeR: moment('14:01', format), points: 49},
+{timeR: moment('14:26', format), points: 46.5},
+{timeR: moment('14:53', format), points: 44},
+{timeR: moment('15:21', format), points: 41},
+{timeR: moment('15:51', format), points: 38},
+{timeR: moment('16:23', format), points: 35},
+{timeR: moment('59:59', format), points: 0}
 ];
 
 let mPuScoreSheet30_34 = [
@@ -310,27 +390,29 @@ let mSuScoreSheet30_34 = [
 ];
 
 let mRtScoreSheet30_34 = [
-  moment('09:35', format),
-  moment('09:59', format),
-  moment('10:11', format),
-  moment('10:24', format),
-  moment('10:38', format),
-  moment('10:52', format),
-  moment('11:07', format),
-  moment('11:23', format),
-  moment('11:39', format),
-  moment('11:57', format),
-  moment('12:15', format),
-  moment('12:34', format),
-  moment('12:54', format),
-  moment('13:15', format),
-  moment('13:37', format),
-  moment('14:01', format),
-  moment('14:26', format),
-  moment('14:53', format),
-  moment('15:21', format),
-  moment('15:51', format),
-  moment('16:23', format)
+  {timeR: moment('09:35', format), points: 60},
+  {timeR: moment('09:59', format), points: 59.5},
+  {timeR: moment('10:11', format), points: 59},
+  {timeR: moment('10:24', format), points: 58.5},
+  {timeR: moment('10:38', format), points: 58},
+  {timeR: moment('10:52', format), points: 57.5}
+  {timeR: moment('11:07', format), points: 57},
+  {timeR: moment('11:23', format), points: 56.5},
+  {timeR: moment('11:39', format), points: 56},
+  {timeR: moment('11:57', format), points: 55.5},
+  {timeR: moment('12:15', format), points: 55},
+  {timeR: moment('12:34', format), points: 54.4},
+  {timeR: moment('12:54', format), points: 54},
+  {timeR: moment('13:15', format), points: 53.5},
+  {timeR: moment('13:37', format), points: 52},
+  {timeR: moment('14:01', format), points: 50.5},
+  {timeR: moment('14:26', format), points: 48},
+  {timeR: moment('14:53', format), points: 45.5},
+  {timeR: moment('15:21', format), points: 43},
+  {timeR: moment('15:51', format), points: 40.5},
+  {timeR: moment('16:23', format), points: 38},
+  {timeR: moment('16:58', format), points: 35},
+  {timeR: moment('59:59', format), points: 0}
  
 ];
 
@@ -393,27 +475,29 @@ let mSuScoreSheet35_39 = [
 ];
 
 let mRtScoreSheet35_39 = [
-  moment('09:46', format),
-  moment('10:11', format),
-  moment('10:24', format),
-  moment('10:38', format),
-  moment('10:52', format),
-  moment('11:07', format),
-  moment('11:23', format),
-  moment('11:39', format),
-  moment('11:57', format),
-  moment('12:15', format),
-  moment('12:34', format),
-  moment('12:54', format),
-  moment('13:15', format),
-  moment('13:37', format),
-  moment('14:01', format),
-  moment('14:26', format),
-  moment('14:53', format),
-  moment('15:21', format),
-  moment('15:51', format),
-  moment('16:23', format),
-  moment('16:58', format)
+  {timeR: moment('09:46', format), points: 60},
+  {timeR: moment('10:11', format), points: 59.5},
+  {timeR: moment('10:24', format), points: 59},
+  {timeR: moment('10:38', format), points: 58.5},
+  {timeR: moment('10:52', format), points: 58},
+  {timeR: moment('11:07', format), points: 57.5},
+  {timeR: moment('11:23', format), points: 57},
+  {timeR: moment('11:39', format), points: 56.6},
+  {timeR: moment('11:57', format), points: 56},
+  {timeR: moment('12:15', format), points: 55.5},
+  {timeR: moment('12:34', format), points: 55},
+  {timeR: moment('12:54', format), points: 54.5},
+  {timeR: moment('13:15', format), points: 54},
+  {timeR: moment('13:37', format), points: 53.5},
+  {timeR: moment('14:01', format), points: 52},
+  {timeR: moment('14:26', format), points: 50.5},
+  {timeR: moment('14:53', format), points: 48},
+  {timeR: moment('15:21', format), points: 45.5},
+  {timeR: moment('15:51', format), points: 43},
+  {timeR: moment('16:23', format), points: 40.5},
+  {timeR: moment('16:58', format), points: 38},
+  {timeR: moment('17:35', format), points: 35},
+  {timeR: moment('59:59', format), points: 0}
  
 ];
 
@@ -473,27 +557,29 @@ let mSuScoreSheet40_44 = [
 ];
 
 let mRtScoreSheet40_44 = [
-  moment('09:59', format),
-  moment('10:24', format),
-  moment('10:38', format),
-  moment('10:52', format),
-  moment('11:07', format),
-  moment('11:23', format),
-  moment('11:39', format),
-  moment('11:57', format),
-  moment('12:15', format),
-  moment('12:34', format),
-  moment('12:54', format),
-  moment('13:15', format),
-  moment('13:37', format),
-  moment('14:01', format),
-  moment('14:26', format),
-  moment('14:53', format),
-  moment('15:21', format),
-  moment('15:51', format),
-  moment('16:23', format),
-  moment('16:58', format),
-  moment('17:35', format)
+  {timeR: moment('09:59', format), points: 60},
+  {timeR: moment('10:24', format), points: 59.5},
+  {timeR: moment('10:38', format), points: 59},
+  {timeR: moment('10:52', format), points: 58.5},
+  {timeR: moment('11:07', format), points: 58},
+  {timeR: moment('11:23', format), points: 57.7},
+  {timeR: moment('11:39', format), points: 57},
+  {timeR: moment('11:57', format), points: 56.5},
+  {timeR: moment('12:15', format), points: 56},
+  {timeR: moment('12:34', format), points: 55.5},
+  {timeR: moment('12:54', format), points: 55},
+  {timeR: moment('13:15', format), points: 54.5},
+  {timeR: moment('13:37', format), points: 54},
+  {timeR: moment('14:01', format), points: 53.5},
+  {timeR: moment('14:26', format), points: 52},
+  {timeR: moment('14:53', format), points: 50.5},
+  {timeR: moment('15:21', format), points: 48},
+  {timeR: moment('15:51', format), points: 45.5}
+  {timeR: moment('16:23', format), points: 43}
+  {timeR: moment('16:58', format), points: 40.5},
+  {timeR: moment('17:35', format), points: 38},
+  {timeR: moment('59:59', format), points: 35},
+  {timeR: moment('59:59', format), points: 0}
  
 ];
 
@@ -794,7 +880,7 @@ let mSuScoreSheet60 = [
 let mRtScoreSheet60 = [
   {count: moment('11:23', format), score: 59.5},
   {count: moment('11:57', format), score: 59},
-  {count: moment('12:15', format),score: 58.5},
+  {count: moment('12:15', format), score: 58.5},
   {count: moment('12:34', format), score: 58},
   {count: moment('12:54', format), score: 57.5},
   {count: moment('13:15', format), score: 57},
@@ -1354,7 +1440,7 @@ function sitUpsGetter(sitUps, scoreSheet){
 };
 
 // TEST //
-console.log(sitUpsGetter(55, mSuScoreSheet17_24));
+// console.log(sitUpsGetter(55, mSuScoreSheet17_24));
 
 function ageGetter(inputAge, inputGender) {
   var scoreSheetArr = [];
@@ -1422,4 +1508,5 @@ function ageGetter(inputAge, inputGender) {
 
 };
 
-console.log(ageGetter(34, 'female'));
+// TEST //
+// console.log(ageGetter(34, 'female'));

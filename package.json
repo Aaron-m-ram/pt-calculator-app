@@ -4,7 +4,7 @@
   "description": "",
   "main": "Form.js",
   "scripts": {
-    "test": "jest --watchAll",
+    "test": "jest --watchAll --env=jsdom",
     "applesauce": "jest --env=jsdom",
     "start": "http-server ./",
     "dev-start": "git fetch && git pull origin master && npm install",

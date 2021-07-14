@@ -6,21 +6,380 @@
 
 import { describe, expect, it } from "@jest/globals";
 import {
+  mPuScoreSheet17_24,
+  mSuScoreSheet17_24,
+  mRtScoreSheet17_24,
+  
+  mPuScoreSheet25_29,
+  mSuScoreSheet25_29,
+  mRtScoreSheet25_29,
+
+  mPuScoreSheet30_34,
+  mSuScoreSheet30_34,
+  mRtScoreSheet30_34,
+
+  mPuScoreSheet35_39,
+  mSuScoreSheet35_39,
+  mRtScoreSheet35_39,
+
+  mPuScoreSheet40_44,
+  mSuScoreSheet40_44,
+  mRtScoreSheet40_44,
+
+  mPuScoreSheet45_49,
+  mSuScoreSheet45_49,
+  mRtScoreSheet45_49,
+
+  mPuScoreSheet50_54,
+  mSuScoreSheet50_54,
+  mRtscoreSheet50_54,
+
+  mPuScoreSheet55_59,
+  mSuScoreSheet55_59,
+  mRtScoreSheet55_59,
+
+  mPuScoreSheet60,
+  mSuScoreSheet60,
+  mRtScoreSheet60,
+  
   genderGetter,
   ageGetter,
+
   pushUpsGetter,
-  SitUpsGetter,
+  sitUpsGetter,
   RunTimeGetter,
+
   FinalScore,
 } from "./Form.js";
 
-describe("ageGetter", () => {
+/* describe("ageGetter", () => {
     it('returns "17_24" when give a number below 25', () => {
         expect(ageGetter(17)).toBe('17_24');
     });
+}); */
+
+describe("pushUpsGetter", () => {
+  it('returns 1 point when given 30 pushups', () => {
+    expect(pushUpsGetter(30, mPuScoreSheet17_24)).toBe(1);
+    });
+  it('returns 20 point when given 67 pushups', () => {
+    expect(pushUpsGetter(67, mPuScoreSheet17_24)).toBe(20);
+    });
+  it('returns 0 point when less than 30', () => {
+    expect(pushUpsGetter(29, mPuScoreSheet17_24)).toBe(0);
+    });
+  it('returns 20 point when more than 67', () => {
+    expect(pushUpsGetter(68, mPuScoreSheet17_24)).toBe(20);
+    });
+  it('returns 0 point when given 0 pushups', () => {
+    expect(pushUpsGetter(0, mPuScoreSheet17_24)).toBe(0);
+    });
+  it('returns 0 point when given null pushups', () => {
+    expect(pushUpsGetter(null, mPuScoreSheet17_24)).toBe(0);
+    });
+  it('returns 0 point when given undefined pushups', () => {
+    expect(pushUpsGetter(undefined, mPuScoreSheet17_24)).toBe(0);
+    });
+
+  // Male 25-29 
+
+  it('returns 1 point when given 27 pushups', () => {
+    expect(pushUpsGetter(27, mPuScoreSheet25_29)).toBe(1);
+    });
+  it('returns 20 point when given 62 pushups', () => {
+    expect(pushUpsGetter(62, mPuScoreSheet25_29)).toBe(20);
+    });
+  it('returns 0 point when less than 27', () => {
+    expect(pushUpsGetter(26, mPuScoreSheet25_29)).toBe(0);
+    });
+  it('returns 20 point when more than 62', () => {
+    expect(pushUpsGetter(63, mPuScoreSheet25_29)).toBe(20);
+    });
+  it('returns 0 point when given 0 pushups', () => {
+    expect(pushUpsGetter(0, mPuScoreSheet25_29)).toBe(0);
+    });
+  it('returns 0 point when given null pushups', () => {
+    expect(pushUpsGetter(null, mPuScoreSheet25_29)).toBe(0);
+    });
+  it('returns 0 point when given undefined pushups', () => {
+    expect(pushUpsGetter(undefined, mPuScoreSheet25_29)).toBe(0);
+    });
+
+   // Male 30-34
+
+  it('returns 1 point when given 24 pushups', () => {
+      expect(pushUpsGetter(24, mPuScoreSheet30_34)).toBe(1);
+      });
+  it('returns 20 point when given 57 pushups', () => {
+      expect(pushUpsGetter(57, mPuScoreSheet30_34)).toBe(20);
+      });
+  it('returns 0 point when less than 24', () => {
+      expect(pushUpsGetter(23, mPuScoreSheet30_34)).toBe(0);
+      });
+  it('returns 20 point when more than 57', () => {
+      expect(pushUpsGetter(58, mPuScoreSheet30_34)).toBe(20);
+      });
+  it('returns 0 point when given 0 pushups', () => {
+      expect(pushUpsGetter(0, mPuScoreSheet30_34)).toBe(0);
+      });
+  it('returns 0 point when given null pushups', () => {
+      expect(pushUpsGetter(null, mPuScoreSheet30_34)).toBe(0);
+      });
+  it('returns 0 point when given undefined pushups', () => {
+      expect(pushUpsGetter(undefined, mPuScoreSheet30_34)).toBe(0);
+      });
+  
+  // Male 35-39
+
+  it('returns 1 point when given 21 pushups', () => {
+    expect(pushUpsGetter(21, mPuScoreSheet35_39)).toBe(1);
+    });
+  it('returns 20 point when given 51 pushups', () => {
+    expect(pushUpsGetter(51, mPuScoreSheet35_39)).toBe(20);
+    });
+  it('returns 0 point when less than 21', () => {
+    expect(pushUpsGetter(20, mPuScoreSheet35_39)).toBe(0);
+    });
+  it('returns 20 point when more than 51', () => {
+    expect(pushUpsGetter(52, mPuScoreSheet35_39)).toBe(20);
+    });
+  it('returns 0 point when given 0 pushups', () => {
+    expect(pushUpsGetter(0, mPuScoreSheet35_39)).toBe(0);
+    });
+  it('returns 0 point when given null pushups', () => {
+    expect(pushUpsGetter(null, mPuScoreSheet35_39)).toBe(0);
+    });
+  it('returns 0 point when given undefined pushups', () => {
+    expect(pushUpsGetter(undefined, mPuScoreSheet35_39)).toBe(0);
+    });
+  
+  // male 40-44
+
+  it('returns 1 point when given 18 pushups', () => {
+    expect(pushUpsGetter(18, mPuScoreSheet40_44)).toBe(1);
+    });
+  it('returns 20 point when given 44 pushups', () => {
+    expect(pushUpsGetter(44, mPuScoreSheet40_44)).toBe(20);
+    });
+  it('returns 0 point when less than 18', () => {
+    expect(pushUpsGetter(17, mPuScoreSheet40_44)).toBe(0);
+    });
+  it('returns 20 point when more than 44', () => {
+    expect(pushUpsGetter(45, mPuScoreSheet40_44)).toBe(20);
+    });
+  it('returns 0 point when given 0 pushups', () => {
+    expect(pushUpsGetter(0, mPuScoreSheet40_44)).toBe(0);
+    });
+  it('returns 0 point when given null pushups', () => {
+    expect(pushUpsGetter(null, mPuScoreSheet40_44)).toBe(0);
+    });
+  it('returns 0 point when given undefined pushups', () => {
+    expect(pushUpsGetter(undefined, mPuScoreSheet40_44)).toBe(0);
+    });
+    
+  //male 45-49
+
+  it('returns 1 point when given 15 pushups', () => {
+    expect(pushUpsGetter(15, mPuScoreSheet45_49)).toBe(1);
+    });
+  it('returns 20 point when given 44 pushups', () => {
+    expect(pushUpsGetter(44, mPuScoreSheet45_49)).toBe(20);
+    });
+  it('returns 0 point when less than 15', () => {
+    expect(pushUpsGetter(14, mPuScoreSheet45_49)).toBe(0);
+    });
+  it('returns 20 point when more than 44', () => {
+    expect(pushUpsGetter(45, mPuScoreSheet45_49)).toBe(20);
+    });
+  it('returns 0 point when given 0 pushups', () => {
+    expect(pushUpsGetter(0, mPuScoreSheet45_49)).toBe(0);
+    });
+  it('returns 0 point when given null pushups', () => {
+    expect(pushUpsGetter(null, mPuScoreSheet45_49)).toBe(0);
+    });
+  it('returns 0 point when given undefined pushups', () => {
+    expect(pushUpsGetter(undefined, mPuScoreSheet45_49)).toBe(0);
+    });
+  
+    // male 50-54
+
+  it('returns 1 point when given 12 pushups', () => {
+      expect(pushUpsGetter(12, mPuScoreSheet50_54)).toBe(1);
+      });
+  it('returns 20 point when given 36 pushups', () => {
+      expect(pushUpsGetter(36, mPuScoreSheet50_54)).toBe(20);
+      });
+  it('returns 0 point when less than 12', () => {
+      expect(pushUpsGetter(11, mPuScoreSheet50_54)).toBe(0);
+      });
+  it('returns 20 point when more than 36', () => {
+      expect(pushUpsGetter(35, mPuScoreSheet50_54)).toBe(20);
+      });
+  it('returns 0 point when given 0 pushups', () => {
+      expect(pushUpsGetter(0, mPuScoreSheet50_54)).toBe(0);
+      });
+  it('returns 0 point when given null pushups', () => {
+      expect(pushUpsGetter(null, mPuScoreSheet50_54)).toBe(0);
+      });
+  it('returns 0 point when given undefined pushups', () => {
+      expect(pushUpsGetter(undefined, mPuScoreSheet50_54)).toBe(0);
+      });
+  
+  //male 55-59
+  
+  it('returns 1 point when given 12 pushups', () => {
+    expect(pushUpsGetter(12, mPuScoreSheet55_59)).toBe(1);
+    });
+  it('returns 20 point when given 33 pushups', () => {
+    expect(pushUpsGetter(33, mPuScoreSheet55_59)).toBe(20);
+    });
+  it('returns 0 point when less than 12', () => {
+    expect(pushUpsGetter(11, mPuScoreSheet55_59)).toBe(0);
+    });
+  it('returns 20 point when more than 33', () => {
+    expect(pushUpsGetter(34, mPuScoreSheet55_59)).toBe(20);
+    });
+  it('returns 0 point when given 0 pushups', () => {
+    expect(pushUpsGetter(0, mPuScoreSheet55_59)).toBe(0);
+    });
+  it('returns 0 point when given null pushups', () => {
+    expect(pushUpsGetter(null, mPuScoreSheet55_59)).toBe(0);
+    });
+  it('returns 0 point when given undefined pushups', () => {
+    expect(pushUpsGetter(undefined, mPuScoreSheet55_59)).toBe(0);
+    });
+
+  // male 60 and up
+
+  it('returns 1 point when given 11 pushups', () => {
+    expect(pushUpsGetter(11, mPuScoreSheet60)).toBe(1);
+    });
+  it('returns 20 point when given 30 pushups', () => {
+    expect(pushUpsGetter(30, mPuScoreSheet60)).toBe(20);
+    });
+  it('returns 0 point when less than 11', () => {
+    expect(pushUpsGetter(10, mPuScoreSheet60)).toBe(0);
+    });
+  it('returns 20 point when more than 30', () => {
+    expect(pushUpsGetter(30, mPuScoreSheet60)).toBe(20);
+    });
+  it('returns 0 point when given 0 pushups', () => {
+    expect(pushUpsGetter(0, mPuScoreSheet55_59)).toBe(0);
+    });
+  it('returns 0 point when given null pushups', () => {
+    expect(pushUpsGetter(null, mPuScoreSheet55_59)).toBe(0);
+    });
+  it('returns 0 point when given undefined pushups', () => {
+    expect(pushUpsGetter(undefined, mPuScoreSheet55_59)).toBe(0);
+    });
+
+}); 
+
+
+describe("sitUpsGetter", () => {
+  /* male 17-24 */
+  it('returns 3 point when given 39 situps', () => {
+    expect(sitUpsGetter(39, mSuScoreSheet17_24)).toBe(3);
+    });
+  it('returns 20 point when given 58 situps', () => {
+    expect(sitUpsGetter(58, mSuScoreSheet17_24)).toBe(20);
+    });
+  it('returns 0 point when less than 39', () => {
+    expect(sitUpsGetter(38, mSuScoreSheet17_24)).toBe(0);
+    });
+  it('returns 20 point when more than 58', () => {
+    expect(sitUpsGetter(59, mSuScoreSheet17_24)).toBe(20);
+    });
+  it('returns 0 point when given 0 situps', () => {
+    expect(sitUpsGetter(0, mSuScoreSheet17_24)).toBe(0);
+    });
+  it('returns 0 point when given null situps', () => {
+    expect(sitUpsGetter(null, mSuScoreSheet17_24)).toBe(0);
+    });
+  it('returns 0 point when given undefined situps', () => {
+    expect(sitUpsGetter(undefined, mSuScoreSheet17_24)).toBe(0);
+    });
+ 
+    /* male 25-29 */
+
+  it('returns 3 point when given 38 situps', () => {
+    expect(sitUpsGetter(38, mSuScoreSheet25_29)).toBe(3);
+    });
+  it('returns 20 point when given 57 situps', () => {
+    expect(sitUpsGetter(57, mSuScoreSheet25_29)).toBe(20);
+    });
+  it('returns 0 point when less than 38', () => {
+    expect(sitUpsGetter(37, mSuScoreSheet25_29)).toBe(0);
+    });
+  it('returns 20 point when more than 57', () => {
+    expect(sitUpsGetter(58, mSuScoreSheet25_29)).toBe(20);
+    });
+  it('returns 0 point when given 0 situps', () => {
+    expect(sitUpsGetter(0, mSuScoreSheet25_29)).toBe(0);
+    });
+  it('returns 0 point when given null situps', () => {
+    expect(sitUpsGetter(null, mSuScoreSheet25_29)).toBe(0);
+    });
+  it('returns 0 point when given undefined situps', () => {
+    expect(sitUpsGetter(undefined, mSuScoreSheet25_29)).toBe(0);
+    });
+
+    /* male 30-34 */
+
+  it('returns 3 point when given 36 situps', () => {
+    expect(sitUpsGetter(36, mSuScoreSheet30_34)).toBe(3);
+    });
+  it('returns 20 point when given 55 situps', () => {
+    expect(sitUpsGetter(55, mSuScoreSheet30_34)).toBe(20);
+    });
+  it('returns 0 point when less than 36', () => {
+    expect(sitUpsGetter(35, mSuScoreSheet30_34)).toBe(0);
+    });
+  it('returns 20 point when more than 55', () => {
+    expect(sitUpsGetter(56, mSuScoreSheet30_34)).toBe(20);
+    });
+  it('returns 0 point when given 0 situps', () => {
+    expect(sitUpsGetter(0, mSuScoreSheet30_34)).toBe(0);
+    });
+  it('returns 0 point when given null situps', () => {
+    expect(sitUpsGetter(null, mSuScoreSheet30_34)).toBe(0);
+    });
+  it('returns 0 point when given undefined situps', () => {
+    expect(sitUpsGetter(undefined, mSuScoreSheet30_34)).toBe(0);
+    });
+    
+  /* male 35-39 */
+
+  it('returns 3 point when given 36 situps', () => {
+    expect(sitUpsGetter(36, mSuScoreSheet30_34)).toBe(3);
+    });
+  it('returns 20 point when given 55 situps', () => {
+    expect(sitUpsGetter(55, mSuScoreSheet30_34)).toBe(20);
+    });
+  it('returns 0 point when less than 36', () => {
+    expect(sitUpsGetter(35, mSuScoreSheet30_34)).toBe(0);
+    });
+  it('returns 20 point when more than 55', () => {
+    expect(sitUpsGetter(56, mSuScoreSheet30_34)).toBe(20);
+    });
+  it('returns 0 point when given 0 situps', () => {
+    expect(sitUpsGetter(0, mSuScoreSheet30_34)).toBe(0);
+    });
+  it('returns 0 point when given null situps', () => {
+    expect(sitUpsGetter(null, mSuScoreSheet30_34)).toBe(0);
+    });
+  it('returns 0 point when given undefined situps', () => {
+    expect(sitUpsGetter(undefined, mSuScoreSheet30_34)).toBe(0);
+    });
+
+    
+    
+  
+
 });
 
-/* describe("genderGetter", () => {
+/*
+ describe("genderGetter", () => {
   it('returns "male" for true', () => {
     expect(genderGetter(true)).toMatch("male");
   });
@@ -28,6 +387,7 @@ describe("ageGetter", () => {
     expect(genderGetter(false)).toMatch("female");
   });
 });
+
 
 describe("PushUpsGetter", () => {
   it("returns 1 point when given 30 pushups", () => {

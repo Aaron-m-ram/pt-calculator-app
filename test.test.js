@@ -5,7 +5,7 @@
 
 
 import { describe, expect, it } from "@jest/globals";
-import moment from 'moment';
+//import moment from 'moment';
 var format = 'mm:ss';
 import {
   mPuScoreSheet17_24,
@@ -88,15 +88,10 @@ import {
   fRtScoreSheet60,
   
  
-  FinalScore,
+  finalScore,
   mRtScoreSheet50_54,
 } from "./Form.js";
 
-/* describe("ageGetter", () => {
-    it('returns "17_24" when give a number below 25', () => {
-        expect(ageGetter(17)).toBe('17_24');
-    });
-}); */
 
 describe("pushUpsGetter", () => {
   it('returns 1 point when given 30 pushups', () => {
@@ -253,7 +248,7 @@ describe("pushUpsGetter", () => {
       expect(pushUpsGetter(11, mPuScoreSheet50_54)).toBe(0);
       });
   it('returns 20 point when more than 36', () => {
-      expect(pushUpsGetter(35, mPuScoreSheet50_54)).toBe(20);
+      expect(pushUpsGetter(37, mPuScoreSheet50_54)).toBe(20);
       });
   it('returns 0 point when given 0 pushups', () => {
       expect(pushUpsGetter(0, mPuScoreSheet50_54)).toBe(0);
@@ -712,7 +707,7 @@ describe("pushUpsGetter", () => {
     expect(pushUpsGetter(4, fPuScoreSheet55_59)).toBe(0);
       });
   it('returns 20 point when more than 28', () => {
-    expect(pushUpsGetter(9, fPuScoreSheet55_59)).toBe(20);
+    expect(pushUpsGetter(29, fPuScoreSheet55_59)).toBe(20);
       });
   it('returns 0 point when given 0 pushups', () => {
     expect(pushUpsGetter(0, fPuScoreSheet55_59)).toBe(0);
@@ -877,7 +872,7 @@ describe("pushUpsGetter", () => {
       expect(sitUpsGetter(18, fSuScoreSheet45_49)).toBe(0);
       });
     it('returns 20 point when more than 35', () => {
-      expect(sitUpsGetter(34, fSuScoreSheet45_49)).toBe(20);
+      expect(sitUpsGetter(36, fSuScoreSheet45_49)).toBe(20);
       });
     it('returns 0 point when given 0 situps', () => {
       expect(sitUpsGetter(0, fSuScoreSheet45_49)).toBe(0);
@@ -900,7 +895,7 @@ describe("pushUpsGetter", () => {
       expect(sitUpsGetter(16, fSuScoreSheet50_54)).toBe(0);
       });
     it('returns 20 point when more than 32', () => {
-      expect(sitUpsGetter(31, fSuScoreSheet50_54)).toBe(20);
+      expect(sitUpsGetter(33, fSuScoreSheet50_54)).toBe(20);
       });
     it('returns 0 point when given 0 situps', () => {
       expect(sitUpsGetter(0, fSuScoreSheet50_54)).toBe(0);
@@ -923,7 +918,7 @@ describe("pushUpsGetter", () => {
       expect(sitUpsGetter(11, fSuScoreSheet55_59)).toBe(0);
     });
     it('returns 20 point when more than 32', () => {
-      expect(sitUpsGetter(31, fSuScoreSheet55_59)).toBe(20);
+      expect(sitUpsGetter(33, fSuScoreSheet55_59)).toBe(20);
     });
     it('returns 0 point when given 0 situps', () => {
       expect(sitUpsGetter(0, fSuScoreSheet55_59)).toBe(0);
@@ -962,7 +957,7 @@ describe("pushUpsGetter", () => {
 
 // *** male run time test *** //
 
-describe("runGetter", () => {
+/* describe("runGetter", () => {
     // male 17-24 //
     it('returns 60 when given less than 9:13', () => {
       expect(runGetter(moment('09:12', format), mRtScoreSheet17_24)).toBe(60)
@@ -1399,4 +1394,209 @@ describe("runGetter", () => {
   it('return 0 when given in undefined', () => {
     expect(runGetter(moment(undefined, format), fRtScoreSheet60)).toBe(0)
   });
+}); */
+
+
+/* describe("ageGetter", () => {
+    it('returns "17_24" when give a number below 25', () => {
+        expect(ageGetter(17)).toBe('17_24');
+    });
+}); */
+
+/// *** Male ageGetter tester *** //
+
+describe("ageGetter", () => {
+  // Male 17-24
+  it('returns all scoresheets when given an age', () => {
+    expect(ageGetter(18, 'false')).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining(mPuScoreSheet17_24),
+        expect.objectContaining(mSuScoreSheet17_24),
+        expect.objectContaining(mRtScoreSheet17_24)
+      ])
+    );
+    });
+    // Male 25-29
+  it('returns all scoresheets when given an age', () => {
+    expect(ageGetter(26, 'false')).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining(mPuScoreSheet25_29),
+        expect.objectContaining(mSuScoreSheet25_29),
+        expect.objectContaining(mRtScoreSheet25_29)
+      ])
+    );
+  });
+  // male 30-34
+  it('returns all scoresheets 17-25 when given an age', () => {
+    expect(ageGetter(32, 'false')).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining(mPuScoreSheet30_34),
+        expect.objectContaining(mSuScoreSheet30_34),
+        expect.objectContaining(mRtScoreSheet30_34)
+      ])
+    );
+    });
+    // Male 35-39
+  it('returns all scoresheets 17-25 when given an age', () => {
+    expect(ageGetter(37, 'false')).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining(mPuScoreSheet35_39),
+        expect.objectContaining(mSuScoreSheet35_39),
+        expect.objectContaining(mRtScoreSheet35_39)
+      ])
+    );
+  });
+  // Male 40-44
+  it('returns all scoresheets 17-25 when given an age', () => {
+    expect(ageGetter(44, 'false')).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining(mPuScoreSheet40_44),
+        expect.objectContaining(mSuScoreSheet40_44),
+        expect.objectContaining(mRtScoreSheet40_44)
+      ])
+    );
+  });
+  // Male 45-49
+  it('returns all scoresheets 17-25 when given an age', () => {
+    expect(ageGetter(48, 'false')).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining(mPuScoreSheet45_49),
+        expect.objectContaining(mSuScoreSheet45_49),
+        expect.objectContaining(mRtScoreSheet45_49)
+      ])
+    );
+    });
+  // Male 50-54
+  it('returns all scoresheets 17-25 when given an age', () => {
+    expect(ageGetter(50, 'false')).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining(mPuScoreSheet50_54),
+        expect.objectContaining(mSuScoreSheet50_54),
+        expect.objectContaining(mRtScoreSheet50_54)
+      ])
+    );
+  });
+  // Male 55-59
+  it('returns all scoresheets 17-25 when given an age', () => {
+    expect(ageGetter(55, 'false')).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining(mPuScoreSheet55_59),
+        expect.objectContaining(mSuScoreSheet55_59),
+        expect.objectContaining(mRtScoreSheet55_59)
+      ])
+    );
+    });
+    // Male 60 and up
+  it('returns all scoresheets 17-25 when given an age', () => {
+    expect(ageGetter(62, 'false')).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining(mPuScoreSheet60),
+        expect.objectContaining(mSuScoreSheet60),
+        expect.objectContaining(mRtScoreSheet60)
+      ])
+    );
+  });
+});
+
+// *** Female ageGetter tester *** //
+describe("ageGetter", () => {
+  // Female 17-24
+  it('returns all scoresheets when given an age', () => {
+    expect(ageGetter(18, 'true')).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining(fPuScoreSheet17_24),
+        expect.objectContaining(fSuScoreSheet17_24),
+        expect.objectContaining(fRtScoreSheet17_24)
+      ])
+    );
+    });
+    // Female 25-29
+  it('returns all scoresheets when given an age', () => {
+    expect(ageGetter(26, 'true')).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining(fPuScoreSheet25_29),
+        expect.objectContaining(fSuScoreSheet25_29),
+        expect.objectContaining(fRtScoreSheet25_29)
+      ])
+    );
+  });
+  // Female 30-34
+  it('returns all scoresheets when given an age', () => {
+    expect(ageGetter(31, 'true')).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining(fPuScoreSheet30_34),
+        expect.objectContaining(fSuScoreSheet30_34),
+        expect.objectContaining(fRtScoreSheet30_34)
+      ])
+    );
+    });
+  // Female 35-39
+  it('returns all scoresheets when given an age', () => {
+    expect(ageGetter(37, 'true')).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining(fPuScoreSheet35_39),
+        expect.objectContaining(fSuScoreSheet35_39),
+        expect.objectContaining(fRtScoreSheet35_39)
+      ])
+    );
+    });
+  // Female 40-44
+  it('returns all scoresheets when given an age', () => {
+    expect(ageGetter(42, 'true')).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining(fPuScoreSheet40_44),
+        expect.objectContaining(fSuScoreSheet40_44),
+        expect.objectContaining(fRtScoreSheet40_44)
+      ])
+    );
+    });
+  // Female 45-49
+  it('returns all scoresheets when given an age', () => {
+    expect(ageGetter(46, 'true')).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining(fPuScoreSheet45_49),
+        expect.objectContaining(fSuScoreSheet45_49),
+        expect.objectContaining(fRtScoreSheet45_49)
+      ])
+    );
+    });
+  // Female 50-54
+  it('returns all scoresheets when given an age', () => {
+    expect(ageGetter(53, 'true')).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining(fPuScoreSheet50_54),
+        expect.objectContaining(fSuScoreSheet50_54),
+        expect.objectContaining(fRtScoreSheet50_54)
+      ])
+    );
+    });
+  // Female 55-59
+  it('returns all scoresheets when given an age', () => {
+    expect(ageGetter(55, 'true')).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining(fPuScoreSheet55_59),
+        expect.objectContaining(fSuScoreSheet55_59),
+        expect.objectContaining(fRtScoreSheet55_59)
+      ])
+    );
+    });
+  // female 60 and up
+  it('returns all scoresheets when given an age', () => {
+    expect(ageGetter(65, 'true')).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining(fPuScoreSheet60),
+        expect.objectContaining(fSuScoreSheet60),
+        expect.objectContaining(fRtScoreSheet60)
+      ])
+    );
+    });
+});
+
+// *** Finale score test *** //
+describe("finalScore", () => {
+  // Final score with no waviers 
+  it('returns 68 when given an age', () => {
+    expect(finalScore(18,15,35, [false,false,false])).toEqual(68)
+  });
+  //final score with one waiver
 });

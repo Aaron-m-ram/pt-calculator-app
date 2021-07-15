@@ -1,4 +1,7 @@
 /* VARIABLES */
+
+import moment from "moment";
+
 //import moment from 'moment';
 var format = 'mm:ss' //format for moments
 /* console.log("moment version: " + moment.version) */
@@ -96,7 +99,7 @@ var mRtScoreSheet17_24 = [
     {timeR: moment('14:53', format), points: 41},
     {timeR: moment('15:21', format), points: 38},
     {timeR: moment('15:51', format), points: 35},
-    {timeR: moment('59:59', format), points: 0}
+    {timeR: moment('59:59', format), points: 0},
   ]; // run time scoresheet
 
 /* Male 25-29 */
@@ -1471,7 +1474,7 @@ let fPuScoreSheet60 = [
     {count: 18, points: 18.8},
     {count: 19, points: 19},
     {count: 20, points: 19.5},
-    {count: 21, points: 18},
+    {count: 21, points: 20},
   
   ]; //push ups scoresheet
   
@@ -1665,7 +1668,7 @@ function ageGetter(inputAge, inputGender) {
   };
 
 function pushUpsGetter(pushUps, scoreSheet) {
-    console.log("pushups from pushupsGetter"+ pushUps);
+    //console.log("pushups from pushupsGetter"+ pushUps);
     if(pushUps < scoreSheet[0].count || pushUps == null || pushUps == undefined){
 
         return 0
@@ -1702,6 +1705,7 @@ function sitUpsGetter(sitUps, scoreSheet){
 
 function runGetter(runScore, runScoreSheet){
     /* let score = 0; */
+    //console.log(runScore);
     if(runScore == '1626256800000' || isNaN(runScore) === true){
         return 0;
     } 
@@ -1820,6 +1824,6 @@ export {
     //GenderGetter,
     pushUpsGetter,
     sitUpsGetter,
-    runGetter
-    //finalScore
+    runGetter,
+    finalScore
 };

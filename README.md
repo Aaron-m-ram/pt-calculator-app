@@ -1,0 +1,1 @@
+npm run git-acp --message=message-without-spaces --branch=branch-name-without-spaces

@@ -1,7 +1,5 @@
 /* VARIABLES */
 
-import moment from "moment";
-
 //import moment from 'moment';
 var format = 'mm:ss' //format for moments
 /* console.log("moment version: " + moment.version) */
@@ -1577,7 +1575,10 @@ function myfunction(){
         seconds = '0'+ seconds;
     }
     var runTime = minutes +":" + seconds;
+    console.log("Before moments: " + runTime);
     var newRunTime = moment(runTime,format);
+    console.log("After moment: " + newRunTime);
+
     
     var scoreSheetArr = ageGetter(age, gender);
     //console.log(scoreSheetArr);
@@ -1705,8 +1706,10 @@ function sitUpsGetter(sitUps, scoreSheet){
 
 function runGetter(runScore, runScoreSheet){
     /* let score = 0; */
-    //console.log(runScore);
-    if(runScore == '1626256800000' || isNaN(runScore) === true){
+    let zeroSaver = moment('00:01', format)
+    console.log("inside run getter - runscore: " +runScore);
+    if(runScore < zeroSaver) {
+    //if(runScore == '1626256800000' || isNaN(runScore) === true){
         return 0;
     } 
     else  {

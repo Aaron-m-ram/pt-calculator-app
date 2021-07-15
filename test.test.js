@@ -5,6 +5,8 @@
 
 
 import { describe, expect, it } from "@jest/globals";
+import moment from 'moment';
+var format = 'mm:ss';
 import {
   mPuScoreSheet17_24,
   mSuScoreSheet17_24,
@@ -47,9 +49,47 @@ import {
 
   pushUpsGetter,
   sitUpsGetter,
-  RunTimeGetter,
+  runGetter,
 
+  fPuScoreSheet17_24,
+  fSuScoreSheet17_24,
+  fRtScoreSheet17_24,
+
+  fPuScoreSheet25_29,
+  fSuScoreSheet25_29,
+  fRtScoreSheet25_29,
+
+  fPuScoreSheet30_34,
+  fSuScoreSheet30_34,
+  fRtScoreSheet30_34,
+
+  fPuScoreSheet35_39,
+  fSuScoreSheet35_39,
+  fRtScoreSheet35_39,
+
+  fPuScoreSheet40_44,
+  fSuScoreSheet40_44,
+  fRtScoreSheet40_44,
+
+  fPuScoreSheet45_49,
+  fSuScoreSheet45_49,
+  fRtScoreSheet45_49,
+
+  fPuScoreSheet50_54,
+  fSuScoreSheet50_54,
+  fRtScoreSheet50_54,
+
+  fPuScoreSheet55_59,
+  fSuScoreSheet55_59,
+  fRtScoreSheet55_59,
+
+  fPuScoreSheet60,
+  fSuScoreSheet60,
+  fRtScoreSheet60,
+  
+ 
   FinalScore,
+  mRtScoreSheet50_54,
 } from "./Form.js";
 
 /* describe("ageGetter", () => {
@@ -491,244 +531,872 @@ it('returns 0 point when given undefined situps', () => {
 
 });
 
-/*
- describe("genderGetter", () => {
-  it('returns "male" for true', () => {
-    expect(genderGetter(true)).toMatch("male");
+// *** female push ups *** //
+
+describe("pushUpsGetter", () => {
+  
+  // female 17-24 
+
+  it('returns 1 point when given 15 pushups', () => {
+    expect(pushUpsGetter(15, fPuScoreSheet17_24)).toBe(1);
+    });
+  it('returns 20 point when given 47 pushups', () => {
+    expect(pushUpsGetter(47, fPuScoreSheet17_24)).toBe(20);
+    });
+  it('returns 0 point when less than 15', () => {
+    expect(pushUpsGetter(14, fPuScoreSheet17_24)).toBe(0);
+    });
+  it('returns 20 point when more than 47', () => {
+    expect(pushUpsGetter(48, fPuScoreSheet17_24)).toBe(20);
+    });
+  it('returns 0 point when given 0 pushups', () => {
+    expect(pushUpsGetter(0, fPuScoreSheet17_24)).toBe(0);
+    });
+  it('returns 0 point when given null pushups', () => {
+    expect(pushUpsGetter(null, fPuScoreSheet17_24)).toBe(0);
+    });
+  it('returns 0 point when given undefined pushups', () => {
+    expect(pushUpsGetter(undefined, fPuScoreSheet17_24)).toBe(0);
+    });
+
+  // female 25-29
+  it('returns 1 point when given 14 pushups', () => {
+    expect(pushUpsGetter(14, fPuScoreSheet25_29)).toBe(1);
+      });
+  it('returns 20 point when given 47 pushups', () => {
+    expect(pushUpsGetter(47, fPuScoreSheet25_29)).toBe(20);
+      });
+  it('returns 0 point when less than 14', () => {
+    expect(pushUpsGetter(13, fPuScoreSheet25_29)).toBe(0);
+      });
+  it('returns 20 point when more than 47', () => {
+    expect(pushUpsGetter(48, fPuScoreSheet25_29)).toBe(20);
+      });
+  it('returns 0 point when given 0 pushups', () => {
+    expect(pushUpsGetter(0, fPuScoreSheet25_29)).toBe(0);
+      });
+  it('returns 0 point when given null pushups', () => {
+    expect(pushUpsGetter(null, fPuScoreSheet25_29)).toBe(0);
+      });
+  it('returns 0 point when given undefined pushups', () => {
+    expect(pushUpsGetter(undefined, fPuScoreSheet25_29)).toBe(0);
+      });
+
+  // female 30-34
+  
+  it('returns 1 point when given 11 pushups', () => {
+    expect(pushUpsGetter(11, fPuScoreSheet30_34)).toBe(1);
+      });
+  it('returns 20 point when given 46 pushups', () => {
+    expect(pushUpsGetter(46, fPuScoreSheet30_34)).toBe(20);
+      });
+  it('returns 0 point when less than 11', () => {
+    expect(pushUpsGetter(10, fPuScoreSheet30_34)).toBe(0);
+      });
+  it('returns 20 point when more than 46', () => {
+    expect(pushUpsGetter(47, fPuScoreSheet30_34)).toBe(20);
+      });
+  it('returns 0 point when given 0 pushups', () => {
+    expect(pushUpsGetter(0, fPuScoreSheet30_34)).toBe(0);
+      });
+  it('returns 0 point when given null pushups', () => {
+    expect(pushUpsGetter(null, fPuScoreSheet30_34)).toBe(0);
+      });
+  it('returns 0 point when given undefined pushups', () => {
+    expect(pushUpsGetter(undefined, fPuScoreSheet30_34)).toBe(0);
+      });
+
+  // female 35-39
+
+  it('returns 1 point when given 10 pushups', () => {
+    expect(pushUpsGetter(10, fPuScoreSheet35_39)).toBe(1);
+      });
+  it('returns 20 point when given 42 pushups', () => {
+    expect(pushUpsGetter(42, fPuScoreSheet35_39)).toBe(20);
+      });
+  it('returns 0 point when less than 10', () => {
+    expect(pushUpsGetter(9, fPuScoreSheet35_39)).toBe(0);
+      });
+  it('returns 20 point when more than 42', () => {
+    expect(pushUpsGetter(43, fPuScoreSheet35_39)).toBe(20);
+      });
+  it('returns 0 point when given 0 pushups', () => {
+    expect(pushUpsGetter(0, fPuScoreSheet35_39)).toBe(0);
+      });
+  it('returns 0 point when given null pushups', () => {
+    expect(pushUpsGetter(null, fPuScoreSheet35_39)).toBe(0);
+      });
+  it('returns 0 point when given undefined pushups', () => {
+    expect(pushUpsGetter(undefined, fPuScoreSheet35_39)).toBe(0);
+      });
+
+  // female 40-44
+
+  it('returns 1 point when given 8 pushups', () => {
+    expect(pushUpsGetter(8, fPuScoreSheet40_44)).toBe(1);
+      });
+  it('returns 20 point when given 38 pushups', () => {
+    expect(pushUpsGetter(45, fPuScoreSheet40_44)).toBe(20);
+      });
+  it('returns 0 point when less than 8', () => {
+    expect(pushUpsGetter(7, fPuScoreSheet40_44)).toBe(0);
+      });
+  it('returns 20 point when more than 38', () => {
+    expect(pushUpsGetter(39, fPuScoreSheet40_44)).toBe(20);
+      });
+  it('returns 0 point when given 0 pushups', () => {
+    expect(pushUpsGetter(0, fPuScoreSheet40_44)).toBe(0);
+      });
+  it('returns 0 point when given null pushups', () => {
+    expect(pushUpsGetter(null, fPuScoreSheet40_44)).toBe(0);
+      });
+  it('returns 0 point when given undefined pushups', () => {
+    expect(pushUpsGetter(undefined, fPuScoreSheet40_44)).toBe(0);
+      });
+
+  // female 45-49
+
+  it('returns 1 point when given 7 pushups', () => {
+    expect(pushUpsGetter(7, fPuScoreSheet45_49)).toBe(1);
+      });
+  it('returns 20 point when given 37 pushups', () => {
+    expect(pushUpsGetter(37, fPuScoreSheet45_49)).toBe(20);
+      });
+  it('returns 0 point when less than 7', () => {
+    expect(pushUpsGetter(6, fPuScoreSheet45_49)).toBe(0);
+      });
+  it('returns 20 point when more than 37', () => {
+    expect(pushUpsGetter(38, fPuScoreSheet45_49)).toBe(20);
+      });
+  it('returns 0 point when given 0 pushups', () => {
+    expect(pushUpsGetter(0, fPuScoreSheet45_49)).toBe(0);
+      });
+  it('returns 0 point when given null pushups', () => {
+    expect(pushUpsGetter(null, fPuScoreSheet45_49)).toBe(0);
+      });
+  it('returns 0 point when given undefined pushups', () => {
+    expect(pushUpsGetter(undefined, fPuScoreSheet45_49)).toBe(0);
+      });
+
+  // female 50-54
+  it('returns 1 point when given 6 pushups', () => {
+    expect(pushUpsGetter(6, fPuScoreSheet50_54)).toBe(1);
+      });
+  it('returns 20 point when given 35 pushups', () => {
+    expect(pushUpsGetter(35, fPuScoreSheet50_54)).toBe(20);
+      });
+  it('returns 0 point when less than 6', () => {
+    expect(pushUpsGetter(5, fPuScoreSheet50_54)).toBe(0);
+      });
+  it('returns 20 point when more than 35', () => {
+    expect(pushUpsGetter(36, fPuScoreSheet50_54)).toBe(20);
+      });
+  it('returns 0 point when given 0 pushups', () => {
+    expect(pushUpsGetter(0, fPuScoreSheet50_54)).toBe(0);
+      });
+  it('returns 0 point when given null pushups', () => {
+    expect(pushUpsGetter(null, fPuScoreSheet50_54)).toBe(0);
+      });
+  it('returns 0 point when given undefined pushups', () => {
+    expect(pushUpsGetter(undefined, fPuScoreSheet50_54)).toBe(0);
+      });
+
+  // female 55-59
+  it('returns 1 point when given 5 pushups', () => {
+    expect(pushUpsGetter(5, fPuScoreSheet55_59)).toBe(1);
+      });
+  it('returns 20 point when given 28 pushups', () => {
+    expect(pushUpsGetter(28, fPuScoreSheet55_59)).toBe(20);
+      });
+  it('returns 0 point when less than 5', () => {
+    expect(pushUpsGetter(4, fPuScoreSheet55_59)).toBe(0);
+      });
+  it('returns 20 point when more than 28', () => {
+    expect(pushUpsGetter(9, fPuScoreSheet55_59)).toBe(20);
+      });
+  it('returns 0 point when given 0 pushups', () => {
+    expect(pushUpsGetter(0, fPuScoreSheet55_59)).toBe(0);
+      });
+  it('returns 0 point when given null pushups', () => {
+    expect(pushUpsGetter(null, fPuScoreSheet55_59)).toBe(0);
+      });
+  it('returns 0 point when given undefined pushups', () => {
+    expect(pushUpsGetter(undefined, fPuScoreSheet55_59)).toBe(0);
+      });
+
+  // Female 60 and up
+  it('returns 1 point when given 4 pushups', () => {
+    expect(pushUpsGetter(4, fPuScoreSheet60)).toBe(1);
+      });
+  it('returns 20 point when given 21 pushups', () => {
+    expect(pushUpsGetter(21, fPuScoreSheet60)).toBe(20);
+      });
+  it('returns 0 point when less than 4', () => {
+    expect(pushUpsGetter(3, fPuScoreSheet60)).toBe(0);
+      });
+  it('returns 20 point when more than 21', () => {
+    expect(pushUpsGetter(22, fPuScoreSheet60)).toBe(20);
+      });
+  it('returns 0 point when given 0 pushups', () => {
+    expect(pushUpsGetter(0, fPuScoreSheet60)).toBe(0);
+      });
+  it('returns 0 point when given null pushups', () => {
+    expect(pushUpsGetter(null, fPuScoreSheet60)).toBe(0);
+      });
+  it('returns 0 point when given undefined pushups', () => {
+    expect(pushUpsGetter(undefined, fPuScoreSheet60)).toBe(0);
+      });
   });
-  it('returns "female" for false', () => {
-    expect(genderGetter(false)).toMatch("female");
-  });
+ 
+   // *** female sit ups *** //
+
+  describe("sitUpsGetter", () => {
+    /* female 17-24 */
+    it('returns 3 point when given 35 situps', () => {
+      expect(sitUpsGetter(35, fSuScoreSheet17_24)).toBe(3);
+      });
+    it('returns 20 point when given 54 situps', () => {
+      expect(sitUpsGetter(54, fSuScoreSheet17_24)).toBe(20);
+      });
+    it('returns 0 point when less than 35', () => {
+      expect(sitUpsGetter(34, fSuScoreSheet17_24)).toBe(0);
+      });
+    it('returns 20 point when more than 54', () => {
+      expect(sitUpsGetter(55, fSuScoreSheet17_24)).toBe(20);
+      });
+    it('returns 0 point when given 0 situps', () => {
+      expect(sitUpsGetter(0, fSuScoreSheet17_24)).toBe(0);
+      });
+    it('returns 0 point when given null situps', () => {
+      expect(sitUpsGetter(null, fSuScoreSheet17_24)).toBe(0);
+      });
+    it('returns 0 point when given undefined situps', () => {
+      expect(sitUpsGetter(undefined, fSuScoreSheet17_24)).toBe(0);
+      });
+
+    // Female 25-29
+    it('returns 3 point when given 31 situps', () => {
+      expect(sitUpsGetter(31, fSuScoreSheet25_29)).toBe(3);
+      });
+    it('returns 20 point when given 50 situps', () => {
+      expect(sitUpsGetter(50, fSuScoreSheet25_29)).toBe(20);
+      });
+    it('returns 0 point when less than 31', () => {
+      expect(sitUpsGetter(30, fSuScoreSheet25_29)).toBe(0);
+      });
+    it('returns 20 point when more than 50', () => {
+      expect(sitUpsGetter(51, fSuScoreSheet25_29)).toBe(20);
+      });
+    it('returns 0 point when given 0 situps', () => {
+      expect(sitUpsGetter(0, fSuScoreSheet25_29)).toBe(0);
+      });
+    it('returns 0 point when given null situps', () => {
+      expect(sitUpsGetter(null, fSuScoreSheet25_29)).toBe(0);
+      });
+    it('returns 0 point when given undefined situps', () => {
+      expect(sitUpsGetter(undefined, fSuScoreSheet25_29)).toBe(0);
+      });
+      
+    // female 30-34
+    it('returns 3 point when given 26 situps', () => {
+      expect(sitUpsGetter(26, fSuScoreSheet30_34)).toBe(3);
+      });
+    it('returns 20 point when given 45 situps', () => {
+      expect(sitUpsGetter(45, fSuScoreSheet30_34)).toBe(20);
+      });
+    it('returns 0 point when less than 26', () => {
+      expect(sitUpsGetter(25, fSuScoreSheet30_34)).toBe(0);
+      });
+    it('returns 20 point when more than 45', () => {
+      expect(sitUpsGetter(46, fSuScoreSheet30_34)).toBe(20);
+      });
+    it('returns 0 point when given 0 situps', () => {
+      expect(sitUpsGetter(0, fSuScoreSheet30_34)).toBe(0);
+      });
+    it('returns 0 point when given null situps', () => {
+      expect(sitUpsGetter(null, fSuScoreSheet30_34)).toBe(0);
+      });
+    it('returns 0 point when given undefined situps', () => {
+      expect(sitUpsGetter(undefined, fSuScoreSheet30_34)).toBe(0);
+      });
+
+    //female 35-39
+    it('returns 3 point when given 24 situps', () => {
+      expect(sitUpsGetter(24, fSuScoreSheet35_39)).toBe(3);
+      });
+    it('returns 20 point when given 43 situps', () => {
+      expect(sitUpsGetter(43, fSuScoreSheet35_39)).toBe(20);
+      });
+    it('returns 0 point when less than 24', () => {
+      expect(sitUpsGetter(23, fSuScoreSheet35_39)).toBe(0);
+      });
+    it('returns 20 point when more than 43', () => {
+      expect(sitUpsGetter(44, fSuScoreSheet35_39)).toBe(20);
+      });
+    it('returns 0 point when given 0 situps', () => {
+      expect(sitUpsGetter(0, fSuScoreSheet35_39)).toBe(0);
+      });
+    it('returns 0 point when given null situps', () => {
+      expect(sitUpsGetter(null, fSuScoreSheet35_39)).toBe(0);
+      });
+    it('returns 0 point when given undefined situps', () => {
+      expect(sitUpsGetter(undefined, fSuScoreSheet35_39)).toBe(0);
+      });
+
+    //female 40-44
+    it('returns 3 point when given 21 situps', () => {
+      expect(sitUpsGetter(21, fSuScoreSheet40_44)).toBe(3);
+      });
+    it('returns 20 point when given 41 situps', () => {
+      expect(sitUpsGetter(41, fSuScoreSheet40_44)).toBe(20);
+      });
+    it('returns 0 point when less than 21', () => {
+      expect(sitUpsGetter(20, fSuScoreSheet40_44)).toBe(0);
+      });
+    it('returns 20 point when more than 41', () => {
+      expect(sitUpsGetter(42, fSuScoreSheet40_44)).toBe(20);
+      });
+    it('returns 0 point when given 0 situps', () => {
+      expect(sitUpsGetter(0, fSuScoreSheet40_44)).toBe(0);
+      });
+    it('returns 0 point when given null situps', () => {
+      expect(sitUpsGetter(null, fSuScoreSheet40_44)).toBe(0);
+      });
+    it('returns 0 point when given undefined situps', () => {
+      expect(sitUpsGetter(undefined, fSuScoreSheet40_44)).toBe(0);
+      });
+
+    // female 45-49
+    it('returns 3 point when given 19 situps', () => {
+      expect(sitUpsGetter(19, fSuScoreSheet45_49)).toBe(3);
+      });
+    it('returns 20 point when given 35 situps', () => {
+      expect(sitUpsGetter(35, fSuScoreSheet45_49)).toBe(20);
+      });
+    it('returns 0 point when less than 19', () => {
+      expect(sitUpsGetter(18, fSuScoreSheet45_49)).toBe(0);
+      });
+    it('returns 20 point when more than 35', () => {
+      expect(sitUpsGetter(34, fSuScoreSheet45_49)).toBe(20);
+      });
+    it('returns 0 point when given 0 situps', () => {
+      expect(sitUpsGetter(0, fSuScoreSheet45_49)).toBe(0);
+      });
+    it('returns 0 point when given null situps', () => {
+      expect(sitUpsGetter(null, fSuScoreSheet45_49)).toBe(0);
+      });
+    it('returns 0 point when given undefined situps', () => {
+      expect(sitUpsGetter(undefined, fSuScoreSheet45_49)).toBe(0);
+      });
+
+    //female 50-54
+    it('returns 3 point when given 17 situps', () => {
+      expect(sitUpsGetter(17, fSuScoreSheet50_54)).toBe(3);
+      });
+    it('returns 20 point when given 32 situps', () => {
+      expect(sitUpsGetter(32, fSuScoreSheet50_54)).toBe(20);
+      });
+    it('returns 0 point when less than 17', () => {
+      expect(sitUpsGetter(16, fSuScoreSheet50_54)).toBe(0);
+      });
+    it('returns 20 point when more than 32', () => {
+      expect(sitUpsGetter(31, fSuScoreSheet50_54)).toBe(20);
+      });
+    it('returns 0 point when given 0 situps', () => {
+      expect(sitUpsGetter(0, fSuScoreSheet50_54)).toBe(0);
+      });
+    it('returns 0 point when given null situps', () => {
+      expect(sitUpsGetter(null, fSuScoreSheet50_54)).toBe(0);
+      });
+    it('returns 0 point when given undefined situps', () => {
+      expect(sitUpsGetter(undefined, fSuScoreSheet50_54)).toBe(0);
+      });
+
+    // female 55-59
+    it('returns 3 point when given 12 situps', () => {
+      expect(sitUpsGetter(12, fSuScoreSheet55_59)).toBe(3);
+    });
+    it('returns 20 point when given 32 situps', () => {
+      expect(sitUpsGetter(32, fSuScoreSheet55_59)).toBe(20);
+    });
+    it('returns 0 point when less than 12', () => {
+      expect(sitUpsGetter(11, fSuScoreSheet55_59)).toBe(0);
+    });
+    it('returns 20 point when more than 32', () => {
+      expect(sitUpsGetter(31, fSuScoreSheet55_59)).toBe(20);
+    });
+    it('returns 0 point when given 0 situps', () => {
+      expect(sitUpsGetter(0, fSuScoreSheet55_59)).toBe(0);
+    });
+    it('returns 0 point when given null situps', () => {
+      expect(sitUpsGetter(null, fSuScoreSheet55_59)).toBe(0);
+    });
+    it('returns 0 point when given undefined situps', () => {
+      expect(sitUpsGetter(undefined, fSuScoreSheet55_59)).toBe(0);
+    });
+
+    // female 60 and up
+    it('returns 3 point when given 8 situps', () => {
+      expect(sitUpsGetter(8, fSuScoreSheet60)).toBe(3);
+      });
+    it('returns 20 point when given 31 situps', () => {
+      expect(sitUpsGetter(31, fSuScoreSheet60)).toBe(20);
+      });
+    it('returns 0 point when less than 8', () => {
+      expect(sitUpsGetter(7, fSuScoreSheet60)).toBe(0);
+      });
+    it('returns 20 point when more than 31', () => {
+      expect(sitUpsGetter(32, fSuScoreSheet60)).toBe(20);
+      });
+    it('returns 0 point when given 0 situps', () => {
+      expect(sitUpsGetter(0, fSuScoreSheet60)).toBe(0);
+      });
+    it('returns 0 point when given null situps', () => {
+      expect(sitUpsGetter(null, fSuScoreSheet60)).toBe(0);
+      });
+    it('returns 0 point when given undefined situps', () => {
+      expect(sitUpsGetter(undefined, fSuScoreSheet60)).toBe(0);
+      });
+
 });
 
+// *** male run time test *** //
 
-describe("PushUpsGetter", () => {
-  it("returns 1 point when given 30 pushups", () => {
-    expect(pushUpsGetter(30)).toBe(1);
+describe("runGetter", () => {
+    // male 17-24 //
+    it('returns 60 when given less than 9:13', () => {
+      expect(runGetter(moment('09:12', format), mRtScoreSheet17_24)).toBe(60)
+    });
+    it('return 59.5 when given in range of 9:13 to 9:34', () => {
+        expect(runGetter(moment('09:13', format), mRtScoreSheet17_24)).toBe(59.5)
+    });
+    it('return 35 when given in range of 15:21 to 15:50', () => {
+      expect(runGetter(moment('15:50', format), mRtScoreSheet17_24)).toBe(35)
+    });
+
+    it('return 0 when given over 15:50', () => {
+      expect(runGetter(moment('15:51', format), mRtScoreSheet17_24)).toBe(0)
+    });
+
+    it('return 0 when given 00:00', () => {
+      expect(runGetter(moment('00:00', format), mRtScoreSheet17_24)).toBe(0)
+    });
+    it('return 0 when given in null', () => {
+      expect(runGetter(moment(null, format), mRtScoreSheet17_24)).toBe(0)
+    });
+    it('return 0 when given in undefined', () => {
+      expect(runGetter(moment(undefined, format), mRtScoreSheet17_24)).toBe(0)
+    });
+  // male 25-29
+    it('returns 60 when given less than 9:23', () => {
+    expect(runGetter(moment('09:22', format), mRtScoreSheet25_29)).toBe(60)
+    });
+    it('return 59.5 when given in range of 9:23 to 9:45', () => {
+      expect(runGetter(moment('09:23', format), mRtScoreSheet25_29)).toBe(59.5)
+    });
+    it('return 35 when given in range of 15:51 to 16:22', () => {
+      expect(runGetter(moment('16:22', format), mRtScoreSheet25_29)).toBe(35)
+    });
+
+    it('return 0 when given over 16:22', () => {
+      expect(runGetter(moment('16:23', format), mRtScoreSheet25_29)).toBe(0)
+    });
+
+    it('return 0 when given 00:00', () => {
+      expect(runGetter(moment('00:00', format), mRtScoreSheet25_29)).toBe(0)
+    });
+    it('return 0 when given in null', () => {
+      expect(runGetter(moment(null, format), mRtScoreSheet25_29)).toBe(0)
+    });
+    it('return 0 when given in undefined', () => {
+      expect(runGetter(moment(undefined, format), mRtScoreSheet25_29)).toBe(0)
+    });
+    
+  // male 30-34
+    it('returns 60 when given less than 9:35', () => {
+      expect(runGetter(moment('09:34', format), mRtScoreSheet30_34)).toBe(60)
+      });
+      it('return 59.5 when given in range of 9:35 to 9:58', () => {
+        expect(runGetter(moment('09:35', format), mRtScoreSheet30_34)).toBe(59.5)
+      });
+      it('return 35 when given in range of 16:23 to 16:57', () => {
+        expect(runGetter(moment('16:57', format), mRtScoreSheet30_34)).toBe(35)
+      });
+  
+      it('return 0 when given over 16:57', () => {
+        expect(runGetter(moment('16:58', format), mRtScoreSheet30_34)).toBe(0)
+      });
+  
+      it('return 0 when given 00:00', () => {
+        expect(runGetter(moment('00:00', format), mRtScoreSheet30_34)).toBe(0)
+      });
+      it('return 0 when given in null', () => {
+        expect(runGetter(moment(null, format), mRtScoreSheet30_34)).toBe(0)
+      });
+      it('return 0 when given in undefined', () => {
+        expect(runGetter(moment(undefined, format), mRtScoreSheet30_34)).toBe(0)
+      });
+
+    // male 35-39
+      it('returns 60 when given less than 9:46', () => {
+        expect(runGetter(moment('09:45', format), mRtScoreSheet35_39)).toBe(60)
+      });
+      it('return 59.5 when given in range of 9:46 to 10:10', () => {
+        expect(runGetter(moment('09:46', format), mRtScoreSheet35_39)).toBe(59.5)
+      });
+      it('return 35 when given in range of 16:58 to 17:34', () => {
+        expect(runGetter(moment('17:34', format), mRtScoreSheet35_39)).toBe(35)
+      });
+  
+      it('return 0 when given over 17:34', () => {
+        expect(runGetter(moment('17:35', format), mRtScoreSheet35_39)).toBe(0)
+      });
+  
+      it('return 0 when given 00:00', () => {
+        expect(runGetter(moment('00:00', format), mRtScoreSheet35_39)).toBe(0)
+      });
+      it('return 0 when given in null', () => {
+        expect(runGetter(moment(null, format), mRtScoreSheet35_39)).toBe(0)
+      });
+      it('return 0 when given in undefined', () => {
+        expect(runGetter(moment(undefined, format), mRtScoreSheet35_39)).toBe(0)
+      });
+
+    // Male 40-44
+      it('returns 60 when given less than 9:59', () => {
+        expect(runGetter(moment('09:58', format), mRtScoreSheet40_44)).toBe(60)
+      });
+      it('return 59.5 when given in range of 9:59 to 10:23', () => {
+        expect(runGetter(moment('09:59', format), mRtScoreSheet40_44)).toBe(59.5)
+      });
+      it('return 35 when given in range of 17:35 to 18:14', () => {
+        expect(runGetter(moment('18:14', format), mRtScoreSheet40_44)).toBe(35)
+      });
+  
+      it('return 0 when given over 18:14', () => {
+        expect(runGetter(moment('18:15', format), mRtScoreSheet40_44)).toBe(0)
+      });
+  
+      it('return 0 when given 00:00', () => {
+        expect(runGetter(moment('00:00', format), mRtScoreSheet40_44)).toBe(0)
+      });
+      it('return 0 when given in null', () => {
+        expect(runGetter(moment(null, format), mRtScoreSheet40_44)).toBe(0)
+      });
+      it('return 0 when given in undefined', () => {
+        expect(runGetter(moment(undefined, format), mRtScoreSheet40_44)).toBe(0)
+      });
+
+    // Male 45-49
+      it('returns 60 when given less than 10:11', () => {
+        expect(runGetter(moment('10:10', format), mRtScoreSheet45_49)).toBe(60)
+      });
+      it('return 59.5 when given in range of 10:11 to 10:37', () => {
+        expect(runGetter(moment('10:11', format), mRtScoreSheet45_49)).toBe(59.5)
+      });
+      it('return 35 when given in range of 18:15 to 18:56', () => {
+        expect(runGetter(moment('18:56', format), mRtScoreSheet45_49)).toBe(35)
+      });
+  
+      it('return 0 when given over 18:56', () => {
+        expect(runGetter(moment('18:57', format), mRtScoreSheet45_49)).toBe(0)
+      });
+  
+      it('return 0 when given 00:00', () => {
+        expect(runGetter(moment('00:00', format), mRtScoreSheet45_49)).toBe(0)
+      });
+      it('return 0 when given in null', () => {
+        expect(runGetter(moment(null, format), mRtScoreSheet45_49)).toBe(0)
+      });
+      it('return 0 when given in undefined', () => {
+        expect(runGetter(moment(undefined, format), mRtScoreSheet45_49)).toBe(0)
+      });
+    
+    // Male 50-54
+      it('returns 60 when given less than 10:38', () => {
+        expect(runGetter(moment('10:37', format), mRtScoreSheet50_54)).toBe(60)
+      });
+      it('return 59.5 when given in range of 10:38 to 11:06', () => {
+        expect(runGetter(moment('10:38', format), mRtScoreSheet50_54)).toBe(59.5)
+      });
+      it('return 35 when given in range of 19:44 to 20:33', () => {
+        expect(runGetter(moment('20:33', format), mRtScoreSheet50_54)).toBe(35)
+      });
+  
+      it('return 0 when given over 20:33', () => {
+        expect(runGetter(moment('20:34', format), mRtScoreSheet50_54)).toBe(0)
+      });
+  
+      it('return 0 when given 00:00', () => {
+        expect(runGetter(moment('00:00', format), mRtScoreSheet50_54)).toBe(0)
+      });
+      it('return 0 when given in null', () => {
+        expect(runGetter(moment(null, format), mRtScoreSheet50_54)).toBe(0)
+      });
+      it('return 0 when given in undefined', () => {
+        expect(runGetter(moment(undefined, format), mRtScoreSheet50_54)).toBe(0)
+      });
+
+    // Male 55-59
+      it('returns 60 when given less than 10:52', () => {
+        expect(runGetter(moment('10:51', format), mRtScoreSheet55_59)).toBe(60)
+      });
+      it('return 59.5 when given in range of 10:52 to 11:22', () => {
+        expect(runGetter(moment('10:52', format), mRtScoreSheet55_59)).toBe(59.5)
+      });
+      it('return 35 when given in range of 20:34 to 21:28', () => {
+        expect(runGetter(moment('21:28', format), mRtScoreSheet55_59)).toBe(35)
+      });
+  
+      it('return 0 when given over 21:28', () => {
+        expect(runGetter(moment('21:29', format), mRtScoreSheet55_59)).toBe(0)
+      });
+  
+      it('return 0 when given 00:00', () => {
+        expect(runGetter(moment('00:00', format), mRtScoreSheet55_59)).toBe(0)
+      });
+      it('return 0 when given in null', () => {
+        expect(runGetter(moment(null, format), mRtScoreSheet55_59)).toBe(0)
+      });
+      it('return 0 when given in undefined', () => {
+        expect(runGetter(moment(undefined, format), mRtScoreSheet55_59)).toBe(0)
+      });
+
+    // Male 60 and up
+      it('returns 60 when given less than 11:23', () => {
+        expect(runGetter(moment('11:22', format), mRtScoreSheet60)).toBe(60)
+      });
+      it('return 59.5 when given in range of 11:23 to 11:56', () => {
+        expect(runGetter(moment('11:23', format), mRtScoreSheet60)).toBe(59.5)
+      });
+      it('return 35 when given in range of 21:29 to 22:28', () => {
+        expect(runGetter(moment('22:28', format), mRtScoreSheet60)).toBe(35)
+      });
+  
+      it('return 0 when given over 22:28', () => {
+        expect(runGetter(moment('22:29', format), mRtScoreSheet60)).toBe(0)
+      });
+  
+      it('return 0 when given 00:00', () => {
+        expect(runGetter(moment('00:00', format), mRtScoreSheet60)).toBe(0)
+      });
+      it('return 0 when given in null', () => {
+        expect(runGetter(moment(null, format), mRtScoreSheet60)).toBe(0)
+      });
+      it('return 0 when given in undefined', () => {
+        expect(runGetter(moment(undefined, format), mRtScoreSheet60)).toBe(0)
+      });
+    });
+
+// *** Female run time test *** //
+describe("runGetter", () => {
+  // female 17-24 //
+  it('returns 60 when given less than 10:24', () => {
+    expect(runGetter(moment('10:23', format), fRtScoreSheet17_24)).toBe(60)
   });
-  it("returns 20 points when given 67 pushups", () => {
-    expect(pushUpsGetter(67)).toBe(20);
+  it('return 59.5 when given in range of 10:24 to 10:51', () => {
+      expect(runGetter(moment('10:24', format), fRtScoreSheet17_24)).toBe(59.5)
   });
-  it("returns 0 points when given < 30 pushups", () => {
-    expect(pushUpsGetter(29)).toBe(0);
+  it('return 35 when given in range of 18:15 to 18:56', () => {
+    expect(runGetter(moment('18:56', format), fRtScoreSheet17_24)).toBe(35)
   });
-  it("returns 20 points when given > 67 pushups", () => {
-    expect(pushUpsGetter(68)).toBe(20);
+
+  it('return 0 when given over 18:56', () => {
+    expect(runGetter(moment('18:57', format), fRtScoreSheet17_24)).toBe(0)
   });
-  it("returns 0 points when given 0 pushups", () => {
-    expect(pushUpsGetter(0)).toBe(0);
+
+  it('return 0 when given 00:00', () => {
+    expect(runGetter(moment('00:00', format), fRtScoreSheet17_24)).toBe(0)
   });
-  it("returns 0 points when given null pushups", () => {
-    expect(pushUpsGetter(null)).toBe(0);
+  it('return 0 when given in null', () => {
+    expect(runGetter(moment(null, format), fRtScoreSheet17_24)).toBe(0)
   });
-  it("returns 0 points when given undefined pushups", () => {
-    expect(pushUpsGetter(undefined)).toBe(0);
+  it('return 0 when given in undefined', () => {
+    expect(runGetter(moment(undefined, format), fRtScoreSheet17_24)).toBe(0)
+  });
+
+// female 25-29
+  it('returns 60 when given less than 10:38', () => {
+    expect(runGetter(moment('10:37', format), fRtScoreSheet25_29)).toBe(60)
+  });
+  it('return 59.5 when given in range of 10:38 to 11:06', () => {
+    expect(runGetter(moment('10:38', format), fRtScoreSheet25_29)).toBe(59.5)
+  });
+  it('return 35 when given in range of 18:57 to 19:43', () => {
+    expect(runGetter(moment('19:43', format), fRtScoreSheet25_29)).toBe(35)
+  });
+
+  it('return 0 when given over 19:43', () => {
+    expect(runGetter(moment('19:44', format), fRtScoreSheet25_29)).toBe(0)
+  });
+
+  it('return 0 when given 00:00', () => {
+    expect(runGetter(moment('00:00', format), fRtScoreSheet25_29)).toBe(0)
+  });
+  it('return 0 when given in null', () => {
+    expect(runGetter(moment(null, format), fRtScoreSheet25_29)).toBe(0)
+  });
+  it('return 0 when given in undefined', () => {
+    expect(runGetter(moment(undefined, format), fRtScoreSheet25_29)).toBe(0)
+  });
+// Female 30-34
+  it('returns 60 when given less than 10:52', () => {
+    expect(runGetter(moment('10:51', format), fRtScoreSheet30_34)).toBe(60)
+  });
+  it('return 59.5 when given in range of 10:52 to 11:22', () => {
+    expect(runGetter(moment('10:52', format), fRtScoreSheet30_34)).toBe(59.5)
+  });
+  it('return 35 when given in range of 19:44 to 20:33', () => {
+    expect(runGetter(moment('20:33', format), fRtScoreSheet30_34)).toBe(35)
+  });
+
+  it('return 0 when given over 20:33', () => {
+  expect(runGetter(moment('20:34', format), fRtScoreSheet30_34)).toBe(0)
+  });
+
+  it('return 0 when given 00:00', () => {
+    expect(runGetter(moment('00:00', format), fRtScoreSheet30_34)).toBe(0)
+  });
+  it('return 0 when given in null', () => {
+    expect(runGetter(moment(null, format), fRtScoreSheet30_34)).toBe(0)
+  });
+  it('return 0 when given in undefined', () => {
+    expect(runGetter(moment(undefined, format), fRtScoreSheet30_34)).toBe(0)
+  });
+//female 35-39
+  it('returns 60 when given less than 11:07', () => {
+    expect(runGetter(moment('11:06', format), fRtScoreSheet35_39)).toBe(60)
+  });
+  it('return 59.5 when given in range of 11:07 to 11:38', () => {
+    expect(runGetter(moment('11:07', format), fRtScoreSheet35_39)).toBe(59.5)
+  });
+  it('return 35 when given in range of 20:34 to 21:28', () => {
+    expect(runGetter(moment('21:28', format), fRtScoreSheet35_39)).toBe(35)
+  });
+  it('return 0 when given over 21:28', () => {
+    expect(runGetter(moment('21:29', format), fRtScoreSheet35_39)).toBe(0)
+  });
+  it('return 0 when given 00:00', () => {
+    expect(runGetter(moment('00:00', format), fRtScoreSheet35_39)).toBe(0)
+  });
+  it('return 0 when given in null', () => {
+    expect(runGetter(moment(null, format), fRtScoreSheet35_39)).toBe(0)
+  });
+  it('return 0 when given in undefined', () => {
+    expect(runGetter(moment(undefined, format), fRtScoreSheet35_39)).toBe(0)
+  });
+// Female 40-44
+  it('returns 60 when given less than 11:23', () => {
+    expect(runGetter(moment('11:22', format), fRtScoreSheet40_44)).toBe(60)
+  });
+  it('return 59.5 when given in range of 11:23 to 11:56', () => {
+    expect(runGetter(moment('11:23', format), fRtScoreSheet40_44)).toBe(59.5)
+  });
+  it('return 35 when given in range of 21:29 to 22:28', () => {
+    expect(runGetter(moment('22:28', format), fRtScoreSheet40_44)).toBe(35)
+  });
+  it('return 0 when given over 22:28', () => {
+    expect(runGetter(moment('22:29', format), fRtScoreSheet40_44)).toBe(0)
+  });
+  it('return 0 when given 00:00', () => {
+    expect(runGetter(moment('00:00', format), fRtScoreSheet40_44)).toBe(0)
+  });
+  it('return 0 when given in null', () => {
+    expect(runGetter(moment(null, format), fRtScoreSheet40_44)).toBe(0)
+  });
+  it('return 0 when given in undefined', () => {
+    expect(runGetter(moment(undefined, format), fRtScoreSheet40_44)).toBe(0)
+  });
+
+// Female 45-49
+  it('returns 60 when given less than 11:39', () => {
+    expect(runGetter(moment('11:38', format), fRtScoreSheet45_49)).toBe(60)
+  });
+  it('return 59.5 when given in range of 11:39 to 12:14', () => {
+    expect(runGetter(moment('11:39', format), fRtScoreSheet45_49)).toBe(59.5)
+  });
+  it('return 35 when given in range of 22:29 to 23:34', () => {
+    expect(runGetter(moment('23:34', format), fRtScoreSheet45_49)).toBe(35)
+  });
+  it('return 0 when given over 23:34', () => {
+    expect(runGetter(moment('23:35', format), fRtScoreSheet45_49)).toBe(0)
+  });
+  it('return 0 when given 00:00', () => {
+    expect(runGetter(moment('00:00', format), fRtScoreSheet45_49)).toBe(0)
+  });
+  it('return 0 when given in null', () => {
+    expect(runGetter(moment(null, format), fRtScoreSheet45_49)).toBe(0)
+  });
+  it('return 0 when given in undefined', () => {
+    expect(runGetter(moment(undefined, format), fRtScoreSheet45_49)).toBe(0)
+  });
+
+// Female 50-54
+  it('returns 60 when given less than 12:54', () => {
+    expect(runGetter(moment('12:53', format), fRtScoreSheet50_54)).toBe(60)
+  });
+  it('return 59.5 when given in range of 12:54 to 13:36', () => {
+    expect(runGetter(moment('12:54', format), fRtScoreSheet50_54)).toBe(59.5)
+  });
+  it('return 35 when given in range of 23:35 to 24:46', () => {
+    expect(runGetter(moment('24:46', format), fRtScoreSheet50_54)).toBe(35)
+  });
+  it('return 0 when given over 24:46', () => {
+    expect(runGetter(moment('24:47', format), fRtScoreSheet50_54)).toBe(0)
+  });
+  it('return 0 when given 00:00', () => {
+    expect(runGetter(moment('00:00', format), fRtScoreSheet50_54)).toBe(0)
+  });
+  it('return 0 when given in null', () => {
+    expect(runGetter(moment(null, format), fRtScoreSheet50_54)).toBe(0)
+  });
+  it('return 0 when given in undefined', () => {
+    expect(runGetter(moment(undefined, format), fRtScoreSheet50_54)).toBe(0)
+  });
+
+  //Female 55-59
+  it('returns 60 when given less than 13:15', () => {
+    expect(runGetter(moment('13:14', format), fRtScoreSheet55_59)).toBe(60)
+  });
+  it('return 59.5 when given in range of 13:15 to 14:00', () => {
+    expect(runGetter(moment('13:15', format), fRtScoreSheet55_59)).toBe(59.5)
+  });
+  it('return 35 when given in range of 24:47 to 26:06', () => {
+    expect(runGetter(moment('26:06', format), fRtScoreSheet55_59)).toBe(35)
+  });
+  it('return 0 when given over 26:06', () => {
+    expect(runGetter(moment('26:07', format), fRtScoreSheet55_59)).toBe(0)
+  });
+  it('return 0 when given 00:00', () => {
+    expect(runGetter(moment('00:00', format), fRtScoreSheet55_59)).toBe(0)
+  });
+  it('return 0 when given in null', () => {
+    expect(runGetter(moment(null, format), fRtScoreSheet55_59)).toBe(0)
+  });
+  it('return 0 when given in undefined', () => {
+    expect(runGetter(moment(undefined, format), fRtScoreSheet55_59)).toBe(0)
+  });
+
+  // Female 60 and up
+  it('returns 60 when given less than 14:01', () => {
+    expect(runGetter(moment('14:00', format), fRtScoreSheet60)).toBe(60)
+  });
+  it('return 59.5 when given in range of 14:01 to 14:52', () => {
+    expect(runGetter(moment('14:01', format), fRtScoreSheet60)).toBe(59.5)
+  });
+  it('return 35 when given in range of 26:07 to 27:27', () => {
+    expect(runGetter(moment('27:27', format), fRtScoreSheet60)).toBe(35)
+  });
+  it('return 0 when given over 27:27', () => {
+    expect(runGetter(moment('27:28', format), fRtScoreSheet60)).toBe(0)
+  });
+  it('return 0 when given 00:00', () => {
+    expect(runGetter(moment('00:00', format), fRtScoreSheet60)).toBe(0)
+  });
+  it('return 0 when given in null', () => {
+    expect(runGetter(moment(null, format), fRtScoreSheet60)).toBe(0)
+  });
+  it('return 0 when given in undefined', () => {
+    expect(runGetter(moment(undefined, format), fRtScoreSheet60)).toBe(0)
   });
 });
-
-describe("SitUpsGetter", () => {
-  it("returns 0 point when given < 39 situps", () => {
-    expect(SitUpsGetter(38, false)).toBe(0);
-  });
-  it("returns 3 points when given 39 situps", () => {
-    expect(SitUpsGetter(39, false)).toBe(3);
-  });
-  it("returns 19.7 points when given 57 situps", () => {
-    expect(SitUpsGetter(57, false)).toBe(19.7);
-  });
-  it("returns 20 points when given 58 situps", () => {
-    expect(SitUpsGetter(58, false)).toBe(20);
-  });
-  it("returns 20 points when given > 58 situps", () => {
-    expect(SitUpsGetter(59, false)).toBe(20);
-  });
-  it("returns 0 points when given true waiver", () => {
-    expect(SitUpsGetter(0, true)).toBe(0);
-  });
-  it("returns 0 points when given null situps", () => {
-    expect(SitUpsGetter(null, false)).toBe(0);
-  });
-  it("returns 0 points when given undefined situps", () => {
-    expect(SitUpsGetter(undefined, false)).toBe(0);
-  });
-  it("returns 0 points when given undefined waiver", () => {
-    expect(SitUpsGetter(0, undefined)).toBe(0);
-  });
-  it("returns 0 points when given both undefined inputs", () => {
-    expect(SitUpsGetter(undefined, undefined)).toBe(0);
-  });
-});
-
-// create a test suite to test the AgeGetter
-describe("AgeGetter", () => {
-  it("returns 17_24 when given a range between 17 and 24", () => {
-    expect(ageGetter(17)).toBe("17-24");
-    expect(ageGetter(24)).toBe("17-24");
-  });
-  it("returns 25_29 when given a range between 25 and 29", () => {
-    expect(ageGetter(25)).toBe("25-29");
-    expect(ageGetter(29)).toBe("25-29");
-  });
-  it("returns 30_34 when given a range between 30 and 34", () => {
-    expect(ageGetter(30)).toBe("30-34");
-    expect(ageGetter(34)).toBe("30-34");
-  });
-  it("returns 35_39 when given a range between 35 and 39", () => {
-    expect(ageGetter(35)).toBe("35-39");
-    expect(ageGetter(39)).toBe("35-39");
-  });
-  it("returns 40_44 when given a range between 40 and 44", () => {
-    expect(ageGetter(40)).toBe("40-44");
-    expect(ageGetter(44)).toBe("40-44");
-  });
-  it("returns 45_49 when given a range between 45 and 49", () => {
-    expect(ageGetter(45)).toBe("45-49");
-    expect(ageGetter(49)).toBe("45-49");
-  });
-  it("returns 50_54 when given a range between 50 and 54", () => {
-    expect(ageGetter(50)).toBe("50-54");
-    expect(ageGetter(54)).toBe("50-54");
-  });
-  it("returns 55_59 when given a range between 55 and 59", () => {
-    expect(ageGetter(55)).toBe("55-59");
-    expect(ageGetter(59)).toBe("55-59");
-  });
-  it("returns 60+ when given an age above 59", () => {
-    expect(ageGetter(60)).toBe("60+");
-  });
-});
-
-describe("FinalScore", () => {
-  it("max score, no waivers", () => {
-    expect(
-      FinalScore(
-        pushUpsGetter(67, false),
-        false,
-        SitUpsGetter(58, false),
-        false,
-        RunTimeGetter("0912", false),
-        false
-      )
-    ).toBe(100);
-  });
-  it("max score, only run waiver", () => {
-    expect(
-      FinalScore(
-        pushUpsGetter(67, false),
-        false,
-        SitUpsGetter(58, false),
-        false,
-        RunTimeGetter("", true),
-        true
-      )
-    ).toBe(100);
-  });
-  it("max score, only situps waiver", () => {
-    expect(
-      FinalScore(
-        pushUpsGetter(67, false),
-        false,
-        SitUpsGetter(0, true),
-        true,
-        RunTimeGetter("0912", false),
-        false
-      )
-    ).toBe(100);
-  });
-  it("max score, only pushup waiver", () => {
-    expect(
-      FinalScore(
-        pushUpsGetter(0, true),
-        true,
-        SitUpsGetter(58, false),
-        false,
-        RunTimeGetter("0912", false),
-        false
-      )
-    ).toBe(100);
-  });
-  it("max score, only situps and run waiver", () => {
-    expect(
-      FinalScore(
-        pushUpsGetter(67, false),
-        false,
-        SitUpsGetter(0, true),
-        true,
-        RunTimeGetter("0912", true),
-        true
-      )
-    ).toBe(100);
-  });
-  it("max score, only pushups and run waiver", () => {
-    expect(
-      FinalScore(
-        pushUpsGetter(0, true),
-        true,
-        SitUpsGetter(58, false),
-        false,
-        RunTimeGetter("", true),
-        true
-      )
-    ).toBe(100);
-  });
-  it("max score, only situps and pushup waiver", () => {
-    expect(
-      FinalScore(
-        pushUpsGetter(0, true),
-        true,
-        SitUpsGetter(0, true),
-        true,
-        RunTimeGetter("0912", false),
-        false
-      )
-    ).toBe(100);
-  });
-  it("max score, all waivers", () => {
-    expect(
-      FinalScore(
-        pushUpsGetter(0, true),
-        true,
-        SitUpsGetter(0, true),
-        true,
-        RunTimeGetter("", true),
-        true
-      )
-    ).toBe(100);
-  });
-  it("80 points, no waivers", () => {
-    expect(
-      FinalScore(
-        pushUpsGetter(35, false),
-        false,
-        SitUpsGetter(41, false),
-        false,
-        RunTimeGetter("0912", false),
-        false
-      )
-    ).toBe(80);
-  });
-  it("80 points, only situps waiver", () => {
-    expect(
-      FinalScore(
-        pushUpsGetter(35, false),
-        false,
-        SitUpsGetter(0, true),
-        true,
-        RunTimeGetter("0912", false),
-        false
-      )
-    ).toBe(88.75);
-  });
-  it("80 points, only pushups waiver", () => {
-    expect(
-      FinalScore(
-        pushUpsGetter(0, true),
-        true,
-        SitUpsGetter(41, false),
-        false,
-        RunTimeGetter("0912", false),
-        false
-      )
-    ).toBe(86.25);
-  });
-}); */

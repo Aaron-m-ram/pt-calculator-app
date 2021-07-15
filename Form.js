@@ -1,6 +1,7 @@
 /* VARIABLES */
 import moment from 'moment';
 var format = 'mm:ss' //format for moments
+/* console.log("moment version: " + moment.version) */
 
 /************* BIG DATABASE ******************/
 /* ***************************************** */
@@ -72,6 +73,7 @@ let mSuScoreSheet17_24 = [
    ]; // sit up scoresheet
 
 var mRtScoreSheet17_24 = [
+    /* {timerR: moment('00:00'), f} */
     {timeR: moment('09:13', format), points: 60},
     {timeR: moment('09:35', format), points: 59.5},
     {timeR: moment('09:46', format), points: 59},
@@ -1551,11 +1553,14 @@ function myfunction(){
     var gridValues = [];
     var waiverValue = [];
 
+    console.log(getInputs);
     /****** Parse the inputs and changed them into correct types ******/
     for(var i = 0; i<getInputs.length; i++){
         gridValues.push(getInputs[i].value)
     }
     //console.log(gridValues);
+    console.log(gridValues);
+
     var age =parseInt(gridValues[1]);
     var minutes = parseInt(gridValues[2]);
     var seconds = parseInt(gridValues[3]);
@@ -1574,18 +1579,18 @@ function myfunction(){
     
     
     /****** runs each function to get the score and age ******/
-    console.log(ageGetter(age));
-    var runScore = runGetter(newRunTime);
-    var pushUpsScore = pushUpsGetter(pushUps);
-    var sitUpsScore = sitUpsGetter(sitUps);
-
+    //console.log(ageGetter(age));
+    var runScore = runGetter(newRunTime, mRtScoreSheet17_24);
+    var pushUpsScore = pushUpsGetter(pushUps, mPuScoreSheet17_24);
+    var sitUpsScore = sitUpsGetter(sitUps, mSuScoreSheet17_24);
+    console.log("run: " + runScore + "pushups: " + pushUpsScore + "situps: "+ sitUpsScore);
     //console.log("runscore: "+ runScore+ "\npushupscore: " + pushUpsScore+ "\nsitupscore: " + sitUpsScore);
     /****** Goes through the waiver and checks if it is true or false ******/ 
     for(var i = 0; i<getWaiver.length; i++){
         waiverValue.push(getWaiver[i].checked)
     }
     console.log(waiverValue);
-
+    console.log("right before the final score")
     console.log(finalScore(pushUpsScore,sitUpsScore, runScore, waiverValue));
 
 }
@@ -1658,13 +1663,6 @@ function ageGetter(inputAge, inputGender) {
   
   };
 
-/* function GenderGetter(Gender) {
-    if (Gender === true) {
-        return 'Male';
-    } else if (Gender === false) {
-        return 'Female';
-    }
-} */
 function pushUpsGetter(pushUps, scoreSheet) {
     if(pushUps < scoreSheet[0].count || pushUps == null || pushUps == undefined){
         return 0
@@ -1700,14 +1698,19 @@ function sitUpsGetter(sitUps, scoreSheet){
   };
 
 function runGetter(runScore, runScoreSheet){
-    let score = 0;
-    for(var i = 0; i <= runScoreSheet.length; i++){
-        if(runScore.isBefore(runScoreSheet[i].timeR)){
-            score = runScoreSheet[i].points;
-            break;
+    /* let score = 0; */
+    if(runScore == '1626256800000' || isNaN(runScore) === true){
+        return 0;
+    } 
+    else  {
+        for(var i = 0; i <= runScoreSheet.length; i++){
+            if(runScore.isBefore(runScoreSheet[i].timeR)){
+                let score = runScoreSheet[i].points;
+                return score;
+            }
         }
     }
-    return score;
+    /* return score; */
 };
 
 function finalScore(PushUpsGetter, SitUpsGetter, RunTimeGetter, waiver){
@@ -1774,6 +1777,43 @@ export {
     mPuScoreSheet60,
     mSuScoreSheet60,
     mRtScoreSheet60,
+
+    fPuScoreSheet17_24,
+    fSuScoreSheet17_24,
+    fRtScoreSheet17_24,
+
+    fPuScoreSheet25_29,
+    fSuScoreSheet25_29,
+    fRtScoreSheet25_29,
+
+    fPuScoreSheet30_34,
+    fSuScoreSheet30_34,
+    fRtScoreSheet30_34,
+
+    fPuScoreSheet35_39,
+    fSuScoreSheet35_39,
+    fRtScoreSheet35_39,
+
+    fPuScoreSheet40_44,
+    fSuScoreSheet40_44,
+    fRtScoreSheet40_44,
+
+    fPuScoreSheet45_49,
+    fSuScoreSheet45_49,
+    fRtScoreSheet45_49,
+
+    fPuScoreSheet50_54,
+    fSuScoreSheet50_54,
+    fRtScoreSheet50_54,
+
+    fPuScoreSheet55_59,
+    fSuScoreSheet55_59,
+    fRtScoreSheet55_59,
+
+    fPuScoreSheet60,
+    fSuScoreSheet60,
+    fRtScoreSheet60,
+
     //GenderGetter,
     pushUpsGetter,
     sitUpsGetter,

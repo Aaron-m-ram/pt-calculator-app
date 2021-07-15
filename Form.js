@@ -1,5 +1,5 @@
 /* VARIABLES */
-import moment from 'moment';
+//import moment from 'moment';
 var format = 'mm:ss' //format for moments
 /* console.log("moment version: " + moment.version) */
 
@@ -1560,7 +1560,7 @@ function myfunction(){
     }
     //console.log(gridValues);
     console.log(gridValues);
-
+    var gender = gridValues[0];
     var age =parseInt(gridValues[1]);
     var minutes = parseInt(gridValues[2]);
     var seconds = parseInt(gridValues[3]);
@@ -1577,12 +1577,14 @@ function myfunction(){
     var runTime = minutes +":" + seconds;
     var newRunTime = moment(runTime,format);
     
-    
+    var scoreSheetArr = ageGetter(age, gender);
+    console.log(scoreSheetArr);
+
     /****** runs each function to get the score and age ******/
     //console.log(ageGetter(age));
-    var runScore = runGetter(newRunTime, mRtScoreSheet17_24);
-    var pushUpsScore = pushUpsGetter(pushUps, mPuScoreSheet17_24);
-    var sitUpsScore = sitUpsGetter(sitUps, mSuScoreSheet17_24);
+    var runScore = runGetter(newRunTime, scoreSheetArr[2]);
+    var pushUpsScore = pushUpsGetter(pushUps, scoreSheetArr[0]);
+    var sitUpsScore = sitUpsGetter(sitUps, scoreSheetArr[1]);
     console.log("run: " + runScore + "pushups: " + pushUpsScore + "situps: "+ sitUpsScore);
     //console.log("runscore: "+ runScore+ "\npushupscore: " + pushUpsScore+ "\nsitupscore: " + sitUpsScore);
     /****** Goes through the waiver and checks if it is true or false ******/ 
@@ -1600,7 +1602,7 @@ function myfunction(){
 function ageGetter(inputAge, inputGender) {
     var scoreSheetArr = [];
     
-   if(inputGender == 'male') {
+   if(inputGender == 'false') {
       if (inputAge < 25) {
         scoreSheetArr.push(mPuScoreSheet17_24, mSuScoreSheet17_24, mRtScoreSheet17_24);
           return scoreSheetArr;

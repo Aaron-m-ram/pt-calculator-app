@@ -1553,13 +1553,12 @@ function myfunction(){
     var gridValues = [];
     var waiverValue = [];
 
-    console.log(getInputs);
+
     /****** Parse the inputs and changed them into correct types ******/
     for(var i = 0; i<getInputs.length; i++){
         gridValues.push(getInputs[i].value)
     }
     //console.log(gridValues);
-    console.log(gridValues);
     var gender = gridValues[0];
     var age =parseInt(gridValues[1]);
     var minutes = parseInt(gridValues[2]);
@@ -1578,20 +1577,20 @@ function myfunction(){
     var newRunTime = moment(runTime,format);
     
     var scoreSheetArr = ageGetter(age, gender);
-    console.log(scoreSheetArr);
-
+    //console.log(scoreSheetArr);
+    console.log("pushups: "+ pushUps+ " situps: "+sitUps);
     /****** runs each function to get the score and age ******/
     //console.log(ageGetter(age));
     var runScore = runGetter(newRunTime, scoreSheetArr[2]);
     var pushUpsScore = pushUpsGetter(pushUps, scoreSheetArr[0]);
     var sitUpsScore = sitUpsGetter(sitUps, scoreSheetArr[1]);
-    console.log("run: " + runScore + "pushups: " + pushUpsScore + "situps: "+ sitUpsScore);
+    console.log("runScore: " + runScore + " pushupScore: " + pushUpsScore + " situpScore: "+ sitUpsScore);
     //console.log("runscore: "+ runScore+ "\npushupscore: " + pushUpsScore+ "\nsitupscore: " + sitUpsScore);
     /****** Goes through the waiver and checks if it is true or false ******/ 
     for(var i = 0; i<getWaiver.length; i++){
         waiverValue.push(getWaiver[i].checked)
     }
-    console.log(waiverValue);
+    //console.log(waiverValue);
     console.log("right before the final score")
     console.log(finalScore(pushUpsScore,sitUpsScore, runScore, waiverValue));
 
@@ -1666,10 +1665,12 @@ function ageGetter(inputAge, inputGender) {
   };
 
 function pushUpsGetter(pushUps, scoreSheet) {
+    console.log("pushups from pushupsGetter"+ pushUps);
     if(pushUps < scoreSheet[0].count || pushUps == null || pushUps == undefined){
+
         return 0
     }
-    else if(pushUps > scoreSheet[0].count){
+    else if(pushUps > scoreSheet[scoreSheet.length - 1].count){
         return 20
     }
     else{
@@ -1687,7 +1688,7 @@ function sitUpsGetter(sitUps, scoreSheet){
     if(sitUps < scoreSheet[0].count || sitUps == null || sitUps == undefined){
         return 0
     }
-    else if(sitUps > scoreSheet[0].count){
+    else if(sitUps > scoreSheet[scoreSheet.length - 1].count){
         return 20
     }
     else{

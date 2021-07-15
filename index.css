@@ -29,7 +29,7 @@ h1{
 }
  .grid-item {
   /* border: 5px solid #025172; */
-  border: 3px solid pink;
+  border: 3px solid #025172;
  /*  background-color: indianred;
   text-align: left; */
  }
@@ -104,7 +104,7 @@ input[type="checkbox"] {
 
 
 .grid-item.waiver {
-  display: flex;
+  display: grid;
   align-items: center;
 }
 input[type="radio"] {
@@ -120,9 +120,9 @@ input[type="checkbox"] {
 .waiverLabel {
   position: relative;
   margin-top: 10px;
-  margin-right: 1em;
-  padding-left: 2em;
-  padding-right: 1em;
+  margin-right: 0.5em;
+  padding-left: 1.5em;
+  padding-right: 0.5em;
   line-height: 2;
   cursor: pointer;
   color: white;
@@ -142,14 +142,13 @@ input[type="checkbox"] {
 }
 /* Checked */
 input[type="radio"]:checked + .waiverLabel {
-  padding-left: 1em;
+  padding-left: 0.5em;
   background: #99050abf;
   color: white;
   border-radius: 0.25em;
-  margin-bottom: 10px;
 }
 input[type="checkbox"]:checked + .waiverLabel {
-  padding-left: 1em;
+  padding-left: 0.5em;
   background: #99050abf;
   color: white;
   border-radius: 0.25em;
@@ -177,8 +176,14 @@ input[type="checkbox"]:checked + .waiverLabel:before {
 
 
 .label{
-  margin-top: 30px;
+  margin-top: 24px;
   float: right;
+  color: whitesmoke;
+  font-weight: bolder;
+}
+.runWalkLabel{
+  margin-top: 69px;
+  float:right;
   color: whitesmoke;
   font-weight: bolder;
 }
@@ -192,7 +197,7 @@ input[type="checkbox"]:checked + .waiverLabel:before {
 }
 
 .input{
-  margin-top: 25px;
+  margin-top: 18px;
   padding: 9px; 
   border: solid 1px #282f8a; 
   outline: 0; 
@@ -208,7 +213,7 @@ input[type="checkbox"]:checked + .waiverLabel:before {
 /* I need the boxes smaller for time that is why there are two inputs */
 .inputTime{
   padding: 9px; 
-  margin-top: 25px;
+  margin-top: 63px;
   border: solid 1px #282f8a; 
   outline: 0; 
   background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #59abb9), to(#FFFFFF)); 
@@ -222,7 +227,7 @@ input[type="checkbox"]:checked + .waiverLabel:before {
 
 .walkTime{
   padding: 9px; 
-  margin-top: 25px;
+  margin-top: 63px;
   border: solid 1px #5e5959; 
   outline: 0; 
   /*background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #59abb9), to(#FFFFFF)); */
@@ -235,7 +240,7 @@ input[type="checkbox"]:checked + .waiverLabel:before {
 }
 
 .waiverCheckedInput{
-  margin-top: 25px;
+  margin-top: 18px;
   padding: 9px; 
   border: solid 1px #5e5959; 
   outline: 0; 

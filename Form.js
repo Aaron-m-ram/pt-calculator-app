@@ -81,14 +81,101 @@ function myfunction(){
 
 
 
+//run/walk waiver === true makes run time go gray
+var exemptClick = document.getElementById("Exempt");
+var walkTimeClick = document.getElementById("WalkTime");
+var runTimeClick = document.getElementById("RunTime");
+exemptClick.addEventListener('click', exemptRadioChanged);
+walkTimeClick.addEventListener('click',walkRadioChanged);
+runTimeClick.addEventListener('click', runRadioChanged);
+//checks waiver if checked removes old class(walkTime) adds new class(runWaiver)
+// if not checked removes new class(runWaiver) adds old class(walkTime)
+function exemptRadioChanged(){
+    if(exemptClick.click){
+        var removeExemptMinsOldClass = document.getElementById("minutesInput8").classList.remove('inputTime');
+        var removeExemptSecsOldClass = document.getElementById("secondsInput8").classList.remove('inputTime');
+        var disableTime = document.getElementById("minutesInput8").disabled = true;
+        var disableTime = document.getElementById("secondsInput8").disabled = true;
+        addNewRunWalkClassFunc();
+    } else {
+        return null;
+    }
+};
+function walkRadioChanged(){
+    if (walkTimeClick.click){
+        var removeWalkMinsNewClass = document.getElementById("minutesInput8").classList.remove('walkTime');
+        var removeWalkSecsNewClass = document.getElementById("secondsInput8").classList.remove('walkTime');
+        var enableWalkMins = document.getElementById("minutesInput8").disabled = false;
+        var enableWalkSecs = document.getElementById("secondsInput8").disabled = false;
+        returnOldRunWalkClass();
+    } else {
+        return null;
+    }
+};
+function runRadioChanged(){
+    if (runTimeClick.click){
+        var removeRunMinsNewClass = document.getElementById("minutesInput8").classList.remove('walkTime');
+        var removeRunSecsNewClass = document.getElementById("secondsInput8").classList.remove('walkTime');
+        var enableRunMins = document.getElementById("minutesInput8").disabled = false;
+        var enableRunSecs = document.getElementById("secondsInput8").disabled = false;
+        returnOldRunWalkClass();
+    } else{
+        return null;
+    }
+}
+function addNewRunWalkClassFunc(){
+    var addRunWalkMinsNewClass = document.getElementById("minutesInput8").classList.add('walkTime');
+    var addRunWalkSecsNewClass = document.getElementById("secondsInput8").classList.add('walkTime');
+};
+function returnOldRunWalkClass(){
+    var addRunWalkMinsOldClass = document.getElementById("minutesInput8").classList.add('inputTime');
+    var addRunWalkSecsOldClass = document.getElementById("secondsInput8").classList.add('inputTime');
+};
 
-
-
-
-
-
-
-
+//pushup waiver === true makes pushup go gray
+var pushUpWaiverClick = document.getElementById("PushUpWaiver");
+pushUpWaiverClick.addEventListener('change', pushUpWaiverChanged);
+//checks waiver if checked removes old class(walkTime) adds new class(runWaiver)
+// if not checked removes new class(runWaiver) adds old class(walkTime)
+function pushUpWaiverChanged(){
+    if(pushUpWaiverClick.checked === true){
+        var removePushUpOldClass = document.getElementById("pushUpInput").classList.remove('input');
+        var disablePushUp = document.getElementById("pushUpInput").disabled = true;
+        addNewPushUpClassFunc();
+    } else{
+        var removePushUpNewClass = document.getElementById("pushUpInput").classList.remove('waiverCheckedInput');
+        var enableSecs = document.getElementById("pushUpInput").disabled = false;
+        returnOldPushUpClass();
+    }
+};
+function addNewPushUpClassFunc(){
+    var addPushUpNewClass = document.getElementById("pushUpInput").classList.add('waiverCheckedInput');
+}
+function returnOldPushUpClass(){
+    var addPushUpOldClass = document.getElementById("pushUpInput").classList.add('input');
+}
+//situp waiver === true makes situp go gray
+var sitUpWaiverClick = document.getElementById("SitUpWaiver");
+sitUpWaiverClick.addEventListener('change', sitUpWaiverChanged);
+//checks waiver if checked removes old class(walkTime) adds new class(runWaiver)
+// if not checked removes new class(runWaiver) adds old class(walkTime)
+function sitUpWaiverChanged(){
+    if(sitUpWaiverClick.checked === true){
+        var removeSitUpOldClass = document.getElementById("sitUpsInput").classList.remove('input');
+        var disableSitUps = document.getElementById("sitUpsInput").disabled = true;
+        addNewSitUpClassFunc();
+    } else{
+        var removeSitUpNewClass = document.getElementById("sitUpsInput").classList.remove('waiverCheckedInput');
+        var enableSecs = document.getElementById("sitUpsInput").disabled = false;
+        returnOldSitUpClass();
+    }
+};
+function addNewSitUpClassFunc(){
+    var addSitUpNewClass = document.getElementById("sitUpsInput").classList.add('waiverCheckedInput');
+}
+function returnOldSitUpClass(){
+    var addSitUpOldClass = document.getElementById("sitUpsInput").classList.add('input');
+}
 
 
 

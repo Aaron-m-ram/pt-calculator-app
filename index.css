@@ -21,7 +21,7 @@ h1{
   width: 500px;
   height: 550px;
   display:grid;
-  grid-template-columns: auto 179px auto;
+  grid-template-columns: auto 179px 170px;
   /* align-content: center; */
   border: 5px solid #025172;
   background-color: #025172;
@@ -29,7 +29,7 @@ h1{
 }
  .grid-item {
   /* border: 5px solid #025172; */
-  border: 3px solid #025172;
+  border: 3px solid pink;
  /*  background-color: indianred;
   text-align: left; */
  }
@@ -101,9 +101,16 @@ input[type="checkbox"] {
   background: #85808095;
   color: black;
 } */
+
+
 .grid-item.waiver {
   display: flex;
   align-items: center;
+}
+input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
 }
 input[type="checkbox"] {
   position: absolute;
@@ -134,12 +141,23 @@ input[type="checkbox"] {
   z-index: 1;
 }
 /* Checked */
+input[type="radio"]:checked + .waiverLabel {
+  padding-left: 1em;
+  background: #99050abf;
+  color: white;
+  border-radius: 0.25em;
+  margin-bottom: 10px;
+}
 input[type="checkbox"]:checked + .waiverLabel {
   padding-left: 1em;
   background: #99050abf;
   color: white;
   border-radius: 0.25em;
   margin-bottom: 10px;
+}
+input[type="radio"]:checked + .waiverLabel:before {
+  width: 100%;
+  height: 2em;
 }
 input[type="checkbox"]:checked + .waiverLabel:before {
   width: 100%;
@@ -200,6 +218,34 @@ input[type="checkbox"]:checked + .waiverLabel:before {
   -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
   border-radius:13px;
   width:62px;
+}
+
+.walkTime{
+  padding: 9px; 
+  margin-top: 25px;
+  border: solid 1px #5e5959; 
+  outline: 0; 
+  /*background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #59abb9), to(#FFFFFF)); */
+  background: #5e5959; 
+  box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
+  -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
+  -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
+  border-radius:13px;
+  width:62px;
+}
+
+.waiverCheckedInput{
+  margin-top: 25px;
+  padding: 9px; 
+  border: solid 1px #5e5959; 
+  outline: 0; 
+  /* background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #59abb9), to(#FFFFFF)); */ 
+  background: #5e5959; 
+  box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
+  -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
+  -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
+  border-radius:13px;
+  width:150px;
 }
 
 #Gender-Select{

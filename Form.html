@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+	
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+	<title>PT Calculator</title>
+  <link rel="stylesheet" href="index.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+</head>
+
+<body>
+  <h1>USSF/USAF PT Calculator</h1>
+  <div class="grid-container">
+    
+    <div class="grid-item" id="1">
+      <label class="label">
+        Gender:
+      </label>
+      </div>
+
+    <div class="grid-item" id="2">
+      <select class="input1" id="Gender-Select">
+        <option selected>Choose...</option>
+        <option value="true">Female</option>
+        <option value="false">Male</option>
+      </select>
+    </div>
+
+    <div class="grid-item" id="3"></div>
+    
+    <div class="grid-item" id="4">
+      <label class="label">
+        Age:
+      </label>
+    </div>
+
+
+    <div class="grid-item" id="5">
+      <input class="input" id="InputAge" min="0" placeholder="Enter your age" type="number">
+    </div>
+
+    <div class="grid-item" id="6"></div>
+    
+    <div class="grid-item" id="id7">
+      <label class="label">
+        Run/Walk Time:
+      </label>
+    </div>
+
+    <div class="grid-item" id="id8">
+      <!-- <label class="timeLabel">  MM:</label> -->
+      <input class="inputTime" type="number" id="minutesInput8" placeholder="Min" min=0 max=60>
+      <!-- <label class="timeLabel">  SS:</label> -->
+      <input class="inputTime" type="number" id="secondsInput8" placeholder="Sec" min=0 max=60>
+    </div>
+
+    <div class="grid-item waiver" id="waiver9">
+      <input type="radio" name="cb" id="RunTime" checked/>
+      <label class="waiverLabel"for="RunTime" >Run</label>
+      <input type="radio" name="cb" id="WalkTime" />
+      <label class="waiverLabel"for="WalkTime">Walk</label><br>
+      <input type="radio" name="cb" id="Exempt" />
+      <label class="waiverLabel"for="Exempt">Exempt?</label>
+    </div>
+
+    <div class="grid-item" id="id10">
+      <label class="label">
+        Sit Ups:
+      </label>
+    </div>
+
+    <div class="grid-item" id="id11">
+      <input class="input" type="number"  id="sitUpsInput" placeholder="Enter Sit Ups" min=0>
+    </div>
+
+    <div class="grid-item waiver" id="waiver12">
+      <input type="checkbox" name="cb" id="SitUpWaiver" />
+      <label class="waiverLabel"for="SitUpWaiver">Exempt?</label>
+    </div>
+
+    <div class="grid-item" id="id13">
+      <label class="label">
+        Push Ups:
+      </label>
+    </div>
+
+    <div class="grid-item" id="id14">
+      <input class="input" type="number" id="pushUpInput" placeholder="Enter Push Ups" min=0>
+    </div>
+
+    <div class="grid-item waiver" id="waiver15">
+      <input type="checkbox" name="cb" id="PushUpWaiver" />
+      <label class="waiverLabel"for="PushUpWaiver">Exempt?</label>
+    </div>
+
+    <div class="grid-item" id="id16"></div>
+
+    <div class="grid-item"id="id17">
+      <button type="submit" id="SubmitBtn">Submit</button>
+    </div>
+    
+    <div class="grid-item" id="id18"></div> 
+     
+  </div>
+</body>
+<script type="module" src="Form.js"></script>
+</html>

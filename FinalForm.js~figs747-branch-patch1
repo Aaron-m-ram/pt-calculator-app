@@ -1,9 +1,29 @@
 // Submit button click //
 
 var inputBTN = document.getElementById("SubmitBtn");
-inputBTN.addEventListener('click', myfunction);
+inputBTN.addEventListener('click', () => {
+    myFunc();
+    myfunction();
+    
+});
 
-// takes input for runtime, situps and pushups then adds them to array // 
+// takes input for age // 
+
+function myFunc(){
+    var y = document.getElementById("input age");
+     var text = [];
+     var j;
+     for (j = 0; j < y.length ;j++) {
+       text.push(y.elements[j].value);
+     };
+
+     // turns age from string to number //
+
+    var ageNum = parseInt(text[0]);
+     // console.log(ageNum); **test**
+    };
+
+// takes input for runtime, situps and pushups then adds them to array //
 
 function myfunction(){
    var x = document.getElementById("input name");
@@ -11,7 +31,7 @@ function myfunction(){
     var i;
     for (i = 0; i < x.length -1 ;i++) {
       text.push(x.elements[i].value);
-    }
+    };
     
     // Turns sit ups and push ups to number from string //
 
@@ -39,6 +59,7 @@ function myfunction(){
     }
     else {
         return null;
+    
     }
 }
 
@@ -54,8 +75,7 @@ function girl() {
 function func2(num1, num2){
     totalscore = num1 += num2;
     return totalscore;
-}
+}; 
 
-
-    //console.log(text); **test**
-    //document.getElementById("SubmitBtn").innerHTML = text; **test**
+//console.log(text); **test**
+//document.getElementById("SubmitBtn").innerHTML = text;

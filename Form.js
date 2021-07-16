@@ -1,8 +1,8 @@
 /* VARIABLES */
 
-//import moment from 'moment';
+import moment from 'moment';
 var format = 'mm:ss' //format for moments
-/* console.log("moment version: " + moment.version) */
+console.log("moment version: " + moment.version)
 
 /************* BIG DATABASE ******************/
 /* ***************************************** */
@@ -1595,10 +1595,11 @@ function myfunction(){
     for(var i = 0; i<getWaiver.length; i++){
         waiverValue.push(getWaiver[i].checked)
     }
-    console.log(waiverValue);
+    let exemptWaiver = [waiverValue[2],waiverValue[3], waiverValue[4]];
     console.log(getWaiver);
+    console.log(exemptWaiver);
     console.log("right before the final score")
-    console.log(finalScore(pushUpsScore,sitUpsScore, runScore, waiverValue));
+    console.log(finalScore(pushUpsScore,sitUpsScore, runScore, exemptWaiver));
 
 }
 
@@ -1668,10 +1669,10 @@ function ageGetter(inputAge, inputGender) {
   
   };
   
-  };
+};
 
 function pushUpsGetter(pushUps, scoreSheet) {
-    console.log("pushups from pushupsGetter"+ pushUps);
+    //console.log("pushups from pushupsGetter"+ pushUps);
     if(pushUps < scoreSheet[0].count || pushUps == null || pushUps == undefined || isNaN(pushUps) === true){
 
         return 0
@@ -1722,34 +1723,37 @@ function runGetter(runScore, runScoreSheet){
 
 function finalScore(PushUpsGetter, SitUpsGetter, RunTimeGetter, waiver){
     var TotalScore = PushUpsGetter + SitUpsGetter + RunTimeGetter;
-    if (waiver[4] == true && waiver[3] == false && waiver[2] == false) {
-        TotalScore = (TotalScore/ 80) * 100
-        return TotalScore;
-    } else if (waiver[4] == true && waiver[3] == true && waiver[2] == false) {
-        TotalScore = (TotalScore / 60) * 100
-        return TotalScore;
-    } else if (waiver[4] == true && waiver[3] == true && waiver[2] == true) {
-        TotalScore = (TotalScore / 0) * 100
-        return TotalScore;
-    } else if (waiver[4] == true && waiver[3] == false && waiver[2] == true) {
-        TotalScore = (TotalScore / 20) * 100
-        return TotalScore;
-    } else if (waiver[4] == false && waiver[3] == true && waiver[2] == false) {
+    if (waiver[2] == true && waiver[1] == false && waiver[0] == false) {
         TotalScore = (TotalScore / 80) * 100
         return TotalScore;
-    } else if (waiver[4] == false && waiver[3] == true && waiver[2] == true) {
+    } else if (waiver[2] == true && waiver[1] == true && waiver[0] == false) {
+        TotalScore = (TotalScore / 60) * 100
+        return TotalScore;
+    } else if (waiver[2] == true && waiver[1] == true && waiver[0] == true) {
+        TotalScore = (TotalScore / 0) * 100
+        return TotalScore;
+    } else if (waiver[2] == true && waiver[1] == false && waiver[0] == true) {
         TotalScore = (TotalScore / 20) * 100
         return TotalScore;
-    } else if (waiver[4] == false && waiver[3] == false && waiver[2] == true) {
+    } else if (waiver[2] == false && waiver[1] == true && waiver[0] == false) {
+        TotalScore = (TotalScore / 80) * 100
+        return TotalScore;
+    } else if (waiver[2] == false && waiver[1] == true && waiver[0] == true) {
+        TotalScore = (TotalScore / 20) * 100
+        return TotalScore;
+    } else if (waiver[2] == false && waiver[1] == false && waiver[0] == true) {
         TotalScore = (TotalScore / 40) * 100
         return TotalScore;
     }
-    return TotalScore;
+    
 }// Scoresheets //
 
+//console("testing final score"+ finalScore(0, 20, 60, [true, false, false]))
 
 
 
+
+document.addEventListener('DOMContentLoaded', function () {
 
 
 
@@ -1859,7 +1863,7 @@ function returnOldSitUpClass(){
 
 
 
-
+});
 
 
 

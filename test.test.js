@@ -5,7 +5,7 @@
 
 
 import { describe, expect, it } from "@jest/globals";
-//import moment from 'moment';
+import moment from 'moment';
 var format = 'mm:ss';
 import {
   mPuScoreSheet17_24,
@@ -1599,4 +1599,7 @@ describe("finalScore", () => {
     expect(finalScore(18,15,35, [false,false,false])).toEqual(68)
   });
   //final score with one waiver
+  it('returns a 62.5 when given an age', () => {
+    expect(finalScore(0,20,60, [true, false, false])).toEqual(100)
+  })
 });

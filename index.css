@@ -206,7 +206,7 @@ input[type="checkbox"]:checked + .waiverLabel:before {
   box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
   -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
   -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
-  border-radius:13px;
+  border-radius:10px;
   width:150px;
 }
 
@@ -221,7 +221,7 @@ input[type="checkbox"]:checked + .waiverLabel:before {
   box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
   -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
   -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
-  border-radius:13px;
+  border-radius:10px;
   width:62px;
 }
 
@@ -253,20 +253,20 @@ input[type="checkbox"]:checked + .waiverLabel:before {
   width:150px;
 }
 
-#Gender-Select{
+ #Gender-Select{
+  margin-top: 18px;
   padding: 9px; 
-  margin-top: 25px;
-  /* border: solid 1px #282f8a; */ 
+  border: solid 4px #282f8a; 
   outline: 0; 
-  background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #025172), to(#FFFFFF)); 
+  background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #59abb9), to(#FFFFFF)); 
   background: -moz-linear-gradient(top, #FFFFFF, #59abb9 1px, #FFFFFF 25px); 
   box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
   -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
   -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
-  border-radius:13px;
-  width:173px;
-
-}
+  border-radius: 10px;
+  width: 170px;
+  height: 33px;
+} 
 
 /* Waiver both the text and the boxes - not working for some reason*/
 /* #9,#12,#15{

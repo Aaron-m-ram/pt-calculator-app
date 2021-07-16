@@ -14,23 +14,23 @@
   <h1>USSF/USAF PT Calculator</h1>
   <div class="grid-container">
     
-    <div class="grid-item" id="1">
+    <div class="grid-item" id="id1">
       <label class="label">
         Gender:
       </label>
       </div>
 
-    <div class="grid-item" id="2">
-      <select class="input1" id="Gender-Select">
+    <div class="grid-item" id="id2">
+      <select class="input" id="Gender-Select">
         <option selected>Choose...</option>
         <option value="true">Female</option>
         <option value="false">Male</option>
       </select>
     </div>
 
-    <div class="grid-item" id="3"></div>
+    <div class="grid-item" id="id3"></div>
     
-    <div class="grid-item" id="4">
+    <div class="grid-item" id="id4">
       <label class="label">
         Age:
       </label>
@@ -51,17 +51,17 @@
 
     <div class="grid-item" id="id8">
       <!-- <label class="timeLabel">  MM:</label> -->
-      <input class="inputTime" type="number" id="minutesInput8" placeholder="Min" min=0 max=60>
+      <input class="input inputTime" type="number" id="minutesInput8" placeholder="Min" min=0 max=60>
       <!-- <label class="timeLabel">  SS:</label> -->
-      <input class="inputTime" type="number" id="secondsInput8" placeholder="Sec" min=0 max=60>
+      <input class="input inputTime" type="number" id="secondsInput8" placeholder="Sec" min=0 max=60>
     </div>
 
     <div class="grid-item waiver" id="waiver9">
-      <input type="radio" name="cb" id="RunTime" checked/>
+      <input class="waiverInput" type="radio" name="cb" id="RunTime" checked/>
       <label class="waiverLabel"for="RunTime" >Run</label>
-      <input type="radio" name="cb" id="WalkTime" />
+      <input class="waiverInput" type="radio" name="cb" id="WalkTime" />
       <label class="waiverLabel"for="WalkTime">Walk</label>
-      <input type="radio" name="cb" id="Exempt" />
+      <input class="waiverInput" type="radio" name="cb" id="Exempt" />
       <label class="waiverLabel"for="Exempt">Exempt?</label>
     </div>
 
@@ -76,7 +76,7 @@
     </div>
 
     <div class="grid-item waiver" id="waiver12">
-      <input type="checkbox" name="cb" id="SitUpWaiver" />
+      <input class="waiverInput" type="checkbox" name="cb" id="SitUpWaiver" />
       <label class="waiverLabel"for="SitUpWaiver">Exempt?</label>
     </div>
 
@@ -91,7 +91,7 @@
     </div>
 
     <div class="grid-item waiver" id="waiver15">
-      <input type="checkbox" name="cb" id="PushUpWaiver" />
+      <input class="waiverInput" type="checkbox" name="cb" id="PushUpWaiver" />
       <label class="waiverLabel"for="PushUpWaiver">Exempt?</label>
     </div>
 

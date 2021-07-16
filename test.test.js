@@ -1592,14 +1592,74 @@ describe("ageGetter", () => {
     });
 });
 
-// *** Finale score test *** //
+// *** Finale score = 0 || 100 test *** //
 describe("finalScore", () => {
-  // Final score with no waviers 
-  it('returns 68 when given an age', () => {
-    expect(finalScore(18,15,35, [false,false,false])).toEqual(68)
+  // No waviers 
+  it('returns 100 when there is no waivers', () => {
+    expect(finalScore(60,20,20, [false,false,false])).toEqual(100)
   });
-  //final score with one waiver
-  it('returns a 62.5 when given an age', () => {
-    expect(finalScore(0,20,60, [true, false, false])).toEqual(100)
-  })
+  // Waiver for run
+  it('returns a 100 when there is a run waiver', () => {
+    expect(finalScore(0,20,20, [false, false, true, false, false])).toEqual(100)
+  });
+  // Waiver for run and sit ups
+  it('returns 100 when there is a run and situp waiver', () => {
+    expect(finalScore(0,0,20, [false, false, true, true, false])).toEqual(100)
+  });
+  // Waiver for sit ups
+  it('returns a 100 when there is a sit ups waiver', () => {
+    expect(finalScore(60,0,20, [true, false, false, true, false])).toEqual(100)
+  });
+  // Waiver for run, sit ups and push ups
+  it('returns 0 when there is all waivers', () => {
+    expect(finalScore(0,0,0, [false,false,true,true,true])).toEqual(0)
+  });
+  // Waiver for run and push ups
+  it('returns 100 when there is a run and push up waiver', () => {
+    expect(finalScore(0,20,0, [false,false,true,false,true])).toEqual(100)
+  });
+  // Waiver for sit ups and push ups
+  it('returns 100 when there is a sit up and push up waiver', () => {
+    expect(finalScore(60,0,0, [true,false,false,true,true])).toEqual(100)
+  });
+  // waiver for push ups
+  it('returns 100 when there is a push up waiver', () => {
+    expect(finalScore(60,20,0, [true,false,false,false,true])).toEqual(100)
+  });
+});
+
+// *** Final score with random numbers *** //
+describe("finalScore", () => {
+  // No waviers 
+  it('returns 68 when there is no waivers', () => {
+    expect(finalScore(35,15,18, [false,false,false])).toEqual(68)
+  });
+  // Waiver for run
+  it('returns 75 when there is a run waiver', () => {
+    expect(finalScore(0,17,13, [false, false, true, false, false])).toEqual(75)
+  });
+  // Waiver for run and sit ups
+  it('returns 68 when there is a run and situp waiver', () => {
+    expect(finalScore(0,0,13.6, [false, false, true, true, false])).toEqual(68)
+  });
+  // Waiver for sit ups
+  it('returns a 82.75 when there is a sit ups waiver', () => {
+    expect(finalScore(48,0,18.2, [true, false, false, true, false])).toEqual(82.75)
+  });
+  // Waiver for run, sit ups and push ups
+  it('returns 0 when there is all waivers', () => {
+    expect(finalScore(0,0,0, [false,false,true,true,true])).toEqual(0)
+  });
+  // Waiver for run and push ups
+  it('returns 83 when there is a run and push up waiver', () => {
+    expect(finalScore(0,16.6,0, [false,false,true,false,true])).toEqual(83)
+  });
+  // Waiver for sit ups and push ups
+  it('returns 95 when there is a sit up and push up waiver', () => {
+    expect(finalScore(57,0,0, [true,false,false,true,true])).toEqual(95)
+  }); //try with 56 later
+  // waiver for push ups
+  it('returns 91.25 when there is a push up waiver', () => {
+    expect(finalScore(56,17,0, [true,false,false,false,true])).toEqual(91.25)
+  });
 });

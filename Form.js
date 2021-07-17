@@ -2,7 +2,7 @@
 
 //import moment from 'moment';
 var format = 'mm:ss' //format for moments
-console.log("moment version: " + moment.version)
+//console.log("moment version: " + moment.version)
 
 /************* BIG DATABASE ******************/
 /* ***************************************** */
@@ -1595,13 +1595,14 @@ function myfunction(){
     for(var i = 0; i<getWaiver.length; i++){
         waiverValue.push(getWaiver[i].checked)
     }
-    let exemptWaiver = [waiverValue[2],waiverValue[3], waiverValue[4]];
-    console.log(getWaiver);
-    console.log(exemptWaiver);
+    //let exemptWaiver = [waiverValue[2],waiverValue[3], waiverValue[4]];
+    //console.log(getWaiver);
+    //console.log(exemptWaiver);
+    console.log(waiverValue);
     console.log("right before the final score")
-    var fluff = finalScore(pushUpsScore,sitUpsScore, runScore, exemptWaiver)
+    var fluff = finalScore(pushUpsScore,sitUpsScore, runScore, waiverValue)
     console.log(fluff);
-    console.log(typeof fluff);
+    //console.log(typeof fluff);
     if(fluff < 75) {
       window.alert('Sorry, you failed with a unsatisfactory score of ' + fluff)
     } else if(fluff >= 75 && fluff < 90) {
@@ -1681,7 +1682,7 @@ function ageGetter(inputAge, inputGender) {
 };
 
 function pushUpsGetter(pushUps, scoreSheet) {
-    //console.log("pushups from pushupsGetter"+ pushUps);
+    //onsole.log("pushups from pushupsGetter"+ pushUps);
     if(pushUps < scoreSheet[0].count || pushUps == null || pushUps == undefined || isNaN(pushUps) === true){
 
         return 0
@@ -1793,7 +1794,6 @@ function finalScore(RunTimeGetter, SitUpsGetter, PushUpsGetter, waiver){
 
 
 function finalScore(runTimeGetter, sitUpsGetter, pushUpsGetter, waiver){
-  var finalScore = TotalScore;
   var TotalScore = runTimeGetter + sitUpsGetter + pushUpsGetter;
 // run with push/sit ups table
   if(waiver[0] == true) {
@@ -1809,6 +1809,7 @@ function finalScore(runTimeGetter, sitUpsGetter, pushUpsGetter, waiver){
           }
   // exempt push ups and sit ups
       else if(waiver[3] == true && waiver[4] == true){
+        console.log("i made it to exempt push ups and situps");
           TotalScore = (TotalScore / 60) * 100
           return TotalScore; 
       }
@@ -1856,7 +1857,7 @@ function finalScore(runTimeGetter, sitUpsGetter, pushUpsGetter, waiver){
 
 // Scoresheets //
 
-console.log("testing final score"+ finalScore(0, 20, 60, [true, false, false]));
+//console.log("testing final score"+ finalScore(0, 20, 60, [true, false, false]));
 
 
 

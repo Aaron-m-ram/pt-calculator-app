@@ -1599,8 +1599,17 @@ function myfunction(){
     console.log(getWaiver);
     console.log(exemptWaiver);
     console.log("right before the final score")
-    console.log(finalScore(pushUpsScore,sitUpsScore, runScore, exemptWaiver));
-
+    var fluff = finalScore(pushUpsScore,sitUpsScore, runScore, exemptWaiver)
+    console.log(fluff);
+    console.log(typeof fluff);
+    if(fluff < 75) {
+      window.alert('Sorry, you failed with a unsatisfactory score of ' + fluff)
+    } else if(fluff >= 75 && fluff < 90) {
+      window.alert('You passed with a satisfactory score of ' + fluff)
+    } else if(fluff >= 90) {
+      window.alert('Hooray, you passed with an excellent score of ' + fluff)
+    }
+    location.reload();
 }
 
 
@@ -1784,6 +1793,7 @@ function finalScore(RunTimeGetter, SitUpsGetter, PushUpsGetter, waiver){
 
 
 function finalScore(runTimeGetter, sitUpsGetter, pushUpsGetter, waiver){
+  var finalScore = TotalScore;
   var TotalScore = runTimeGetter + sitUpsGetter + pushUpsGetter;
 // run with push/sit ups table
   if(waiver[0] == true) {
@@ -2053,3 +2063,4 @@ export {
     runGetter,
     finalScore
 };
+

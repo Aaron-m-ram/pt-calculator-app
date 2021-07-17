@@ -1,6 +1,6 @@
 /* VARIABLES */
 
-import moment from 'moment';
+//import moment from 'moment';
 var format = 'mm:ss' //format for moments
 console.log("moment version: " + moment.version)
 
@@ -1721,6 +1721,20 @@ function runGetter(runScore, runScoreSheet){
     /* return score; */
 };
 
+function walkGetter (walkScore, walkScoreSheet) {
+  let zeroSaver = moment('00:01', format)
+  if(walkScore < zeroSaver || isNaN(walkScore) === true){
+    return 0;
+  } else {
+    for(var i = 0; i <= walkScoreSheet.length; i++){
+      if(walkScore.isBefore(walkScoreSheet[i].timeW)){
+        let walk = walkScoreSheet[i].points
+      }
+    }
+  }
+}
+
+/* ***************************************** Old finalScore Function *****************************************
 function finalScore(RunTimeGetter, SitUpsGetter, PushUpsGetter, waiver){
     var TotalScore = RunTimeGetter + SitUpsGetter + PushUpsGetter;
     // *** index 0 is for run, 1 is for walk, 2 is for exempt run, 3 is situps, 4 is push ups *** //
@@ -1735,13 +1749,13 @@ function finalScore(RunTimeGetter, SitUpsGetter, PushUpsGetter, waiver){
         return TotalScore;
     } 
     //exempt for situps
-    else if(waiver[0] == true && waiver[1] == false && waiver[2] == false && waiver[3] == true && waiver[4] === false) {
+    else if((waiver[0] == true && waiver[1] == false && waiver[2] == false && waiver[3] == true && waiver[4] === false ) || (waiver[0] == false && waiver[1] == true && waiver[2] == false && waiver[3] == true && waiver[4] === false)) {
         TotalScore = (TotalScore / 80) * 100
         return TotalScore;
     } 
     //exempt run, situps and pushups
     else if (waiver[0] == false && waiver[1] == false && waiver[2] == true && waiver[3] == true && waiver[4] == true) {
-        TotalScore = 0 /* Put alert to notify user action not allowed*/
+        TotalScore = 0 /// Put alert to notify user action not allowed
         return TotalScore;
     } 
     //exempt from run and pushups
@@ -1764,7 +1778,73 @@ function finalScore(RunTimeGetter, SitUpsGetter, PushUpsGetter, waiver){
       return TotalScore;
     };
 
-}// Scoresheets //
+} */ 
+
+
+
+
+function finalScore(runTimeGetter, sitUpsGetter, pushUpsGetter, waiver){
+  var TotalScore = runTimeGetter + sitUpsGetter + pushUpsGetter;
+// run with push/sit ups table
+  if(waiver[0] == true) {
+  // exempt sit ups  
+      if(waiver[3] == true && waiver[4] == false){
+          TotalScore = (TotalScore / 80) * 100
+          return TotalScore;
+      } 
+  // exempt push ups
+      else if (waiver[3] == false && waiver[4] == true){
+          TotalScore = (TotalScore / 80) * 100
+          return TotalScore;
+          }
+  // exempt push ups and sit ups
+      else if(waiver[3] == true && waiver[4] == true){
+          TotalScore = (TotalScore / 60) * 100
+          return TotalScore; 
+      }
+  }
+// walk with push/sit ups table
+  else if(waiver[1] == true){
+  // exempt sit ups
+      if(waiver[3] == true && waiver[4] == false){
+          TotalScore = (TotalScore / 80) * 100
+          return TotalScore;
+      }
+  // exempt push ups
+      else if(waiver[3] == false && waiver[4] == true) {
+          TotalScore = (TotalScore / 80) * 100
+          return TotalScore; 
+      }
+  // exempt push ups and sit ups
+      else if(waiver[3] == true && waiver[4] == true){
+          TotalScore = (TotalScore / 60) * 100
+          return TotalScore;
+      }
+  }
+// exempt run with push/sit ups table
+  else if(waiver[2] == true){
+  // exempt sit ups
+      if(waiver[3] == true && waiver[4] == false){
+          TotalScore = (TotalScore / 20) * 100
+          return TotalScore;
+      }
+  // exempt push ups
+      else if(waiver[3] == false && waiver[4] == true){ 
+          TotalScore = (TotalScore / 20) * 100
+          return TotalScore;
+      }
+  // exempt push ups and sit ups
+      else if(waiver[3] == true && waiver[4] == true){
+          TotalScore = 0 /* Put alert to notify user action not allowed*/
+          return TotalScore;
+      }
+  } else {
+      return TotalScore;
+  }
+};
+
+
+// Scoresheets //
 
 console.log("testing final score"+ finalScore(0, 20, 60, [true, false, false]));
 

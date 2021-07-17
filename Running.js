@@ -224,3 +224,111 @@ export {
     RunTimeGetter,
     FinalScore
 };
+
+
+
+
+
+function finalScore(RunTimeGetter, SitUpsGetter, PushUpsGetter, waiver){
+    var TotalScore = RunTimeGetter + SitUpsGetter + PushUpsGetter;
+    // *** index 0 is for run, 1 is for walk, 2 is for exempt run, 3 is situps, 4 is push ups *** //
+    //exempt run
+    if (waiver[0] == false && waiver[1] == false && waiver[2] == true && waiver[3] == false && waiver[4] == false) {
+        TotalScore = (TotalScore / 40) * 100
+        return TotalScore;
+      } 
+    //exempt run and situps
+    else if (waiver[0] == false && waiver[1] == false && waiver[2] == true && waiver[3] == true && waiver[4] == false) {
+        TotalScore = (TotalScore / 20) * 100
+        return TotalScore;
+    } 
+    //exempt for situps
+    else if((waiver[0] == true && waiver[1] == false && waiver[2] == false && waiver[3] == true && waiver[4] === false ) || (waiver[0] == false && waiver[1] == true && waiver[2] == false && waiver[3] == true && waiver[4] === false)) {
+        TotalScore = (TotalScore / 80) * 100
+        return TotalScore;
+    } 
+    //exempt run, situps and pushups
+    else if (waiver[0] == false && waiver[1] == false && waiver[2] == true && waiver[3] == true && waiver[4] == true) {
+        TotalScore = 0 /* Put alert to notify user action not allowed*/
+        return TotalScore;
+    } 
+    //exempt from run and pushups
+    else if (waiver[0] == false && waiver[1] == false && waiver[2] == true && waiver[3] == false && waiver[4] == true) {
+        TotalScore = (TotalScore / 20) * 100
+        return TotalScore;
+    } 
+    //exempt situps and pushups
+    else if (waiver[0] == true && waiver[1] == false && waiver[2] == false && waiver[3] == true && waiver[4] == true) {
+        TotalScore = (TotalScore / 60) * 100
+        return TotalScore;
+    } 
+    //exempt pushups
+    else if (waiver[0] == true && waiver[1] == false && waiver[2] == false && waiver[3] == false && waiver[4] == true) {
+        TotalScore = (TotalScore / 80) * 100 // fix the equation
+        return TotalScore;
+    } 
+    // no exemptions
+    else {
+      return TotalScore;
+    };
+}
+
+function finalScore(runTimeGetter, sitUpsGetter, pushUpsGetter, waiver){
+    var TotalScore = runTimeGetter + sitUpsGetter + pushUpsGetter;
+// run with push/sit ups table
+    if(waiver[0] == true) {
+    // exempt sit ups  
+        if(waiver[3] == true && waiver[4] == false){
+            TotalScore = (TotalScore / 80) * 100
+            return TotalScore;
+        } 
+    // exempt push ups
+        else if (waiver[3] == false && waiver[4] == true){
+            TotalScore = (TotalScore / 80) * 100
+            return TotalScore;
+            }
+    // exempt push ups and sit ups
+        else if(waiver[3] == true && waiver[4] == true){
+            TotalScore = (TotalScore / 60) * 100
+            return TotalScore; 
+        }
+    }
+// walk with push/sit ups table
+    else if(waiver[1] == true){
+    // exempt sit ups
+        if(waiver[3] == true && waiver[4] == false){
+            TotalScore = (TotalScore / 80) * 100
+            return TotalScore;
+        }
+    // exempt push ups
+        else if(waiver[3] == false && waiver[4] == true) {
+            TotalScore = (TotalScore / 80) * 100
+            return TotalScore; 
+        }
+    // exempt push ups and sit ups
+        else if(waiver[3] == true && waiver[4] == true){
+            TotalScore = (TotalScore / 60) * 100
+            return TotalScore;
+        }
+    }
+// exempt run with push/sit ups table
+    else if(waiver[2] == true){
+    // exempt sit ups
+        if(waiver[3] == true && waiver[4] == false){
+            TotalScore = (TotalScore / 20) * 100
+            return TotalScore;
+        }
+    // exempt push ups
+        else if(waiver[3] == false && waiver[4] == true){ 
+            TotalScore = (TotalScore / 20) * 100
+            return TotalScore;
+        }
+    // exempt push ups and sit ups
+        else if(waiver[3] == true && waiver[4] == true){
+            TotalScore = 0 /* Put alert to notify user action not allowed*/
+            return TotalScore;
+        }
+    } else {
+        return TotalScore;
+    }
+}

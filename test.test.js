@@ -5,7 +5,7 @@
 
 
 import { describe, expect, it } from "@jest/globals";
-import moment from 'moment';
+//import moment from 'moment';
 var format = 'mm:ss';
 import {
   mPuScoreSheet17_24,
@@ -977,7 +977,7 @@ describe("pushUpsGetter", () => {
 
 // *** male run time test *** //
 
-/* describe("runGetter", () => {
+describe("runGetter", () => {
     // male 17-24 //
     it('returns 60 when given less than 9:13', () => {
       expect(runGetter(moment('09:12', format), mRtScoreSheet17_24)).toBe(60)
@@ -1414,14 +1414,7 @@ describe("runGetter", () => {
   it('return 0 when given in undefined', () => {
     expect(runGetter(moment(undefined, format), fRtScoreSheet60)).toBe(0)
   });
-}); */
-
-
-/* describe("ageGetter", () => {
-    it('returns "17_24" when give a number below 25', () => {
-        expect(ageGetter(17)).toBe('17_24');
-    });
-}); */
+});
 
 /// *** Male ageGetter tester *** //
 

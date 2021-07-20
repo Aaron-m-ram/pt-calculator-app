@@ -1,17 +1,16 @@
 /* VARIABLES */
 
-import { run } from "jest";
+//import { run } from "jest";
 
-import moment from 'moment';
+//import moment from 'moment';
 var format = 'mm:ss' //format for moments
-//console.log("moment version: " + moment.version)
 
 /************* BIG DATABASE ******************/
 /* ***************************************** */
 /* ***************************************** */
 
 /* Male 17-24 */
-const mPuScoreSheet17_24 = [
+let mPuScoreSheet17_24 = [
     {count: 30, points: 1.0},
     {count: 31, points: 4.0},
     {count: 32, points: 7.0},
@@ -76,7 +75,6 @@ let mSuScoreSheet17_24 = [
    ]; // sit up scoresheet
 
 var mRtScoreSheet17_24 = [
-    /* {timerR: moment('00:00'), f} */
     {timeR: moment('09:13', format), points: 60.0},
     {timeR: moment('09:35', format), points: 59.5},
     {timeR: moment('09:46', format), points: 59.0},
@@ -386,7 +384,7 @@ let mRtScoreSheet35_39 = [
     {timeW: moment('59:59', format), points: 0.0}
   ]; //walk test Male 35-39
 
-  /* male 40-44 */
+/* male 40-44 */
 let mPuScoreSheet40_44 = [
     {count: 18, points: 1.0},
     {count: 19, points: 4.0},
@@ -474,7 +472,7 @@ let mRtScoreSheet40_44 = [
     {timeW: moment('59:59', format), points: 0.0}
   ]; //walk test Male 40-44
 
-  /* Male 45-49 */
+/* Male 45-49 */
 let mPuScoreSheet45_49 = [
     {count: 15, points: 1.0},
     {count: 16, points: 4.0},
@@ -566,7 +564,7 @@ let mRtScoreSheet45_49 = [
     {timeW: moment('59:59', format), points: 0.0}
   ]; //walk test Male 44-49
 
-  /* Male 50-54 */
+/* Male 50-54 */
 let mPuScoreSheet50_54 = [
     {count: 12, points: 1.0},
     {count: 13, points: 4.0},
@@ -1642,17 +1640,14 @@ function myfunction(){
     /****** Gets the inputs from the HTML format including waiver and the array variables ******/
     var getInputs = document.getElementsByClassName('input');
     var getWaiver = document.getElementsByClassName("waiverInput");
-    //console.log(getInputs.length);
     var gridValues = [];
     var waiverValue = [];
-    //console.log(waiverValue)
 
 
     /****** Parse the inputs and changed them into correct types ******/
     for(var i = 0; i<getInputs.length; i++){
         gridValues.push(getInputs[i].value)
     }
-    //console.log(gridValues);
     var gender = gridValues[0];
     var age =parseInt(gridValues[1]);
     var minutes = parseInt(gridValues[2]);
@@ -1668,19 +1663,11 @@ function myfunction(){
         seconds = '0'+ seconds;
     }
     var runTime = minutes +":" + seconds;
-    //console.log("Before moments: " + runTime);
     var newRunTime = moment(runTime,format);
-    //console.log("After moment: " + newRunTime);
     
     
     var scoreSheetArr = ageGetter(age, gender);
-    //console.log(scoreSheetArr);
-    //console.log("pushups: "+ pushUps+ " situps: "+sitUps);
     /****** runs each function to get the score and age ******/
-    //console.log(ageGetter(age));
-
-
-    //console.log("runScore: " + runScore + " pushupScore: " + pushUpsScore + " situpScore: "+ sitUpsScore);
     
     /****** Goes through the waiver and checks if it is true or false ******/ 
     for(var i = 0; i<getWaiver.length; i++){
@@ -1688,29 +1675,15 @@ function myfunction(){
     }
     var pushUpsScore = pushUpsGetter(pushUps, scoreSheetArr[0]);
     var sitUpsScore = sitUpsGetter(sitUps, scoreSheetArr[1]);
-    //console.log(waiverValue[0]);
     if (waiverValue[0] == true) {
-      //console.log("we are in the if for run ischeck");
       var runScore = runGetter(newRunTime, scoreSheetArr[2]);
     } else if (waiverValue[1] == true){
-      //console.log("we are in the elif for walk ischeck");
-      //console.log(typeof newRunTime);
       var runScore = walkGetter(newRunTime, scoreSheetArr[3]);
       runScore = parseFloat(runScore);
-      //console.log(typeof runScore);
     }
 
-    //console.log("runscore: "+ runScore+ "\npushupscore: " + pushUpsScore+ "\nsitupscore: " + sitUpsScore);
-    //let exemptWaiver = [waiverValue[2],waiverValue[3], waiverValue[4]];
-    //console.log(getWaiver);
-    //console.log(exemptWaiver);
-    //console.log(waiverValue);
-    //console.log("right before the final score")
     var fluffy = finalScore(pushUpsScore, sitUpsScore, runScore, waiverValue);
-    //console.log("fluffy" + fluffy + "type of " + typeof fluffy);
-    //var fluff = fluffy.toFixed(1);
-    //console.log(fluffy);
-    //console.log(typeof fluffy);
+    var fluff = fluffy.toFixed(1);
     if(fluff < 75) {
       window.alert('Sorry, you failed with a unsatisfactory score of ' + fluff + '\nRun/Walk Score: ' + runScore + '\nSit Ups: ' + sitUpsScore + '\nPush Ups: ' + pushUpsScore)
     } else if(fluff >= 75 && fluff < 90) {
@@ -1718,7 +1691,7 @@ function myfunction(){
     } else if(fluff >= 90) {
       window.alert('Horay, you passed with an excellent score of ' + fluff + '\nRun/Walk Score: ' + runScore + '\nSit Ups Score: ' + sitUpsScore + '\nPush Ups Score: ' + pushUpsScore)
     }
-    //location.reload();
+    location.reload();
 }
 
 
@@ -1790,7 +1763,6 @@ function ageGetter(inputAge, inputGender) {
 };
 
 function pushUpsGetter(pushUps, scoreSheet) {
-    //onsole.log("pushups from pushupsGetter"+ pushUps);
     if(pushUps < scoreSheet[0].count || pushUps == null || pushUps == undefined || isNaN(pushUps) === true){
         return 0
     } 
@@ -1823,9 +1795,7 @@ function sitUpsGetter(sitUps, scoreSheet){
   };
 
 function runGetter(runScore, runScoreSheet){
-    /* let score = 0; */
     let zeroSaver = moment('00:01', format)
-    //console.log("inside run getter - runscore: " +runScore);
     if(runScore < zeroSaver || isNaN(runScore) === true) {
         return 0;
     } 
@@ -1837,7 +1807,6 @@ function runGetter(runScore, runScoreSheet){
             }
         }
     }
-    /* return score; */
 };
 
 
@@ -1857,11 +1826,7 @@ function walkGetter(walkScore, walkScoreSheet) {
 
 
 function finalScore(pushUpsGetter, sitUpsGetter, runTimeGetter, waiver){
-  //console.log('sitUpsGetter ' + sitUpsGetter);
-  //console.log('pushUpsGetter ' + pushUpsGetter);
   runTimeGetter = parseFloat(runTimeGetter);
-  //console.log('runTimeGetter ' + runTimeGetter + "typeof" +typeof runTimeGetter );
-  //console.log('waiver ' + waiver)
   var TotalScore = runTimeGetter + sitUpsGetter + pushUpsGetter;
   // run with push/sit ups table
   if(waiver[0] == true) {
@@ -1922,8 +1887,8 @@ function finalScore(pushUpsGetter, sitUpsGetter, runTimeGetter, waiver){
       }
   // exempt push ups and sit ups
       else if(waiver[3] == true && waiver[4] == true){
-          return TotalScore = 0.0 /* Put alert to notify user action not allowed*/
-          window.alert('You are exempt from taking this test');
+        window.alert('You are exempt from taking this test')
+        return TotalScore = 0.0;
       } else {
         return TotalScore = (TotalScore / 40) * 100;
       }
@@ -1934,11 +1899,6 @@ function finalScore(pushUpsGetter, sitUpsGetter, runTimeGetter, waiver){
 
 
 // Scoresheets //
-
-//console.log("testing final score"+ finalScore(0, 20, 60, [true, false, false]));
-
-
-
 
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -2155,7 +2115,6 @@ export {
     fRtScoreSheet60,
     fWtScoreSheet60,
 
-    //GenderGetter,
     pushUpsGetter,
     sitUpsGetter,
     runGetter,

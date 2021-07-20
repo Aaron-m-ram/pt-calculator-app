@@ -11,38 +11,47 @@ import {
   mPuScoreSheet17_24,
   mSuScoreSheet17_24,
   mRtScoreSheet17_24,
+  mWtScoreSheet17_24,
   
   mPuScoreSheet25_29,
   mSuScoreSheet25_29,
   mRtScoreSheet25_29,
+  mWtScoreSheet25_29,
 
   mPuScoreSheet30_34,
   mSuScoreSheet30_34,
   mRtScoreSheet30_34,
+  mWtScoreSheet30_34,
 
   mPuScoreSheet35_39,
   mSuScoreSheet35_39,
   mRtScoreSheet35_39,
+  mWtScoreSheet35_39,
 
   mPuScoreSheet40_44,
   mSuScoreSheet40_44,
   mRtScoreSheet40_44,
+  mWtScoreSheet40_44,
 
   mPuScoreSheet45_49,
   mSuScoreSheet45_49,
   mRtScoreSheet45_49,
+  mWtScoreSheet45_49,
 
   mPuScoreSheet50_54,
   mSuScoreSheet50_54,
   mRtscoreSheet50_54,
+  mWtScoreSheet50_54,
 
   mPuScoreSheet55_59,
   mSuScoreSheet55_59,
   mRtScoreSheet55_59,
+  mWtScoreSheet55_59,
 
   mPuScoreSheet60,
   mSuScoreSheet60,
   mRtScoreSheet60,
+  mWtScoreSheet60,
   
   genderGetter,
   ageGetter,
@@ -50,46 +59,57 @@ import {
   pushUpsGetter,
   sitUpsGetter,
   runGetter,
+  walkGetter,
 
   fPuScoreSheet17_24,
   fSuScoreSheet17_24,
   fRtScoreSheet17_24,
+  fWtScoreSheet17_24,
 
   fPuScoreSheet25_29,
   fSuScoreSheet25_29,
   fRtScoreSheet25_29,
+  fWtScoreSheet25_29,
 
   fPuScoreSheet30_34,
   fSuScoreSheet30_34,
   fRtScoreSheet30_34,
+  fWtScoreSheet30_34,
 
   fPuScoreSheet35_39,
   fSuScoreSheet35_39,
   fRtScoreSheet35_39,
+  fWtScoreSheet35_39,
 
   fPuScoreSheet40_44,
   fSuScoreSheet40_44,
   fRtScoreSheet40_44,
+  fWtScoreSheet40_44,
 
   fPuScoreSheet45_49,
   fSuScoreSheet45_49,
   fRtScoreSheet45_49,
+  fWtScoreSheet45_49,
 
   fPuScoreSheet50_54,
   fSuScoreSheet50_54,
   fRtScoreSheet50_54,
+  fWtScoreSheet50_54,
 
   fPuScoreSheet55_59,
   fSuScoreSheet55_59,
   fRtScoreSheet55_59,
+  fWtScoreSheet55_59,
 
   fPuScoreSheet60,
   fSuScoreSheet60,
   fRtScoreSheet60,
+  fWtScoreSheet60,
   
  
   finalScore,
   mRtScoreSheet50_54,
+
 } from "./Form.js";
 
 
@@ -1663,3 +1683,158 @@ describe("finalScore", () => {
     expect(finalScore(56,17,0, [true,false,false,false,true])).toEqual(91.25)
   });
 });
+
+describe("walkGetter", () => {
+    // male 17-24 //
+    it('returns 60 when given less than 16:17', () => {
+      expect(walkGetter(moment('16:16', format), mWtScoreSheet17_24)).toBe(60)
+    });
+    it('return 0 when given over 16:16', () => {
+      expect(walkGetter(moment('16:17', format), mWtScoreSheet17_24)).toBe(0)
+    });
+    it('return 0 when given 00:00', () => {
+      expect(walkGetter(moment('00:00', format), mWtScoreSheet17_24)).toBe(0)
+    });
+    it('return 0 when given in null', () => {
+      expect(walkGetter(moment(null, format), mWtScoreSheet17_24)).toBe(0)
+    });
+    it('return 0 when given in undefined', () => {
+      expect(walkGetter(moment(undefined, format), mWtScoreSheet17_24)).toBe(0)
+    });
+    
+    // male 25-29
+    it('returns 60 when given less than 16:17', () => {
+      expect(walkGetter(moment('16:16', format), mWtScoreSheet25_29)).toBe(60)
+    });
+    it('return 0 when given over 16:16', () => {
+      expect(walkGetter(moment('16:17', format), mWtScoreSheet25_29)).toBe(0)
+    });
+    it('return 0 when given 00:00', () => {
+      expect(walkGetter(moment('00:00', format), mWtScoreSheet25_29)).toBe(0)
+    });
+    it('return 0 when given in null', () => {
+      expect(walkGetter(moment(null, format), mWtScoreSheet25_29)).toBe(0)
+    });
+    it('return 0 when given in undefined', () => {
+      expect(walkGetter(moment(undefined, format), mWtScoreSheet25_29)).toBe(0)
+    });
+
+    // male 30-34
+    it('returns 60 when given less than 16:19', () => {
+      expect(walkGetter(moment('16:18', format), mWtScoreSheet30_34)).toBe(60)
+    });
+    it('return 0 when given over 16:18', () => {
+      expect(walkGetter(moment('16:19', format), mWtScoreSheet30_34)).toBe(0)
+    });
+    it('return 0 when given 00:00', () => {
+      expect(walkGetter(moment('00:00', format), mWtScoreSheet30_34)).toBe(0)
+    });
+    it('return 0 when given in null', () => {
+      expect(walkGetter(moment(null, format), mWtScoreSheet30_34)).toBe(0)
+    });
+    it('return 0 when given in undefined', () => {
+      expect(walkGetter(moment(undefined, format), mWtScoreSheet30_34)).toBe(0)
+    });
+
+    // male 35-39
+    it('returns 60 when given less than 16:19', () => {
+      expect(walkGetter(moment('16:18', format), mWtScoreSheet35_39)).toBe(60)
+    });
+    it('return 0 when given over 16:18', () => {
+      expect(walkGetter(moment('16:19', format), mWtScoreSheet35_39)).toBe(0)
+    });
+    it('return 0 when given 00:00', () => {
+      expect(walkGetter(moment('00:00', format), mWtScoreSheet35_39)).toBe(0)
+    });
+    it('return 0 when given in null', () => {
+      expect(walkGetter(moment(null, format), mWtScoreSheet35_39)).toBe(0)
+    });
+    it('return 0 when given in undefined', () => {
+      expect(walkGetter(moment(undefined, format), mWtScoreSheet35_39)).toBe(0)
+    });
+
+    // male 40-44
+    it('returns 60 when given less than 16:24', () => {
+      expect(walkGetter(moment('16:23', format), mWtScoreSheet40_44)).toBe(60)
+    });
+    it('return 0 when given over 16:23', () => {
+      expect(walkGetter(moment('16:24', format), mWtScoreSheet40_44)).toBe(0)
+    });
+    it('return 0 when given 00:00', () => {
+      expect(walkGetter(moment('00:00', format), mWtScoreSheet40_44)).toBe(0)
+    });
+    it('return 0 when given in null', () => {
+      expect(walkGetter(moment(null, format), mWtScoreSheet40_44)).toBe(0)
+    });
+    it('return 0 when given in undefined', () => {
+      expect(walkGetter(moment(undefined, format), mWtScoreSheet40_44)).toBe(0)
+    });
+
+    // male 45-49
+    it('returns 60 when given less than 16:24', () => {
+      expect(walkGetter(moment('16:23', format), mWtScoreSheet45_49)).toBe(60)
+    });
+    it('return 0 when given over 16:23', () => {
+      expect(walkGetter(moment('16:24', format), mWtScoreSheet45_49)).toBe(0)
+    });
+    it('return 0 when given 00:00', () => {
+      expect(walkGetter(moment('00:00', format), mWtScoreSheet45_49)).toBe(0)
+    });
+    it('return 0 when given in null', () => {
+      expect(walkGetter(moment(null, format), mWtScoreSheet45_49)).toBe(0)
+    });
+    it('return 0 when given in undefined', () => {
+      expect(walkGetter(moment(undefined, format), mWtScoreSheet45_49)).toBe(0)
+    });
+
+    // male 50-54
+    it('returns 60 when given less than 16:41', () => {
+      expect(walkGetter(moment('16:40', format), mWtScoreSheet50_54)).toBe(60)
+    });
+    it('return 0 when given over 16:40', () => {
+      expect(walkGetter(moment('16:41', format), mWtScoreSheet50_54)).toBe(0)
+    });
+    it('return 0 when given 00:00', () => {
+      expect(walkGetter(moment('00:00', format), mWtScoreSheet50_54)).toBe(0)
+    });
+    it('return 0 when given in null', () => {
+      expect(walkGetter(moment(null, format), mWtScoreSheet50_54)).toBe(0)
+    });
+    it('return 0 when given in undefined', () => {
+      expect(walkGetter(moment(undefined, format), mWtScoreSheet50_54)).toBe(0)
+    });
+
+    // male 55-59
+    it('returns 60 when given less than 16:41', () => {
+      expect(walkGetter(moment('16:40', format), mWtScoreSheet55_59)).toBe(60)
+    });
+    it('return 0 when given over 16:40', () => {
+      expect(walkGetter(moment('16:41', format), mWtScoreSheet55_59)).toBe(0)
+    });
+    it('return 0 when given 00:00', () => {
+      expect(walkGetter(moment('00:00', format), mWtScoreSheet55_59)).toBe(0)
+    });
+    it('return 0 when given in null', () => {
+      expect(walkGetter(moment(null, format), mWtScoreSheet55_59)).toBe(0)
+    });
+    it('return 0 when given in undefined', () => {
+      expect(walkGetter(moment(undefined, format), mWtScoreSheet55_59)).toBe(0)
+    });
+
+    // Male 60 and up
+    it('returns 60 when given less than 16:59', () => {
+      expect(walkGetter(moment('16:58', format), mWtScoreSheet60)).toBe(60)
+    });
+    it('return 0 when given over 16:58', () => {
+      expect(walkGetter(moment('16:59', format), mWtScoreSheet60)).toBe(0)
+    });
+    it('return 0 when given 00:00', () => {
+      expect(walkGetter(moment('00:00', format), mWtScoreSheet60)).toBe(0)
+    });
+    it('return 0 when given in null', () => {
+      expect(walkGetter(moment(null, format), mWtScoreSheet60)).toBe(0)
+    });
+    it('return 0 when given in undefined', () => {
+      expect(walkGetter(moment(undefined, format), mWtScoreSheet60)).toBe(0)
+    });
+  });

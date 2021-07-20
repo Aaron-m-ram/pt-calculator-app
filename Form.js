@@ -1,6 +1,8 @@
 /* VARIABLES */
 
-//import moment from 'moment';
+import { run } from "jest";
+
+import moment from 'moment';
 var format = 'mm:ss' //format for moments
 //console.log("moment version: " + moment.version)
 
@@ -9,1522 +11,1612 @@ var format = 'mm:ss' //format for moments
 /* ***************************************** */
 
 /* Male 17-24 */
-let mPuScoreSheet17_24 = [
-    {count: 30, points: 1},
-    {count: 31, points: 4},
-    {count: 32, points: 7},
-    {count: 33, points: 10},
+const mPuScoreSheet17_24 = [
+    {count: 30, points: 1.0},
+    {count: 31, points: 4.0},
+    {count: 32, points: 7.0},
+    {count: 33, points: 10.0},
     {count: 34, points: 10.6},
-    {count: 35, points: 11},
+    {count: 35, points: 11.0},
     {count: 36, points: 11.6},
-    {count: 37, points: 12},
+    {count: 37, points: 12.0},
     {count: 38, points: 12.6},
-    {count: 39, points: 13},
+    {count: 39, points: 13.0},
     {count: 40, points: 13.6},
-    {count: 41, points: 14},
+    {count: 41, points: 14.0},
     {count: 42, points: 14.4},
     {count: 43, points: 14.6},
-    {count: 44, points: 15},
+    {count: 44, points: 15.0},
     {count: 45, points: 15.4},
     {count: 46, points: 15.6},
-    {count: 47, points: 16},
+    {count: 47, points: 16.0},
     {count: 48, points: 16.2},
     {count: 49, points: 16.6},
     {count: 50, points: 16.8},
-    {count: 51, points: 17},
+    {count: 51, points: 17.0},
     {count: 52, points: 17.2},
     {count: 53, points: 17.4},
     {count: 54, points: 17.6},
     {count: 55, points: 17.7},
     {count: 56, points: 17.8},
-    {count: 57, points: 18},
+    {count: 57, points: 18.0},
     {count: 58, points: 18.2},
     {count: 59, points: 18.4},
     {count: 60, points: 18.6},
     {count: 61, points: 18.8},
-    {count: 62, points: 19},
+    {count: 62, points: 19.0},
     {count: 63, points: 19.2},
     {count: 64, points: 19.4},
     {count: 65, points: 19.6},
     {count: 66, points: 19.8},
-    {count: 67, points: 20},
+    {count: 67, points: 20.0},
   ]; // push up scoresheet
 
 let mSuScoreSheet17_24 = [
-    {count: 39, points: 3},
-    {count: 40, points: 6},
-    {count: 41, points: 9},
-    {count: 42, points: 12},
+    {count: 39, points: 3.0},
+    {count: 40, points: 6.0},
+    {count: 41, points: 9.0},
+    {count: 42, points: 12.0},
     {count: 43, points: 12.6},
-    {count: 44, points: 13},
-    {count: 45, points: 14},
-    {count: 46, points: 15},
-    {count: 47, points: 16},
+    {count: 44, points: 13.0},
+    {count: 45, points: 14.0},
+    {count: 46, points: 15.0},
+    {count: 47, points: 16.0},
     {count: 48, points: 16.6},
-    {count: 49, points: 17},
+    {count: 49, points: 17.0},
     {count: 50, points: 17.4},
     {count: 51, points: 17.6},
-    {count: 52, points: 18},
+    {count: 52, points: 18.0},
     {count: 53, points: 18.4},
     {count: 54, points: 18.8},
-    {count: 55, points: 19},
+    {count: 55, points: 19.0},
     {count: 56, points: 19.4},
     {count: 57, points: 19.7},
-    {count: 58, points: 20},
+    {count: 58, points: 20.0},
    ]; // sit up scoresheet
 
 var mRtScoreSheet17_24 = [
     /* {timerR: moment('00:00'), f} */
-    {timeR: moment('09:13', format), points: 60},
+    {timeR: moment('09:13', format), points: 60.0},
     {timeR: moment('09:35', format), points: 59.5},
-    {timeR: moment('09:46', format), points: 59},
+    {timeR: moment('09:46', format), points: 59.0},
     {timeR: moment('09:59', format), points: 58.5},
-    {timeR: moment('10:11', format), points: 58},
+    {timeR: moment('10:11', format), points: 58.0},
     {timeR: moment('10:24', format), points: 57.5},
-    {timeR: moment('10:38', format), points: 57},
+    {timeR: moment('10:38', format), points: 57.0},
     {timeR: moment('10:52', format), points: 56.5},
-    {timeR: moment('11:07', format), points: 56},
+    {timeR: moment('11:07', format), points: 56.0},
     {timeR: moment('11:23', format), points: 55.5},
-    {timeR: moment('11:39', format), points: 55},
+    {timeR: moment('11:39', format), points: 55.0},
     {timeR: moment('11:57', format), points: 54.5},
-    {timeR: moment('12:15', format), points: 54},
+    {timeR: moment('12:15', format), points: 54.0},
     {timeR: moment('12:34', format), points: 53.5},
-    {timeR: moment('12:54', format), points: 52},
+    {timeR: moment('12:54', format), points: 52.0},
     {timeR: moment('13:15', format), points: 50.5},
-    {timeR: moment('13:37', format), points: 49},
+    {timeR: moment('13:37', format), points: 49.0},
     {timeR: moment('14:01', format), points: 46.5},
-    {timeR: moment('14:26', format), points: 44},
-    {timeR: moment('14:53', format), points: 41},
-    {timeR: moment('15:21', format), points: 38},
-    {timeR: moment('15:51', format), points: 35},
-    {timeR: moment('59:59', format), points: 0},
+    {timeR: moment('14:26', format), points: 44.0},
+    {timeR: moment('14:53', format), points: 41.0},
+    {timeR: moment('15:21', format), points: 38.0},
+    {timeR: moment('15:51', format), points: 35.0},
+    {timeR: moment('59:59', format), points: 0.0},
   ]; // run time scoresheet
+
+var mWtScoreSheet17_24 = [
+  {timeW: moment('16:17', format), points: 60.0},
+  {timeW: moment('59:59', format), points: 0.0}
+]; //walk test Male 17-24
 
 /* Male 25-29 */
 let mPuScoreSheet25_29 = [
-    {count: 27, points: 1},
-    {count: 28, points: 4},
-    {count: 29, points: 7},
-    {count: 30, points: 10},
+    {count: 27, points: 1.0},
+    {count: 28, points: 4.0},
+    {count: 29, points: 7.0},
+    {count: 30, points: 10.0},
     {count: 31, points: 10.6},
-    {count: 32, points: 11},
+    {count: 32, points: 11.0},
     {count: 33, points: 11.6},
-    {count: 34, points: 12},
+    {count: 34, points: 12.0},
     {count: 35, points: 12.6},
-    {count: 36, points: 13},
+    {count: 36, points: 13.0},
     {count: 37, points: 13.6},
-    {count: 38, points: 14},
+    {count: 38, points: 14.0},
     {count: 39, points: 14.4},
     {count: 40, points: 14.6},
-    {count: 41, points: 15},
+    {count: 41, points: 15.0},
     {count: 42, points: 15.4},
     {count: 43, points: 15.6},
-    {count: 44, points: 16},
+    {count: 44, points: 16.0},
     {count: 45, points: 16.2},
     {count: 46, points: 16.6},
     {count: 47, points: 16.8},
-    {count: 48, points: 17},
+    {count: 48, points: 17.0},
     {count: 49, points: 17.2},
     {count: 50, points: 17.4},
     {count: 51, points: 17.5},
     {count: 52, points: 17.6},
     {count: 53, points: 17.8},
-    {count: 54, points: 18},
+    {count: 54, points: 18.0},
     {count: 55, points: 18.2},
     {count: 56, points: 18.4},
     {count: 57, points: 18.6},
     {count: 58, points: 18.8},
-    {count: 59, points: 19},
+    {count: 59, points: 19.0},
     {count: 60, points: 19.4},
     {count: 61, points: 19.7},
-    {count: 62, points: 20},
+    {count: 62, points: 20.0},
   
   ]; // push up scoresheet
 
 let mSuScoreSheet25_29 = [
-    {count: 38, points: 3},
-    {count: 39, points: 6},
-    {count: 40, points: 9},
-    {count: 41, points: 12},
+    {count: 38, points: 3.0},
+    {count: 39, points: 6.0},
+    {count: 40, points: 9.0},
+    {count: 41, points: 12.0},
     {count: 42, points: 12.6},
-    {count: 43, points: 13},
-    {count: 44, points: 14},
-    {count: 45, points: 15},
-    {count: 46, points: 16},
+    {count: 43, points: 13.0},
+    {count: 44, points: 14.0},
+    {count: 45, points: 15.0},
+    {count: 46, points: 16.0},
     {count: 47, points: 16.6},
-    {count: 48, points: 17},
+    {count: 48, points: 17.0},
     {count: 49, points: 17.4},
     {count: 50, points: 17.6},
-    {count: 51, points: 18},
+    {count: 51, points: 18.0},
     {count: 52, points: 18.4},
     {count: 53, points: 18.8},
-    {count: 54, points: 19},
+    {count: 54, points: 19.0},
     {count: 55, points: 19.5},
-    {count: 56, points: 20},
+    {count: 56, points: 20.0},
   ]; //sit up scoresheet
 
 let mRtScoreSheet25_29 = [
-    {timeR: moment('09:23', format), points: 60},
+    {timeR: moment('09:23', format), points: 60.0},
     {timeR: moment('09:46', format), points: 59.5},
-    {timeR: moment('09:59', format), points: 59},
+    {timeR: moment('09:59', format), points: 59.0},
     {timeR: moment('10:11', format), points: 58.5},
-    {timeR: moment('10:24', format), points: 58},
+    {timeR: moment('10:24', format), points: 58.0},
     {timeR: moment('10:38', format), points: 57.5},
-    {timeR: moment('10:52', format), points: 57},
+    {timeR: moment('10:52', format), points: 57.0},
     {timeR: moment('11:07', format), points: 56.5},
-    {timeR: moment('11:23', format), points: 56},
+    {timeR: moment('11:23', format), points: 56.0},
     {timeR: moment('11:39', format), points: 55.5},
-    {timeR: moment('11:57', format), points: 55},
+    {timeR: moment('11:57', format), points: 55.0},
     {timeR: moment('12:15', format), points: 54.5},
-    {timeR: moment('12:34', format), points: 54},
+    {timeR: moment('12:34', format), points: 54.0},
     {timeR: moment('12:54', format), points: 53.5},
-    {timeR: moment('13:15', format), points: 52},
+    {timeR: moment('13:15', format), points: 52.0},
     {timeR: moment('13:37', format), points: 50.5},
-    {timeR: moment('14:01', format), points: 49},
+    {timeR: moment('14:01', format), points: 49.0},
     {timeR: moment('14:26', format), points: 46.5},
-    {timeR: moment('14:53', format), points: 44},
-    {timeR: moment('15:21', format), points: 41},
-    {timeR: moment('15:51', format), points: 38},
-    {timeR: moment('16:23', format), points: 35},
-    {timeR: moment('59:59', format), points: 0}
+    {timeR: moment('14:53', format), points: 44.0},
+    {timeR: moment('15:21', format), points: 41.0},
+    {timeR: moment('15:51', format), points: 38.0},
+    {timeR: moment('16:23', format), points: 35.0},
+    {timeR: moment('59:59', format), points: 0.0}
     ]; // run time scoresheet
+
+    var mWtScoreSheet25_29 = [
+      {timeW: moment('16:17', format), points: 60.0},
+      {timeW: moment('59:59', format), points: 0.0}
+    ]; //walk test Male 17-24
 
 /* Male 30-34 */
 let mPuScoreSheet30_34 = [
-    {count: 24, points: 1},
-    {count: 25, points: 4},
-    {count: 26, points: 7},
-    {count: 27, points: 10},
+    {count: 24, points: 1.0},
+    {count: 25, points: 4.0},
+    {count: 26, points: 7.0},
+    {count: 27, points: 10.0},
     {count: 28, points: 10.6},
-    {count: 29, points: 11},
-    {count: 30, points: 12},
-    {count: 31, points: 13},
+    {count: 29, points: 11.0},
+    {count: 30, points: 12.0},
+    {count: 31, points: 13.0},
     {count: 32, points: 13.4},
     {count: 33, points: 13.6},
-    {count: 34, points: 14},
+    {count: 34, points: 14.0},
     {count: 35, points: 14.6},
-    {count: 36, points: 15},
+    {count: 36, points: 15.0},
     {count: 37, points: 15.4},
     {count: 38, points: 15.6},
-    {count: 39, points: 16},
+    {count: 39, points: 16.0},
     {count: 40, points: 16.6},
-    {count: 41, points: 17},
+    {count: 41, points: 17.0},
     {count: 42, points: 17.2},
     {count: 43, points: 17.4},
     {count: 44, points: 17.6},
     {count: 45, points: 17.8},
-    {count: 46, points: 18},
+    {count: 46, points: 18.0},
     {count: 47, points: 18.2},
     {count: 48, points: 18.4},
     {count: 49, points: 18.5},
     {count: 50, points: 18.6},
     {count: 51, points: 18.8},
-    {count: 52, points: 19},
+    {count: 52, points: 19.0},
     {count: 53, points: 19.2},
     {count: 54, points: 19.4},
     {count: 55, points: 19.6},
     {count: 56, points: 19.8},
-    {count: 57, points: 20},
+    {count: 57, points: 20.0},
   
   ]; // push up scoresheet
   
 let mSuScoreSheet30_34 = [
-    {count: 36, points: 3},
-    {count: 37, points: 6},
-    {count: 38, points: 9},
-    {count: 39, points: 12},
-    {count: 40, points: 13},
-    {count: 41, points: 14},
-    {count: 42, points: 15},
-    {count: 43, points: 16},
+    {count: 36, points: 3.0},
+    {count: 37, points: 6.0},
+    {count: 38, points: 9.0},
+    {count: 39, points: 12.0},
+    {count: 40, points: 13.0},
+    {count: 41, points: 14.0},
+    {count: 42, points: 15.0},
+    {count: 43, points: 16.0},
     {count: 44, points: 16.6},
-    {count: 45, points: 17},
+    {count: 45, points: 17.0},
     {count: 46, points: 17.4},
     {count: 47, points: 17.6},
-    {count: 48, points: 18},
+    {count: 48, points: 18.0},
     {count: 49, points: 18.4},
     {count: 50, points: 18.8},
-    {count: 51, points: 19},
+    {count: 51, points: 19.0},
     {count: 52, points: 19.4},
     {count: 53, points: 19.7},
-    {count: 54, points: 20},
+    {count: 54, points: 20.0},
   
   ]; // sit up scoresheet
 
 let mRtScoreSheet30_34 = [
-    {timeR: moment('09:35', format), points: 60},
+    {timeR: moment('09:35', format), points: 60.0},
     {timeR: moment('09:59', format), points: 59.5},
-    {timeR: moment('10:11', format), points: 59},
+    {timeR: moment('10:11', format), points: 59.0},
     {timeR: moment('10:24', format), points: 58.5},
-    {timeR: moment('10:38', format), points: 58},
+    {timeR: moment('10:38', format), points: 58.0},
     {timeR: moment('10:52', format), points: 57.5},
-    {timeR: moment('11:07', format), points: 57},
+    {timeR: moment('11:07', format), points: 57.0},
     {timeR: moment('11:23', format), points: 56.5},
-    {timeR: moment('11:39', format), points: 56},
+    {timeR: moment('11:39', format), points: 56.0},
     {timeR: moment('11:57', format), points: 55.5},
-    {timeR: moment('12:15', format), points: 55},
+    {timeR: moment('12:15', format), points: 55.0},
     {timeR: moment('12:34', format), points: 54.4},
-    {timeR: moment('12:54', format), points: 54},
+    {timeR: moment('12:54', format), points: 54.0},
     {timeR: moment('13:15', format), points: 53.5},
-    {timeR: moment('13:37', format), points: 52},
+    {timeR: moment('13:37', format), points: 52.0},
     {timeR: moment('14:01', format), points: 50.5},
-    {timeR: moment('14:26', format), points: 48},
+    {timeR: moment('14:26', format), points: 48.0},
     {timeR: moment('14:53', format), points: 45.5},
-    {timeR: moment('15:21', format), points: 43},
+    {timeR: moment('15:21', format), points: 43.0},
     {timeR: moment('15:51', format), points: 40.5},
-    {timeR: moment('16:23', format), points: 38},
-    {timeR: moment('16:58', format), points: 35},
-    {timeR: moment('59:59', format), points: 0}
+    {timeR: moment('16:23', format), points: 38.0},
+    {timeR: moment('16:58', format), points: 35.0},
+    {timeR: moment('59:59', format), points: 0.0}
    
   ]; // run time scoresheet
 
+  var mWtScoreSheet30_34 = [
+    {timeW: moment('16:19', format), points: 60.0},
+    {timeW: moment('59:59', format), points: 0.0}
+  ]; //walk test Male 30-34
+
 /* Male 35-39 */
 let mPuScoreSheet35_39 = [
-    {count: 21, points: 1},
-    {count: 22, points: 4},
-    {count: 23, points: 7},
-    {count: 24, points: 10},
+    {count: 21, points: 1.0},
+    {count: 22, points: 4.0},
+    {count: 23, points: 7.0},
+    {count: 24, points: 10.0},
     {count: 25, points: 10.6},
-    {count: 26, points: 11},
-    {count: 27, points: 12},
-    {count: 28, points: 13},
+    {count: 26, points: 11.0},
+    {count: 27, points: 12.0},
+    {count: 28, points: 13.0},
     {count: 29, points: 13.4},
     {count: 30, points: 13.6},
-    {count: 31, points: 14},
+    {count: 31, points: 14.0},
     {count: 32, points: 14.6},
-    {count: 33, points: 15},
+    {count: 33, points: 15.0},
     {count: 34, points: 15.4},
     {count: 35, points: 15.6},
-    {count: 36, points: 16},
+    {count: 36, points: 16.0},
     {count: 37, points: 16.6},
-    {count: 38, points: 17},
+    {count: 38, points: 17.0},
     {count: 39, points: 17.2},
     {count: 40, points: 17.4},
     {count: 41, points: 17.6},
     {count: 42, points: 17.8},
-    {count: 43, points: 18},
+    {count: 43, points: 18.0},
     {count: 44, points: 18.2},
     {count: 45, points: 18.4},
     {count: 46, points: 18.5},
     {count: 47, points: 18.6},
     {count: 48, points: 18.8},
-    {count: 49, points: 19},
+    {count: 49, points: 19.0},
     {count: 50, points: 19.5},
-    {count: 51, points: 20},
+    {count: 51, points: 20.0},
   
   ]; // push up scoresheet
 
 let mSuScoreSheet35_39 = [
-    {count: 34, points: 3},
-    {count: 35, points: 6},
-    {count: 36, points: 9},
-    {count: 37, points: 12},
-    {count: 38, points: 13},
-    {count: 39, points: 14},
-    {count: 40, points: 15},
-    {count: 41, points: 16},
+    {count: 34, points: 3.0},
+    {count: 35, points: 6.0},
+    {count: 36, points: 9.0},
+    {count: 37, points: 12.0},
+    {count: 38, points: 13.0},
+    {count: 39, points: 14.0},
+    {count: 40, points: 15.0},
+    {count: 41, points: 16.0},
     {count: 42, points: 16.6},
-    {count: 43, points: 17},
+    {count: 43, points: 17.0},
     {count: 44, points: 17.4},
     {count: 45, points: 17.6},
-    {count: 46, points: 18},
+    {count: 46, points: 18.0},
     {count: 47, points: 18.4},
     {count: 48, points: 18.8},
-    {count: 49, points: 19},
+    {count: 49, points: 19.0},
     {count: 50, points: 19.4},
     {count: 51, points: 19.7},
-    {count: 52, points: 20},
+    {count: 52, points: 20.0},
   
   ]; // sit ups scoresheet
 
 let mRtScoreSheet35_39 = [
-    {timeR: moment('09:46', format), points: 60},
+    {timeR: moment('09:46', format), points: 60.0},
     {timeR: moment('10:11', format), points: 59.5},
-    {timeR: moment('10:24', format), points: 59},
+    {timeR: moment('10:24', format), points: 59.0},
     {timeR: moment('10:38', format), points: 58.5},
-    {timeR: moment('10:52', format), points: 58},
+    {timeR: moment('10:52', format), points: 58.0},
     {timeR: moment('11:07', format), points: 57.5},
-    {timeR: moment('11:23', format), points: 57},
+    {timeR: moment('11:23', format), points: 57.0},
     {timeR: moment('11:39', format), points: 56.6},
-    {timeR: moment('11:57', format), points: 56},
+    {timeR: moment('11:57', format), points: 56.0},
     {timeR: moment('12:15', format), points: 55.5},
-    {timeR: moment('12:34', format), points: 55},
+    {timeR: moment('12:34', format), points: 55.0},
     {timeR: moment('12:54', format), points: 54.5},
-    {timeR: moment('13:15', format), points: 54},
+    {timeR: moment('13:15', format), points: 54.0},
     {timeR: moment('13:37', format), points: 53.5},
-    {timeR: moment('14:01', format), points: 52},
+    {timeR: moment('14:01', format), points: 52.0},
     {timeR: moment('14:26', format), points: 50.5},
-    {timeR: moment('14:53', format), points: 48},
+    {timeR: moment('14:53', format), points: 48.0},
     {timeR: moment('15:21', format), points: 45.5},
-    {timeR: moment('15:51', format), points: 43},
+    {timeR: moment('15:51', format), points: 43.0},
     {timeR: moment('16:23', format), points: 40.5},
-    {timeR: moment('16:58', format), points: 38},
-    {timeR: moment('17:35', format), points: 35},
-    {timeR: moment('59:59', format), points: 0}
+    {timeR: moment('16:58', format), points: 38.0},
+    {timeR: moment('17:35', format), points: 35.0},
+    {timeR: moment('59:59', format), points: 0.0}
    
   ]; // run time scoresheet
 
+  var mWtScoreSheet35_39 = [
+    {timeW: moment('16:19', format), points: 60.0},
+    {timeW: moment('59:59', format), points: 0.0}
+  ]; //walk test Male 35-39
+
   /* male 40-44 */
 let mPuScoreSheet40_44 = [
-    {count: 18, points: 1},
-    {count: 19, points: 4},
-    {count: 20, points: 7},
-    {count: 21, points: 10},
-    {count: 22, points: 11},
+    {count: 18, points: 1.0},
+    {count: 19, points: 4.0},
+    {count: 20, points: 7.0},
+    {count: 21, points: 10.0},
+    {count: 22, points: 11.0},
     {count: 23, points: 11.6},
-    {count: 24, points: 12},
-    {count: 25, points: 13},
-    {count: 26, points: 14},
+    {count: 24, points: 12.0},
+    {count: 25, points: 13.0},
+    {count: 26, points: 14.0},
     {count: 27, points: 14.4},
     {count: 28, points: 14.6},
-    {count: 29, points: 15},
-    {count: 30, points: 16},
+    {count: 29, points: 15.0},
+    {count: 30, points: 16.0},
     {count: 31, points: 16.2},
     {count: 32, points: 16.6},
     {count: 33, points: 16.8},
-    {count: 34, points: 17},
+    {count: 34, points: 17.0},
     {count: 35, points: 17.6},
-    {count: 36, points: 18},
+    {count: 36, points: 18.0},
     {count: 37, points: 18.2},
     {count: 38, points: 18.4},
     {count: 39, points: 18.8},
-    {count: 40, points: 19},
+    {count: 40, points: 19.0},
     {count: 41, points: 19.2},
     {count: 42, points: 19.4},
     {count: 43, points: 19.7},
-    {count: 44, points: 20},
+    {count: 44, points: 20.0},
   
   ]; //push up scoresheet
   
 let mSuScoreSheet40_44 = [
-    {count: 31, points: 3},
-    {count: 32, points: 6},
-    {count: 33, points: 9},
-    {count: 34, points: 12},
-    {count: 35, points: 13},
-    {count: 36, points: 14},
-    {count: 37, points: 15},
+    {count: 31, points: 3.0},
+    {count: 32, points: 6.0},
+    {count: 33, points: 9.0},
+    {count: 34, points: 12.0},
+    {count: 35, points: 13.0},
+    {count: 36, points: 14.0},
+    {count: 37, points: 15.0},
     {count: 38, points: 15.6},
-    {count: 39, points: 16},
-    {count: 40, points: 17},
+    {count: 39, points: 16.0},
+    {count: 40, points: 17.0},
     {count: 41, points: 17.4},
     {count: 42, points: 17.6},
-    {count: 43, points: 18},
+    {count: 43, points: 18.0},
     {count: 44, points: 18.2},
     {count: 45, points: 18.4},
     {count: 46, points: 18.8},
-    {count: 47, points: 19},
+    {count: 47, points: 19.0},
     {count: 48, points: 19.4},
     {count: 49, points: 19.7},
-    {count: 50, points: 20}
+    {count: 50, points: 20.0}
   
   ]; // sit ups scoresheet
   
 let mRtScoreSheet40_44 = [
-    {timeR: moment('09:59', format), points: 60},
+    {timeR: moment('09:59', format), points: 60.0},
     {timeR: moment('10:24', format), points: 59.5},
-    {timeR: moment('10:38', format), points: 59},
+    {timeR: moment('10:38', format), points: 59.0},
     {timeR: moment('10:52', format), points: 58.5},
-    {timeR: moment('11:07', format), points: 58},
+    {timeR: moment('11:07', format), points: 58.0},
     {timeR: moment('11:23', format), points: 57.7},
-    {timeR: moment('11:39', format), points: 57},
+    {timeR: moment('11:39', format), points: 57.0},
     {timeR: moment('11:57', format), points: 56.5},
-    {timeR: moment('12:15', format), points: 56},
+    {timeR: moment('12:15', format), points: 56.0},
     {timeR: moment('12:34', format), points: 55.5},
-    {timeR: moment('12:54', format), points: 55},
+    {timeR: moment('12:54', format), points: 55.0},
     {timeR: moment('13:15', format), points: 54.5},
-    {timeR: moment('13:37', format), points: 54},
+    {timeR: moment('13:37', format), points: 54.0},
     {timeR: moment('14:01', format), points: 53.5},
-    {timeR: moment('14:26', format), points: 52},
+    {timeR: moment('14:26', format), points: 52.0},
     {timeR: moment('14:53', format), points: 50.5},
-    {timeR: moment('15:21', format), points: 48},
+    {timeR: moment('15:21', format), points: 48.0},
     {timeR: moment('15:51', format), points: 45.5},
-    {timeR: moment('16:23', format), points: 43},
+    {timeR: moment('16:23', format), points: 43.0},
     {timeR: moment('16:58', format), points: 40.5},
-    {timeR: moment('17:35', format), points: 38},
-    {timeR: moment('18:15', format), points: 35},
-    {timeR: moment('59:59', format), points: 0}
+    {timeR: moment('17:35', format), points: 38.0},
+    {timeR: moment('18:15', format), points: 35.0},
+    {timeR: moment('59:59', format), points: 0.0}
    
   ]; // run time scoresheet
 
+  var mWtScoreSheet40_44 = [
+    {timeW: moment('16:24', format), points: 60.0},
+    {timeW: moment('59:59', format), points: 0.0}
+  ]; //walk test Male 40-44
+
   /* Male 45-49 */
 let mPuScoreSheet45_49 = [
-    {count: 15, points: 1},
-    {count: 16, points: 4},
-    {count: 17, points: 7},
-    {count: 18, points: 10},
+    {count: 15, points: 1.0},
+    {count: 16, points: 4.0},
+    {count: 17, points: 7.0},
+    {count: 18, points: 10.0},
     {count: 19, points: 10.6},
-    {count: 20, points: 11},
+    {count: 20, points: 11.0},
     {count: 21, points: 11.6},
-    {count: 22, points: 12},
+    {count: 22, points: 12.0},
     {count: 23, points: 12.6},
-    {count: 24, points: 13},
-    {count: 25, points: 14},
+    {count: 24, points: 13.0},
+    {count: 25, points: 14.0},
     {count: 26, points: 14.4},
     {count: 27, points: 14.6},
-    {count: 28, points: 15},
-    {count: 29, points: 16},
+    {count: 28, points: 15.0},
+    {count: 29, points: 16.0},
     {count: 30, points: 16.2},
     {count: 31, points: 16.6},
     {count: 32, points: 16.8},
-    {count: 33, points: 17},
+    {count: 33, points: 17.0},
     {count: 34, points: 17.6},
-    {count: 35, points: 18},
+    {count: 35, points: 18.0},
     {count: 36, points: 18.2},
     {count: 37, points: 18.4},
     {count: 38, points: 18.8},
-    {count: 39, points: 19},
+    {count: 39, points: 19.0},
     {count: 40, points: 19.2},
     {count: 41, points: 19.4},
     {count: 42, points: 19.6},
     {count: 43, points: 19.8},
-    {count: 44, points: 20},
+    {count: 44, points: 20.0},
   
   ]; // push up scoresheet
   
 let mSuScoreSheet45_49 = [
-    {count: 28, points: 3},
-    {count: 29, points: 6},
-    {count: 30, points: 9},
-    {count: 31, points: 12},
-    {count: 32, points: 13},
-    {count: 33, points: 14},
-    {count: 34, points: 15},
+    {count: 28, points: 3.0},
+    {count: 29, points: 6.0},
+    {count: 30, points: 9.0},
+    {count: 31, points: 12.0},
+    {count: 32, points: 13.0},
+    {count: 33, points: 14.0},
+    {count: 34, points: 15.0},
     {count: 35, points: 15.6},
-    {count: 36, points: 16},
+    {count: 36, points: 16.0},
     {count: 37, points: 16.6},
-    {count: 38, points: 17},
+    {count: 38, points: 17.0},
     {count: 39, points: 17.4},
     {count: 40, points: 17.6},
-    {count: 41, points: 18},
+    {count: 41, points: 18.0},
     {count: 42, points: 18.4},
     {count: 43, points: 18.8},
-    {count: 44, points: 19},
+    {count: 44, points: 19.0},
     {count: 45, points: 19.2},
     {count: 46, points: 19.4},
     {count: 47, points: 19.7},
-    {count: 48, points: 20}
+    {count: 48, points: 20.0}
   
   ]; // sit up scoresheet
   
 let mRtScoreSheet45_49 = [
-    {timeR: moment('10:11', format), points: 60},
+    {timeR: moment('10:11', format), points: 60.0},
     {timeR: moment('10:38', format), points: 59.5},
-    {timeR: moment('10:52', format), points: 59},
+    {timeR: moment('10:52', format), points: 59.0},
     {timeR: moment('11:07', format), points: 58.5},
-    {timeR: moment('11:23', format), points: 58},
+    {timeR: moment('11:23', format), points: 58.0},
     {timeR: moment('11:39', format), points: 57.5},
-    {timeR: moment('11:57', format), points: 57},
+    {timeR: moment('11:57', format), points: 57.0},
     {timeR: moment('12:15', format), points: 56.5},
-    {timeR: moment('12:34', format), points: 56},
+    {timeR: moment('12:34', format), points: 56.0},
     {timeR: moment('12:54', format), points: 55.5},
-    {timeR: moment('13:15', format), points: 55},
+    {timeR: moment('13:15', format), points: 55.0},
     {timeR: moment('13:37', format), points: 54.4},
-    {timeR: moment('14:01', format), points: 54},
+    {timeR: moment('14:01', format), points: 54.0},
     {timeR: moment('14:26', format), points: 53.5},
-    {timeR: moment('14:53', format), points: 52},
+    {timeR: moment('14:53', format), points: 52.0},
     {timeR: moment('15:21', format), points: 50.5},
-    {timeR: moment('15:51', format), points: 49},
+    {timeR: moment('15:51', format), points: 49.0},
     {timeR: moment('16:23', format), points: 46.5},
-    {timeR: moment('16:58', format), points: 44},
-    {timeR: moment('17:35', format), points: 41},
-    {timeR: moment('18:15', format), points: 38},
-    {timeR: moment('18:57', format), points: 35},
-    {timeR: moment('59:59', format), points: 0}
+    {timeR: moment('16:58', format), points: 44.0},
+    {timeR: moment('17:35', format), points: 41.0},
+    {timeR: moment('18:15', format), points: 38.0},
+    {timeR: moment('18:57', format), points: 35.0},
+    {timeR: moment('59:59', format), points: 0.0}
    
   ]; // run time scoresheet
 
+  var mWtScoreSheet45_49 = [
+    {timeW: moment('16:24', format), points: 60.0},
+    {timeW: moment('59:59', format), points: 0.0}
+  ]; //walk test Male 44-49
+
   /* Male 50-54 */
 let mPuScoreSheet50_54 = [
-    {count: 12, points: 1},
-    {count: 13, points: 4},
-    {count: 14, points: 7},
-    {count: 15, points: 10},
+    {count: 12, points: 1.0},
+    {count: 13, points: 4.0},
+    {count: 14, points: 7.0},
+    {count: 15, points: 10.0},
     {count: 16, points: 10.6},
-    {count: 17, points: 11},
+    {count: 17, points: 11.0},
     {count: 18, points: 11.6},
-    {count: 19, points: 12},
+    {count: 19, points: 12.0},
     {count: 20, points: 12.6},
-    {count: 21, points: 13},
-    {count: 22, points: 14},
-    {count: 23, points: 15},
-    {count: 24, points: 16},
+    {count: 21, points: 13.0},
+    {count: 22, points: 14.0},
+    {count: 23, points: 15.0},
+    {count: 24, points: 16.0},
     {count: 25, points: 16.6},
-    {count: 26, points: 17},
+    {count: 26, points: 17.0},
     {count: 27, points: 17.4},
     {count: 28, points: 17.6},
-    {count: 29, points: 18},
+    {count: 29, points: 18.0},
     {count: 30, points: 18.2},
     {count: 31, points: 18.4},
     {count: 32, points: 18.8},
-    {count: 33, points: 19},
+    {count: 33, points: 19.0},
     {count: 34, points: 19.4},
     {count: 35, points: 19.7},
-    {count: 36, points: 20},
+    {count: 36, points: 20.0},
   
   ]; //push ups scoresheet
   
 let mSuScoreSheet50_54 = [
-    {count: 25, points: 3},
-    {count: 26, points: 6},
-    {count: 27, points: 9},
-    {count: 28, points: 12},
+    {count: 25, points: 3.0},
+    {count: 26, points: 6.0},
+    {count: 27, points: 9.0},
+    {count: 28, points: 12.0},
     {count: 29, points: 12.6},
-    {count: 30, points: 13},
-    {count: 31, points: 14},
+    {count: 30, points: 13.0},
+    {count: 31, points: 14.0},
     {count: 32, points: 14.6},
-    {count: 33, points: 15},
+    {count: 33, points: 15.0},
     {count: 34, points: 15.6},
-    {count: 35, points: 16},
-    {count: 36, points: 17},
+    {count: 35, points: 16.0},
+    {count: 36, points: 17.0},
     {count: 37, points: 17.4},
     {count: 38, points: 17.6},
-    {count: 39, points: 18},
+    {count: 39, points: 18.0},
     {count: 40, points: 18.2},
     {count: 41, points: 18.4},
     {count: 42, points: 18.8},
-    {count: 43, points: 19},
+    {count: 43, points: 19.0},
     {count: 44, points: 19.4},
     {count: 45, points: 19.7},
-    {count: 46, points: 20}
+    {count: 46, points: 20.0}
   
   ]; // sit up scoresheet
   
 let mRtScoreSheet50_54 = [
-    {timeR: moment('10:38', format), points: 60},
+    {timeR: moment('10:38', format), points: 60.0},
     {timeR: moment('11:07', format), points: 59.5},
-    {timeR: moment('11:23', format), points: 59},
+    {timeR: moment('11:23', format), points: 59.0},
     {timeR: moment('11:39', format), points: 58.5},
-    {timeR: moment('11:57', format), points: 58},
+    {timeR: moment('11:57', format), points: 58.0},
     {timeR: moment('12:15', format), points: 57.5},
-    {timeR: moment('12:34', format), points: 57},
+    {timeR: moment('12:34', format), points: 57.0},
     {timeR: moment('12:54', format), points: 56.5},
-    {timeR: moment('13:15', format), points: 56},
+    {timeR: moment('13:15', format), points: 56.0},
     {timeR: moment('13:37', format), points: 55.5},
-    {timeR: moment('14:01', format), points: 55},
+    {timeR: moment('14:01', format), points: 55.0},
     {timeR: moment('14:26', format), points: 54.5},
-    {timeR: moment('14:53', format), points: 54},
+    {timeR: moment('14:53', format), points: 54.0},
     {timeR: moment('15:21', format), points: 53.5},
-    {timeR: moment('15:51', format), points: 52},
+    {timeR: moment('15:51', format), points: 52.0},
     {timeR: moment('16:23', format), points: 50.5},
-    {timeR: moment('16:58', format), points: 48},
+    {timeR: moment('16:58', format), points: 48.0},
     {timeR: moment('17:35', format), points: 45.5},
-    {timeR: moment('18:15', format), points: 43},
+    {timeR: moment('18:15', format), points: 43.0},
     {timeR: moment('18:57', format), points: 40.5},
-    {timeR: moment('19:44', format), points: 38},
-    {timeR: moment('20:34', format), points: 35},
-    {timeR: moment('59:59', format), points: 0}
+    {timeR: moment('19:44', format), points: 38.0},
+    {timeR: moment('20:34', format), points: 35.0},
+    {timeR: moment('59:59', format), points: 0.0}
    
   ]; // run time scoresheet
 
+  var mWtScoreSheet50_54 = [
+    {timeW: moment('16:41', format), points: 60.0},
+    {timeW: moment('59:59', format), points: 0.0}
+  ]; //walk test Male 50-54
+
 /* Male 55-59 */
 let mPuScoreSheet55_59 = [
-    {count: 12, points: 1},
-    {count: 13, points: 4},
-    {count: 14, points: 7},
-    {count: 15, points: 10},
+    {count: 12, points: 1.0},
+    {count: 13, points: 4.0},
+    {count: 14, points: 7.0},
+    {count: 15, points: 10.0},
     {count: 16, points: 10.8},
     {count: 17, points: 11.4},
     {count: 18, points: 11.8},
     {count: 19, points: 12.4},
-    {count: 20, points: 13},
-    {count: 21, points: 14},
+    {count: 20, points: 13.0},
+    {count: 21, points: 14.0},
     {count: 22, points: 14.8},
     {count: 23, points: 15.8},
     {count: 24, points: 16.8},
-    {count: 25, points: 17},
+    {count: 25, points: 17.0},
     {count: 26, points: 17.4},
     {count: 27, points: 17.8},
-    {count: 28, points: 18},
+    {count: 28, points: 18.0},
     {count: 29, points: 18.4},
-    {count: 30, points: 19},
+    {count: 30, points: 19.0},
     {count: 31, points: 19.4},
     {count: 32, points: 19.8},
-    {count: 33, points: 20}
+    {count: 33, points: 20.0}
   
   ]; // push up scoresheet
   
 let mSuScoreSheet55_59 = [
-    {count: 22, points: 3},
-    {count: 23, points: 6},
-    {count: 24, points: 9},
-    {count: 25, points: 12},
+    {count: 22, points: 3.0},
+    {count: 23, points: 6.0},
+    {count: 24, points: 9.0},
+    {count: 25, points: 12.0},
     {count: 26, points: 12.6},
-    {count: 27, points: 13},
+    {count: 27, points: 13.0},
     {count: 28, points: 13.6},
-    {count: 29, points: 14},
+    {count: 29, points: 14.0},
     {count: 30, points: 14.6},
-    {count: 31, points: 15},
+    {count: 31, points: 15.0},
     {count: 32, points: 15.6},
-    {count: 33, points: 16},
-    {count: 34, points: 17},
+    {count: 33, points: 16.0},
+    {count: 34, points: 17.0},
     {count: 35, points: 17.4},
     {count: 36, points: 17.6},
-    {count: 37, points: 18},
+    {count: 37, points: 18.0},
     {count: 38, points: 18.2},
     {count: 39, points: 18.4},
     {count: 40, points: 18.8},
-    {count: 41, points: 19},
+    {count: 41, points: 19.0},
     {count: 42, points: 19.4},
     {count: 43, points: 19.7},
-    {count: 44, points: 20}
+    {count: 44, points: 20.0}
   
   ]; // sit ups scoresheet
   
 let mRtScoreSheet55_59 = [
-    {timeR: moment('10:52', format), points: 60},
+    {timeR: moment('10:52', format), points: 60.0},
     {timeR: moment('11:23', format), points: 59.5},
-    {timeR: moment('11:39', format), points: 59},
+    {timeR: moment('11:39', format), points: 59.0},
     {timeR: moment('11:57', format), points: 58.5},
-    {timeR: moment('12:15', format), points: 58},
+    {timeR: moment('12:15', format), points: 58.0},
     {timeR: moment('12:34', format), points: 57.5},
-    {timeR: moment('12:54', format), points: 57},
+    {timeR: moment('12:54', format), points: 57.0},
     {timeR: moment('13:15', format), points: 56.5},
-    {timeR: moment('13:37', format), points: 56},
+    {timeR: moment('13:37', format), points: 56.0},
     {timeR: moment('14:01', format), points: 55.5},
-    {timeR: moment('14:26', format), points: 55},
+    {timeR: moment('14:26', format), points: 55.0},
     {timeR: moment('14:53', format), points: 54.5},
-    {timeR: moment('15:21', format), points: 54},
+    {timeR: moment('15:21', format), points: 54.0},
     {timeR: moment('15:51', format), points: 53.5},
-    {timeR: moment('16:23', format), points: 52},
+    {timeR: moment('16:23', format), points: 52.0},
     {timeR: moment('16:58', format), points: 50.5},
-    {timeR: moment('17:35', format), points: 48},
+    {timeR: moment('17:35', format), points: 48.0},
     {timeR: moment('18:15', format), points: 45.5},
-    {timeR: moment('18:57', format), points: 43},
+    {timeR: moment('18:57', format), points: 43.0},
     {timeR: moment('19:44', format), points: 40.5},
-    {timeR: moment('20:34', format), points: 38},
-    {timeR: moment('21:29', format), points: 35},
-    {timeR: moment('59:59', format), points: 0}
+    {timeR: moment('20:34', format), points: 38.0},
+    {timeR: moment('21:29', format), points: 35.0},
+    {timeR: moment('59:59', format), points: 0.0}
    
   ]; // run time scoresheet
 
+  var mWtScoreSheet55_59 = [
+    {timeW: moment('16:41', format), points: 60.0},
+    {timeW: moment('59:59', format), points: 0.0}
+  ]; //walk test Male 54-59
+
 /* Male 60 and up */
 let mPuScoreSheet60 = [
-    {count: 11, points: 1},
-    {count: 12, points: 4},
-    {count: 13, points: 7},
-    {count: 14, points: 10},
+    {count: 11, points: 1.0},
+    {count: 12, points: 4.0},
+    {count: 13, points: 7.0},
+    {count: 14, points: 10.0},
     {count: 15, points: 10.6},
-    {count: 16, points: 11},
+    {count: 16, points: 11.0},
     {count: 17, points: 11.6},
-    {count: 18, points: 12},
+    {count: 18, points: 12.0},
     {count: 19, points: 12.6},
-    {count: 20, points: 13},
-    {count: 21, points: 14},
-    {count: 22, points: 15},
-    {count: 23, points: 16},
-    {count: 24, points: 17},
+    {count: 20, points: 13.0},
+    {count: 21, points: 14.0},
+    {count: 22, points: 15.0},
+    {count: 23, points: 16.0},
+    {count: 24, points: 17.0},
     {count: 25, points: 17.6},
-    {count: 26, points: 18},
+    {count: 26, points: 18.0},
     {count: 27, points: 18.6},
-    {count: 28, points: 19},
+    {count: 28, points: 19.0},
     {count: 29, points: 19.5},
-    {count: 30, points: 20}
+    {count: 30, points: 20.0}
   
   ]; // push up scoresheet
   
 let mSuScoreSheet60 = [
-    {count: 19, points: 3},
-    {count: 20, points: 6},
-    {count: 21, points: 9},
-    {count: 22, points: 12},
+    {count: 19, points: 3.0},
+    {count: 20, points: 6.0},
+    {count: 21, points: 9.0},
+    {count: 22, points: 12.0},
     {count: 23, points: 12.6},
-    {count: 24, points: 13},
+    {count: 24, points: 13.0},
     {count: 25, points: 13.6},
-    {count: 26, points: 14},
+    {count: 26, points: 14.0},
     {count: 27, points: 14.6},
-    {count: 28, points: 15},
+    {count: 28, points: 15.0},
     {count: 29, points: 15.6},
-    {count: 30, points: 16},
-    {count: 31, points: 17},
+    {count: 30, points: 16.0},
+    {count: 31, points: 17.0},
     {count: 32, points: 17.2},
     {count: 33, points: 17.6},
     {count: 34, points: 17.8},
-    {count: 35, points: 18},
+    {count: 35, points: 18.0},
     {count: 36, points: 18.2},
     {count: 37, points: 18.4},
     {count: 38, points: 18.8},
-    {count: 39, points: 19},
+    {count: 39, points: 19.0},
     {count: 40, points: 19.4},
     {count: 41, points: 19.7},
-    {count: 42, points: 20}
+    {count: 42, points: 20.0}
   
   ]; // sit up scoresheets
   
 let mRtScoreSheet60 = [
-    {timeR: moment('11:23', format), points: 60},
+    {timeR: moment('11:23', format), points: 60.0},
     {timeR: moment('11:57', format), points: 59.5},
-    {timeR: moment('12:15', format), points: 59},
+    {timeR: moment('12:15', format), points: 59.0},
     {timeR: moment('12:34', format), points: 58.5},
-    {timeR: moment('12:54', format), points: 58},
+    {timeR: moment('12:54', format), points: 58.0},
     {timeR: moment('13:15', format), points: 57.5},
-    {timeR: moment('13:37', format), points: 57},
+    {timeR: moment('13:37', format), points: 57.0},
     {timeR: moment('14:01', format), points: 56.5},
-    {timeR: moment('14:26', format), points: 56},
+    {timeR: moment('14:26', format), points: 56.0},
     {timeR: moment('14:53', format), points: 55.5},
-    {timeR: moment('15:21', format), points: 55},
+    {timeR: moment('15:21', format), points: 55.0},
     {timeR: moment('15:51', format), points: 54.5},
-    {timeR: moment('16:23', format), points: 54},
+    {timeR: moment('16:23', format), points: 54.0},
     {timeR: moment('16:58', format), points: 52.5},
-    {timeR: moment('17:35', format), points: 51},
+    {timeR: moment('17:35', format), points: 51.0},
     {timeR: moment('18:15', format), points: 49.5},
-    {timeR: moment('18:57', format), points: 47},
+    {timeR: moment('18:57', format), points: 47.0},
     {timeR: moment('19:44', format), points: 44.5},
     {timeR: moment('20:34', format), points: 41.5},
     {timeR: moment('21:29', format), points: 38.5},
-    {timeR: moment('22:29', format), points: 35},
-    {timeR: moment('59:59', format), points: 0}
+    {timeR: moment('22:29', format), points: 35.0},
+    {timeR: moment('59:59', format), points: 0.0}
    
   ]; // run time scoresheet
 
+  var mWtScoreSheet60 = [
+    {timeW: moment('16:59', format), points: 60.0},
+    {timeW: moment('59:59', format), points: 0.0}
+  ]; //walk test Male 60+
+
 /* Female 17-24 */
 let fPuScoreSheet17_24 = [
-    {count: 15, points: 1},
-    {count: 16, points: 4},
-    {count: 17, points: 7},
-    {count: 18, points: 10},
-    {count: 19, points: 11},
+    {count: 15, points: 1.0},
+    {count: 16, points: 4.0},
+    {count: 17, points: 7.0},
+    {count: 18, points: 10.0},
+    {count: 19, points: 11.0},
     {count: 20, points: 11.6},
-    {count: 21, points: 12},
+    {count: 21, points: 12.0},
     {count: 22, points: 12.6},
-    {count: 23, points: 13},
-    {count: 24, points: 14},
+    {count: 23, points: 13.0},
+    {count: 24, points: 14.0},
     {count: 25, points: 14.4},
     {count: 26, points: 14.6},
-    {count: 27, points: 15},
-    {count: 28, points: 16},
+    {count: 27, points: 15.0},
+    {count: 28, points: 16.0},
     {count: 29, points: 16.2},
     {count: 30, points: 16.4},
     {count: 31, points: 16.6},
     {count: 32, points: 16.8},
-    {count: 33, points: 17},
+    {count: 33, points: 17.0},
     {count: 34, points: 17.2},
     {count: 35, points: 17.6},
     {count: 36, points: 17.8},
-    {count: 37, points: 18},
+    {count: 37, points: 18.0},
     {count: 38, points: 18.2},
     {count: 39, points: 18.4},
     {count: 40, points: 18.6},
     {count: 41, points: 18.8},
-    {count: 42, points: 19},
+    {count: 42, points: 19.0},
     {count: 43, points: 19.2},
     {count: 44, points: 19.4},
     {count: 45, points: 19.6},
     {count: 46, points: 19.8},
-    {count: 47, points: 20}
+    {count: 47, points: 20.0}
   
   ]; // push up scoresheet
   
 let fSuScoreSheet17_24 = [
-    {count: 35, points: 3},
-    {count: 36, points: 6},
-    {count: 37, points: 9},
-    {count: 38, points: 12},
-    {count: 39, points: 13},
+    {count: 35, points: 3.0},
+    {count: 36, points: 6.0},
+    {count: 37, points: 9.0},
+    {count: 38, points: 12.0},
+    {count: 39, points: 13.0},
     {count: 40, points: 13.6},
-    {count: 41, points: 14},
-    {count: 42, points: 15},
+    {count: 41, points: 14.0},
+    {count: 42, points: 15.0},
     {count: 43, points: 15.6},
-    {count: 44, points: 16},
-    {count: 45, points: 17},
+    {count: 44, points: 16.0},
+    {count: 45, points: 17.0},
     {count: 46, points: 17.2},
     {count: 47, points: 17.6},
     {count: 48, points: 17.8},
-    {count: 49, points: 18},
+    {count: 49, points: 18.0},
     {count: 50, points: 18.8},
-    {count: 51, points: 19},
+    {count: 51, points: 19.0},
     {count: 52, points: 19.4},
     {count: 53, points: 19.7},
-    {count: 54, points: 20}
+    {count: 54, points: 20.0}
   
   ]; // sit up scoresheet
   
 let fRtScoreSheet17_24 = [
-    {timeR: moment('10:24', format), points: 60},
+    {timeR: moment('10:24', format), points: 60.0},
     {timeR: moment('10:52', format), points: 59.5},
-    {timeR: moment('11:07', format), points: 59},
+    {timeR: moment('11:07', format), points: 59.0},
     {timeR: moment('11:23', format), points: 58.5},
-    {timeR: moment('11:39', format), points: 58},
+    {timeR: moment('11:39', format), points: 58.0},
     {timeR: moment('11:57', format), points: 57.5},
-    {timeR: moment('12:15', format), points: 57},
+    {timeR: moment('12:15', format), points: 57.0},
     {timeR: moment('12:34', format), points: 56.5},
-    {timeR: moment('12:54', format), points: 56},
+    {timeR: moment('12:54', format), points: 56.0},
     {timeR: moment('13:15', format), points: 55.5},
-    {timeR: moment('13:37', format), points: 55},
+    {timeR: moment('13:37', format), points: 55.0},
     {timeR: moment('14:01', format), points: 54.5},
-    {timeR: moment('14:26', format), points: 54},
+    {timeR: moment('14:26', format), points: 54.0},
     {timeR: moment('14:53', format), points: 53.5},
-    {timeR: moment('15:21', format), points: 52},
+    {timeR: moment('15:21', format), points: 52.0},
     {timeR: moment('15:51', format), points: 50.5},
-    {timeR: moment('16:23', format), points: 49},
-    {timeR: moment('16:58', format), points: 46},
+    {timeR: moment('16:23', format), points: 49.0},
+    {timeR: moment('16:58', format), points: 46.0},
     {timeR: moment('17:35', format), points: 42.5},
-    {timeR: moment('18:15', format), points: 39},
-    {timeR: moment('18:57', format), points: 35},
-    {timeR: moment('59:59', format), points: 0}
+    {timeR: moment('18:15', format), points: 39.0},
+    {timeR: moment('18:57', format), points: 35.0},
+    {timeR: moment('59:59', format), points: 0.0}
   
   ]; // run time scoresheet
 
+  var fWtScoreSheet17_24 = [
+    {timeW: moment('17:23', format), points: 60.0},
+    {timeW: moment('59:59', format), points: 0.0}
+  ]; //walk test female 17-24
+
 /* Female 25-29 */ 
 let fPuScoreSheet25_29 = [
-    {count: 14, points: 1},
-    {count: 15, points: 4},
-    {count: 16, points: 7},
-    {count: 17, points: 10},
+    {count: 14, points: 1.0},
+    {count: 15, points: 4.0},
+    {count: 16, points: 7.0},
+    {count: 17, points: 10.0},
     {count: 18, points: 10.6},
-    {count: 19, points: 11},
+    {count: 19, points: 11.0},
     {count: 20, points: 11.6},
-    {count: 21, points: 12},
+    {count: 21, points: 12.0},
     {count: 22, points: 12.6},
-    {count: 23, points: 13},
-    {count: 24, points: 14},
+    {count: 23, points: 13.0},
+    {count: 24, points: 14.0},
     {count: 25, points: 14.4},
     {count: 26, points: 14.6},
-    {count: 27, points: 15},
-    {count: 28, points: 16},
+    {count: 27, points: 15.0},
+    {count: 28, points: 16.0},
     {count: 29, points: 16.2},
     {count: 30, points: 16.4},
     {count: 31, points: 16.6},
     {count: 32, points: 16.8},
-    {count: 33, points: 17},
+    {count: 33, points: 17.0},
     {count: 34, points: 17.2},
     {count: 35, points: 17.6},
     {count: 36, points: 17.8},
-    {count: 37, points: 18},
+    {count: 37, points: 18.0},
     {count: 38, points: 18.2},
     {count: 39, points: 18.4},
     {count: 40, points: 18.6},
     {count: 41, points: 18.8},
-    {count: 42, points: 19},
+    {count: 42, points: 19.0},
     {count: 43, points: 19.2},
     {count: 44, points: 19.4},
     {count: 45, points: 19.6},
     {count: 46, points: 19.8},
-    {count: 47, points: 20}
+    {count: 47, points: 20.0}
   
   ]; //push up scoresheet
   
 let fSuScoreSheet25_29 = [
-    {count: 31, points: 3},
-    {count: 32, points: 6},
-    {count: 33, points: 9},
-    {count: 34, points: 12},
+    {count: 31, points: 3.0},
+    {count: 32, points: 6.0},
+    {count: 33, points: 9.0},
+    {count: 34, points: 12.0},
     {count: 35, points: 12.6},
-    {count: 36, points: 13},
+    {count: 36, points: 13.0},
     {count: 37, points: 13.6},
-    {count: 38, points: 14},
+    {count: 38, points: 14.0},
     {count: 39, points: 14.6},
-    {count: 40, points: 15},
+    {count: 40, points: 15.0},
     {count: 41, points: 15.6},
-    {count: 42, points: 16},
-    {count: 43, points: 17},
+    {count: 42, points: 16.0},
+    {count: 43, points: 17.0},
     {count: 44, points: 17.2},
     {count: 45, points: 17.8},
-    {count: 46, points: 18},
+    {count: 46, points: 18.0},
     {count: 47, points: 18.8},
-    {count: 48, points: 19},
+    {count: 48, points: 19.0},
     {count: 49, points: 19.5},
-    {count: 50, points: 20}
+    {count: 50, points: 20.0}
   
   ]; //sit up scoresheet
   
 let fRtScoreSheet25_29 = [
-    {timeR: moment('10:38', format), points: 60},
+    {timeR: moment('10:38', format), points: 60.0},
     {timeR: moment('11:07', format), points: 59.5},
-    {timeR: moment('11:23', format), points: 59},
+    {timeR: moment('11:23', format), points: 59.0},
     {timeR: moment('11:39', format), points: 58.5},
-    {timeR: moment('11:57', format), points: 58},
+    {timeR: moment('11:57', format), points: 58.0},
     {timeR: moment('12:15', format), points: 57.5},
-    {timeR: moment('12:34', format), points: 57},
+    {timeR: moment('12:34', format), points: 57.0},
     {timeR: moment('12:54', format), points: 56.5},
-    {timeR: moment('13:15', format), points: 56},
+    {timeR: moment('13:15', format), points: 56.0},
     {timeR: moment('13:37', format), points: 55.5},
-    {timeR: moment('14:01', format), points: 55},
+    {timeR: moment('14:01', format), points: 55.0},
     {timeR: moment('14:26', format), points: 54.5},
-    {timeR: moment('14:53', format), points: 54},
+    {timeR: moment('14:53', format), points: 54.0},
     {timeR: moment('15:21', format), points: 53.5},
-    {timeR: moment('15:51', format), points: 52},
+    {timeR: moment('15:51', format), points: 52.0},
     {timeR: moment('16:23', format), points: 40.5},
-    {timeR: moment('16:58', format), points: 49},
+    {timeR: moment('16:58', format), points: 49.0},
     {timeR: moment('17:35', format), points: 45.5},
-    {timeR: moment('18:15', format), points: 42},
+    {timeR: moment('18:15', format), points: 42.0},
     {timeR: moment('18:57', format), points: 38.5},
-    {timeR: moment('19:44', format), points: 35},
-    {timeR: moment('59:59', format), points: 0}
+    {timeR: moment('19:44', format), points: 35.0},
+    {timeR: moment('59:59', format), points: 0.0}
   
 ]; // run time scoresheet
 
+var fWtScoreSheet25_29 = [
+  {timeW: moment('17:23', format), points: 60.0},
+  {timeW: moment('59:59', format), points: 0.0}
+]; //walk test female 25-29
+
 /* female 30-34 */ 
 let fPuScoreSheet30_34 = [
-    {count: 11, points: 1},
-    {count: 12, points: 4},
-    {count: 13, points: 7},
-    {count: 14, points: 10},
-    {count: 15, points: 12},
-    {count: 16, points: 13},
+    {count: 11, points: 1.0},
+    {count: 12, points: 4.0},
+    {count: 13, points: 7.0},
+    {count: 14, points: 10.0},
+    {count: 15, points: 12.0},
+    {count: 16, points: 13.0},
     {count: 17, points: 13.6},
-    {count: 18, points: 14},
-    {count: 19, points: 15},
+    {count: 18, points: 14.0},
+    {count: 19, points: 15.0},
     {count: 20, points: 15.2},
     {count: 21, points: 15.6},
     {count: 22, points: 15.8},
-    {count: 23, points: 16},
+    {count: 23, points: 16.0},
     {count: 24, points: 16.4},
     {count: 25, points: 16.6},
-    {count: 26, points: 17},
+    {count: 26, points: 17.0},
     {count: 27, points: 17.2},
     {count: 28, points: 17.3},
     {count: 29, points: 17.4},
     {count: 30, points: 17.6},
     {count: 31, points: 17.8},
     {count: 32, points: 17.9},
-    {count: 33, points: 18},
+    {count: 33, points: 18.0},
     {count: 34, points: 18.2},
     {count: 35, points: 18.3},
     {count: 36, points: 18.4},
     {count: 37, points: 18.6},
     {count: 38, points: 18.7},
     {count: 39, points: 18.8},
-    {count: 40, points: 19},
+    {count: 40, points: 19.0},
     {count: 41, points: 19.2},
     {count: 42, points: 19.4},
     {count: 43, points: 19.6},
     {count: 44, points: 19.8},
     {count: 45, points: 19.9},
-    {count: 46, points: 20}
+    {count: 46, points: 20.0}
   
   ]; // push up scoresheet
   
 let fSuScoreSheet30_34 = [
-    {count: 26, points: 3},
-    {count: 27, points: 6},
-    {count: 28, points: 9},
-    {count: 29, points: 12},
-    {count: 30, points: 13},
+    {count: 26, points: 3.0},
+    {count: 27, points: 6.0},
+    {count: 28, points: 9.0},
+    {count: 29, points: 12.0},
+    {count: 30, points: 13.0},
     {count: 31, points: 13.6},
-    {count: 32, points: 14},
-    {count: 33, points: 15},
+    {count: 32, points: 14.0},
+    {count: 33, points: 15.0},
     {count: 34, points: 15.6},
-    {count: 35, points: 16},
+    {count: 35, points: 16.0},
     {count: 36, points: 16.4},
     {count: 37, points: 16.6},
-    {count: 38, points: 17},
+    {count: 38, points: 17.0},
     {count: 39, points: 17.6},
-    {count: 40, points: 18},
+    {count: 40, points: 18.0},
     {count: 41, points: 18.8},
-    {count: 42, points: 19},
+    {count: 42, points: 19.0},
     {count: 43, points: 19.4},
     {count: 44, points: 19.7},
-    {count: 45, points: 20}
+    {count: 45, points: 20.0}
   
   ]; // sit up scoresheet
   
 let fRtScoreSheet30_34 = [
-    {timeR: moment('10:52', format), points: 60},
+    {timeR: moment('10:52', format), points: 60.0},
     {timeR: moment('11:23', format), points: 59.5},
-    {timeR: moment('11:39', format), points: 59},
+    {timeR: moment('11:39', format), points: 59.0},
     {timeR: moment('11:57', format), points: 58.5},
-    {timeR: moment('12:15', format), points: 58},
+    {timeR: moment('12:15', format), points: 58.0},
     {timeR: moment('12:34', format), points: 57.5},
-    {timeR: moment('12:54', format), points: 57},
+    {timeR: moment('12:54', format), points: 57.0},
     {timeR: moment('13:15', format), points: 56.5},
-    {timeR: moment('13:37', format), points: 56},
+    {timeR: moment('13:37', format), points: 56.0},
     {timeR: moment('14:01', format), points: 55.5},
-    {timeR: moment('14:26', format), points: 55},
+    {timeR: moment('14:26', format), points: 55.0},
     {timeR: moment('14:53', format), points: 54.5},
-    {timeR: moment('15:21', format), points: 54},
+    {timeR: moment('15:21', format), points: 54.0},
     {timeR: moment('15:51', format), points: 52.5},
-    {timeR: moment('16:23', format), points: 51},
+    {timeR: moment('16:23', format), points: 51.0},
     {timeR: moment('16:58', format), points: 49.5},
-    {timeR: moment('17:35', format), points: 47},
+    {timeR: moment('17:35', format), points: 47.0},
     {timeR: moment('18:15', format), points: 44.5},
-    {timeR: moment('18:57', format), points: 42},
+    {timeR: moment('18:57', format), points: 42.0},
     {timeR: moment('19:44', format), points: 38.5},
-    {timeR: moment('20:34', format), points: 35},
-    {timeR: moment('59:59', format), points: 0}
+    {timeR: moment('20:34', format), points: 35.0},
+    {timeR: moment('59:59', format), points: 0.0}
   ]; // run time scoresheet
+  
+  var fWtScoreSheet30_34 = [
+    {timeW: moment('17:29', format), points: 60.0},
+    {timeW: moment('59:59', format), points: 0.0}
+  ]; //walk test female 30-34
 
 /* female 35-39 */
 let fPuScoreSheet35_39 = [
-    {count: 10, points: 1},
-    {count: 11, points: 4},
-    {count: 12, points: 7},
-    {count: 13, points: 10},
-    {count: 14, points: 12},
-    {count: 15, points: 13},
+    {count: 10, points: 1.0},
+    {count: 11, points: 4.0},
+    {count: 12, points: 7.0},
+    {count: 13, points: 10.0},
+    {count: 14, points: 12.0},
+    {count: 15, points: 13.0},
     {count: 16, points: 13.6},
-    {count: 17, points: 14},
-    {count: 18, points: 15},
+    {count: 17, points: 14.0},
+    {count: 18, points: 15.0},
     {count: 19, points: 15.2},
     {count: 20, points: 15.6},
     {count: 21, points: 15.8},
-    {count: 22, points: 16},
+    {count: 22, points: 16.0},
     {count: 23, points: 16.4},
     {count: 24, points: 16.6},
-    {count: 25, points: 17},
+    {count: 25, points: 17.0},
     {count: 26, points: 17.2},
     {count: 27, points: 17.3},
     {count: 28, points: 17.4},
     {count: 29, points: 17.6},
     {count: 30, points: 17.8},
     {count: 31, points: 17.9},
-    {count: 32, points: 18},
+    {count: 32, points: 18.0},
     {count: 33, points: 18.1},
     {count: 34, points: 18.3},
     {count: 35, points: 18.4},
     {count: 36, points: 18.6},
     {count: 37, points: 18.7},
     {count: 38, points: 18.8},
-    {count: 39, points: 19},
+    {count: 39, points: 19.0},
     {count: 40, points: 19.4},
     {count: 41, points: 19.7},
-    {count: 42, points: 20}
+    {count: 42, points: 20.0}
   
   ]; // push ups scoresheet
   
 let fSuScoreSheet35_39 = [
-    {count: 24, points: 3},
-    {count: 25, points: 6},
-    {count: 26, points: 9},
-    {count: 27, points: 12},
-    {count: 28, points: 13},
+    {count: 24, points: 3.0},
+    {count: 25, points: 6.0},
+    {count: 26, points: 9.0},
+    {count: 27, points: 12.0},
+    {count: 28, points: 13.0},
     {count: 29, points: 13.6},
-    {count: 30, points: 14},
-    {count: 31, points: 15},
+    {count: 30, points: 14.0},
+    {count: 31, points: 15.0},
     {count: 32, points: 15.6},
-    {count: 33, points: 16},
+    {count: 33, points: 16.0},
     {count: 34, points: 16.4},
     {count: 35, points: 16.6},
-    {count: 36, points: 17},
+    {count: 36, points: 17.0},
     {count: 37, points: 17.6},
-    {count: 38, points: 18},
+    {count: 38, points: 18.0},
     {count: 39, points: 18.8},
-    {count: 40, points: 19},
+    {count: 40, points: 19.0},
     {count: 41, points: 19.4},
     {count: 42, points: 19.7},
-    {count: 43, points: 20}
+    {count: 43, points: 20.0}
   ]; // sit ups scoresheets 
   
 let fRtScoreSheet35_39 = [
-    {timeR: moment('11:07', format), points: 60},
+    {timeR: moment('11:07', format), points: 60.0},
     {timeR: moment('11:39', format), points: 59.5},
-    {timeR: moment('11:57', format), points: 59},
+    {timeR: moment('11:57', format), points: 59.0},
     {timeR: moment('12:15', format), points: 58.5},
-    {timeR: moment('12:34', format), points: 58},
+    {timeR: moment('12:34', format), points: 58.0},
     {timeR: moment('12:54', format), points: 57.5},
-    {timeR: moment('13:15', format), points: 57},
+    {timeR: moment('13:15', format), points: 57.0},
     {timeR: moment('13:37', format), points: 56.5},
-    {timeR: moment('14:01', format), points: 56},
+    {timeR: moment('14:01', format), points: 56.0},
     {timeR: moment('14:26', format), points: 55.5},
-    {timeR: moment('14:53', format), points: 55},
+    {timeR: moment('14:53', format), points: 55.0},
     {timeR: moment('15:21', format), points: 54.5},
-    {timeR: moment('15:51', format), points: 54},
+    {timeR: moment('15:51', format), points: 54.0},
     {timeR: moment('16:23', format), points: 52.5},
-    {timeR: moment('16:58', format), points: 51},
+    {timeR: moment('16:58', format), points: 51.0},
     {timeR: moment('17:35', format), points: 49.5},
-    {timeR: moment('18:15', format), points: 47},
-    {timeR: moment('18:57', format), points: 44},
-    {timeR: moment('19:44', format), points: 41},
-    {timeR: moment('20:34', format), points: 38},
-    {timeR: moment('21:29', format), points: 35},
-    {timeR: moment('59:59', format), points: 0}
+    {timeR: moment('18:15', format), points: 47.0},
+    {timeR: moment('18:57', format), points: 44.0},
+    {timeR: moment('19:44', format), points: 41.0},
+    {timeR: moment('20:34', format), points: 38.0},
+    {timeR: moment('21:29', format), points: 35.0},
+    {timeR: moment('59:59', format), points: 0.0}
   
   ]; // run time scoresheet
+  
+  var fWtScoreSheet35_39 = [
+    {timeW: moment('17:29', format), points: 60.0},
+    {timeW: moment('59:59', format), points: 0.0}
+  ]; //walk test female 35-39
 
 /* Female 40-44 */
 let fPuScoreSheet40_44 = [
-    {count: 8, points: 1},
-    {count: 9, points: 4},
-    {count: 10, points: 7},
-    {count: 11, points: 10},
-    {count: 12, points: 11},
-    {count: 13, points: 12},
-    {count: 14, points: 13},
-    {count: 15, points: 14},
-    {count: 16, points: 15},
+    {count: 8, points: 1.0},
+    {count: 9, points: 4.0},
+    {count: 10, points: 7.0},
+    {count: 11, points: 10.0},
+    {count: 12, points: 11.0},
+    {count: 13, points: 12.0},
+    {count: 14, points: 13.0},
+    {count: 15, points: 14.0},
+    {count: 16, points: 15.0},
     {count: 17, points: 15.6},
-    {count: 18, points: 16},
+    {count: 18, points: 16.0},
     {count: 19, points: 16.2},
     {count: 20, points: 16.4},
     {count: 21, points: 16.6},
     {count: 22, points: 16.8},
-    {count: 23, points: 17},
+    {count: 23, points: 17.0},
     {count: 24, points: 17.2},
     {count: 25, points: 17.3},
     {count: 26, points: 17.4},
     {count: 27, points: 17.6},
     {count: 28, points: 17.8},
-    {count: 29, points: 18},
+    {count: 29, points: 18.0},
     {count: 30, points: 18.2},
     {count: 31, points: 18.4},
     {count: 32, points: 18.8},
-    {count: 33, points: 19},
+    {count: 33, points: 19.0},
     {count: 34, points: 19.2},
     {count: 35, points: 19.4},
     {count: 36, points: 19.6},
     {count: 37, points: 19.8},
-    {count: 38, points: 20},
+    {count: 38, points: 20.0},
   ]; // push ups scoresheet
   
 let fSuScoreSheet40_44 = [
-    {count: 21, points: 3},
-    {count: 22, points: 6},
-    {count: 23, points: 9},
-    {count: 24, points: 12},
+    {count: 21, points: 3.0},
+    {count: 22, points: 6.0},
+    {count: 23, points: 9.0},
+    {count: 24, points: 12.0},
     {count: 25, points: 12.8},
     {count: 26, points: 13.6},
-    {count: 27, points: 14},
-    {count: 28, points: 15},
-    {count: 29, points: 16},
+    {count: 27, points: 14.0},
+    {count: 28, points: 15.0},
+    {count: 29, points: 16.0},
     {count: 30, points: 16.4},
     {count: 31, points: 16.6},
-    {count: 32, points: 17},
+    {count: 32, points: 17.0},
     {count: 33, points: 17.6},
-    {count: 34, points: 18},
+    {count: 34, points: 18.0},
     {count: 35, points: 18.2},
     {count: 36, points: 18.4},
     {count: 37, points: 18.8},
-    {count: 38, points: 19},
+    {count: 38, points: 19.0},
     {count: 39, points: 19.4},
     {count: 40, points: 19.7},
-    {count: 41, points: 20}
+    {count: 41, points: 20.0}
   
   ]; //sit ups scoresheet
   
 let fRtScoreSheet40_44= [
-    {timeR: moment('11:23', format), points: 60},
+    {timeR: moment('11:23', format), points: 60.0},
     {timeR: moment('11:57', format), points: 59.5},
-    {timeR: moment('12:15', format), points: 59},
+    {timeR: moment('12:15', format), points: 59.0},
     {timeR: moment('12:34', format), points: 58.5},
-    {timeR: moment('12:54', format), points: 58},
+    {timeR: moment('12:54', format), points: 58.0},
     {timeR: moment('13:15', format), points: 57.5},
-    {timeR: moment('13:37', format), points: 57},
+    {timeR: moment('13:37', format), points: 57.0},
     {timeR: moment('14:01', format), points: 56.5},
-    {timeR: moment('14:26', format), points: 56},
+    {timeR: moment('14:26', format), points: 56.0},
     {timeR: moment('14:53', format), points: 55.5},
-    {timeR: moment('15:21', format), points: 55},
+    {timeR: moment('15:21', format), points: 55.0},
     {timeR: moment('15:51', format), points: 54.5},
-    {timeR: moment('16:23', format), points: 54},
+    {timeR: moment('16:23', format), points: 54.0},
     {timeR: moment('16:58', format), points: 53.5},
-    {timeR: moment('17:35', format), points: 52},
+    {timeR: moment('17:35', format), points: 52.0},
     {timeR: moment('18:15', format), points: 50.5},
-    {timeR: moment('18:57', format), points: 48},
+    {timeR: moment('18:57', format), points: 48.0},
     {timeR: moment('19:44', format), points: 45.5},
-    {timeR: moment('20:34', format), points: 42},
+    {timeR: moment('20:34', format), points: 42.0},
     {timeR: moment('21:29', format), points: 38.5},
-    {timeR: moment('22:29', format), points: 35},
-    {timeR: moment('59:59', format), points: 0}
+    {timeR: moment('22:29', format), points: 35.0},
+    {timeR: moment('59:59', format), points: 0.0}
   
   ]; //run time scoresheet
 
+  var fWtScoreSheet40_44 = [
+    {timeW: moment('17:50', format), points: 60.0},
+    {timeW: moment('59:59', format), points: 0.0}
+  ]; //walk test female 40-44
+
 /* Female 45-49 */ 
 let fPuScoreSheet45_49 = [
-    {count: 7, points: 1},
-    {count: 8, points: 4},
-    {count: 9, points: 7},
-    {count: 10, points: 10},
-    {count: 11, points: 11},
-    {count: 12, points: 12},
-    {count: 13, points: 13},
-    {count: 14, points: 14},
-    {count: 15, points: 15},
+    {count: 7, points: 1.0},
+    {count: 8, points: 4.0},
+    {count: 9, points: 7.0},
+    {count: 10, points: 10.0},
+    {count: 11, points: 11.0},
+    {count: 12, points: 12.0},
+    {count: 13, points: 13.0},
+    {count: 14, points: 14.0},
+    {count: 15, points: 15.0},
     {count: 16, points: 15.6},
-    {count: 17, points: 16},
+    {count: 17, points: 16.0},
     {count: 18, points: 16.2},
     {count: 19, points: 16.4},
     {count: 20, points: 16.6},
     {count: 21, points: 16.8},
-    {count: 22, points: 17},
+    {count: 22, points: 17.0},
     {count: 23, points: 17.2},
     {count: 24, points: 17.4},
     {count: 25, points: 17.6},
     {count: 26, points: 17.8},
-    {count: 27, points: 18},
+    {count: 27, points: 18.0},
     {count: 28, points: 18.2},
     {count: 29, points: 18.4},
     {count: 30, points: 18.6},
     {count: 31, points: 18.8},
-    {count: 32, points: 19},
+    {count: 32, points: 19.0},
     {count: 33, points: 19.2},
     {count: 34, points: 19.4},
     {count: 35, points: 19.6},
     {count: 36, points: 19.8},
-    {count: 37, points: 20},
+    {count: 37, points: 20.0},
   ]; // push ups scoresheet
   
 let fSuScoreSheet45_49 = [
-    {count: 19, points: 3},
-    {count: 20, points: 6},
-    {count: 21, points: 9},
-    {count: 22, points: 12},
-    {count: 23, points: 13},
-    {count: 24, points: 14},
-    {count: 25, points: 15},
-    {count: 26, points: 16},
+    {count: 19, points: 3.0},
+    {count: 20, points: 6.0},
+    {count: 21, points: 9.0},
+    {count: 22, points: 12.0},
+    {count: 23, points: 13.0},
+    {count: 24, points: 14.0},
+    {count: 25, points: 15.0},
+    {count: 26, points: 16.0},
     {count: 27, points: 16.6},
-    {count: 28, points: 17},
+    {count: 28, points: 17.0},
     {count: 29, points: 17.6},
-    {count: 30, points: 18},
+    {count: 30, points: 18.0},
     {count: 31, points: 18.8},
-    {count: 32, points: 19},
+    {count: 32, points: 19.0},
     {count: 33, points: 19.4},
     {count: 34, points: 19.7},
-    {count: 35, points: 20},
+    {count: 35, points: 20.0},
   
   ]; // sit ups scoresheet
   
 let fRtScoreSheet45_49 = [
-    {timeR: moment('11:39', format), points: 60},
+    {timeR: moment('11:39', format), points: 60.0},
     {timeR: moment('12:15', format), points: 59.5},
-    {timeR: moment('12:34', format), points: 59},
+    {timeR: moment('12:34', format), points: 59.0},
     {timeR: moment('12:54', format), points: 58.5},
-    {timeR: moment('13:15', format), points: 58},
+    {timeR: moment('13:15', format), points: 58.0},
     {timeR: moment('13:37', format), points: 57.5},
-    {timeR: moment('14:01', format), points: 57},
+    {timeR: moment('14:01', format), points: 57.0},
     {timeR: moment('14:26', format), points: 56.5},
-    {timeR: moment('14:53', format), points: 56},
+    {timeR: moment('14:53', format), points: 56.0},
     {timeR: moment('15:21', format), points: 55.5},
-    {timeR: moment('15:51', format), points: 55},
+    {timeR: moment('15:51', format), points: 55.0},
     {timeR: moment('16:23', format), points: 54.5},
-    {timeR: moment('16:58', format), points: 54},
+    {timeR: moment('16:58', format), points: 54.0},
     {timeR: moment('17:35', format), points: 53.5},
-    {timeR: moment('18:15', format), points: 52},
+    {timeR: moment('18:15', format), points: 52.0},
     {timeR: moment('18:57', format), points: 50.5},
-    {timeR: moment('19:44', format), points: 48},
-    {timeR: moment('20:34', format), points: 45},
-    {timeR: moment('21:29', format), points: 42},
+    {timeR: moment('19:44', format), points: 48.0},
+    {timeR: moment('20:34', format), points: 45.0},
+    {timeR: moment('21:29', format), points: 42.0},
     {timeR: moment('22:29', format), points: 38.5},
-    {timeR: moment('23:35', format), points: 35},
-    {timeR: moment('59:59', format), points: 0}
+    {timeR: moment('23:35', format), points: 35.0},
+    {timeR: moment('59:59', format), points: 0.0}
   
   ]; // run time scoresheet
 
+  var fWtScoreSheet45_49 = [
+    {timeW: moment('17:50', format), points: 60.0},
+    {timeW: moment('59:59', format), points: 0.0}
+  ]; //walk test female 44-49
+
 /* Female 50-54 */
 let fPuScoreSheet50_54 = [
-    {count: 6, points: 1},
-    {count: 7, points: 4},
-    {count: 8, points: 7},
-    {count: 9, points: 10},
-    {count: 10, points: 11},
-    {count: 11, points: 12},
-    {count: 12, points: 13},
-    {count: 13, points: 14},
-    {count: 14, points: 15},
-    {count: 15, points: 16},
+    {count: 6, points: 1.0},
+    {count: 7, points: 4.0},
+    {count: 8, points: 7.0},
+    {count: 9, points: 10.0},
+    {count: 10, points: 11.0},
+    {count: 11, points: 12.0},
+    {count: 12, points: 13.0},
+    {count: 13, points: 14.0},
+    {count: 14, points: 15.0},
+    {count: 15, points: 16.0},
     {count: 16, points: 16.2},
     {count: 17, points: 16.4},
     {count: 18, points: 16.6},
     {count: 19, points: 16.8},
-    {count: 20, points: 17},
+    {count: 20, points: 17.0},
     {count: 21, points: 17.2},
     {count: 22, points: 17.3},
     {count: 23, points: 17.4},
     {count: 24, points: 17.6},
-    {count: 25, points: 18},
+    {count: 25, points: 18.0},
     {count: 26, points: 18.2},
     {count: 27, points: 18.4},
     {count: 28, points: 18.6},
     {count: 29, points: 18.8},
-    {count: 30, points: 19},
+    {count: 30, points: 19.0},
     {count: 31, points: 19.2},
     {count: 32, points: 19.4},
     {count: 33, points: 19.6},
     {count: 34, points: 19.8},
-    {count: 35, points: 20},
+    {count: 35, points: 20.0},
   ]; // push up scoresheets 
   
 let fSuScoreSheet50_54 = [
-    {count: 17, points: 3},
-    {count: 18, points: 6},
-    {count: 19, points: 9},
-    {count: 20, points: 12},
-    {count: 21, points: 13},
-    {count: 22, points: 14},
-    {count: 23, points: 15},
-    {count: 24, points: 16},
-    {count: 25, points: 17},
+    {count: 17, points: 3.0},
+    {count: 18, points: 6.0},
+    {count: 19, points: 9.0},
+    {count: 20, points: 12.0},
+    {count: 21, points: 13.0},
+    {count: 22, points: 14.0},
+    {count: 23, points: 15.0},
+    {count: 24, points: 16.0},
+    {count: 25, points: 17.0},
     {count: 26, points: 17.2},
     {count: 27, points: 17.6},
     {count: 28, points: 17.8},
-    {count: 29, points: 18},
-    {count: 30, points: 19},
+    {count: 29, points: 18.0},
+    {count: 30, points: 19.0},
     {count: 31, points: 19.5},
-    {count: 32, points: 20},
+    {count: 32, points: 20.0},
   
   ]; // sit ups scoresheet
   
 let fRtScoreSheet50_54 = [
-    {timeR: moment('12:54', format), points: 60},
+    {timeR: moment('12:54', format), points: 60.0},
     {timeR: moment('13:37', format), points: 59.5},
-    {timeR: moment('14:01', format), points: 59},
+    {timeR: moment('14:01', format), points: 59.0},
     {timeR: moment('14:26', format), points: 58.5},
-    {timeR: moment('14:53', format), points: 58},
+    {timeR: moment('14:53', format), points: 58.0},
     {timeR: moment('15:21', format), points: 57.5},
-    {timeR: moment('15:51', format), points: 57},
+    {timeR: moment('15:51', format), points: 57.0},
     {timeR: moment('16:23', format), points: 56.5},
-    {timeR: moment('16:58', format), points: 56},
+    {timeR: moment('16:58', format), points: 56.0},
     {timeR: moment('17:35', format), points: 55.5},
-    {timeR: moment('18:15', format), points: 55},
+    {timeR: moment('18:15', format), points: 55.0},
     {timeR: moment('18:57', format), points: 53.5},
-    {timeR: moment('19:44', format), points: 52},
+    {timeR: moment('19:44', format), points: 52.0},
     {timeR: moment('20:34', format), points: 49.5},
-    {timeR: moment('21:29', format), points: 46},
+    {timeR: moment('21:29', format), points: 46.0},
     {timeR: moment('22:29', format), points: 42.5},
-    {timeR: moment('23:35', format), points: 39},
-    {timeR: moment('24:47', format), points: 35},
-    {timeR: moment('59:59', format), points: 0}
+    {timeR: moment('23:35', format), points: 39.0},
+    {timeR: moment('24:47', format), points: 35.0},
+    {timeR: moment('59:59', format), points: 0.0}
   
   ]; // run time scoresheet
 
+  var fWtScoreSheet50_54 = [
+    {timeW: moment('18:12', format), points: 60.0},
+    {timeW: moment('59:59', format), points: 0.0}
+  ]; //walk test female 50-54
+
 /*  Female 54-59 */
 let fPuScoreSheet55_59 = [
-    {count: 5, points: 1},
-    {count: 6, points: 4},
-    {count: 7, points: 7},
-    {count: 8, points: 10},
-    {count: 9, points: 11},
-    {count: 10, points: 12},
-    {count: 11, points: 13},
-    {count: 12, points: 14},
-    {count: 13, points: 15},
-    {count: 14, points: 16},
+    {count: 5, points: 1.0},
+    {count: 6, points: 4.0},
+    {count: 7, points: 7.0},
+    {count: 8, points: 10.0},
+    {count: 9, points: 11.0},
+    {count: 10, points: 12.0},
+    {count: 11, points: 13.0},
+    {count: 12, points: 14.0},
+    {count: 13, points: 15.0},
+    {count: 14, points: 16.0},
     {count: 15, points: 16.2},
     {count: 16, points: 16.4},
     {count: 17, points: 16.6},
     {count: 18, points: 16.8},
-    {count: 19, points: 17},
+    {count: 19, points: 17.0},
     {count: 20, points: 17.2},
     {count: 21, points: 17.6},
-    {count: 22, points: 18},
+    {count: 22, points: 18.0},
     {count: 23, points: 18.6},
-    {count: 24, points: 19},
+    {count: 24, points: 19.0},
     {count: 25, points: 19.2},
     {count: 26, points: 19.4},
     {count: 27, points: 19.7},
-    {count: 28, points: 20},
+    {count: 28, points: 20.0},
   
   ]; // push ups scoresheet
   
 let fSuScoreSheet55_59 = [
-    {count: 12, points: 3},
-    {count: 13, points: 6},
-    {count: 14, points: 9},
-    {count: 15, points: 12},
+    {count: 12, points: 3.0},
+    {count: 13, points: 6.0},
+    {count: 14, points: 9.0},
+    {count: 15, points: 12.0},
     {count: 16, points: 12.6},
-    {count: 17, points: 13},
+    {count: 17, points: 13.0},
     {count: 18, points: 13.6},
-    {count: 19, points: 14},
+    {count: 19, points: 14.0},
     {count: 20, points: 14.6},
-    {count: 21, points: 15},
-    {count: 22, points: 16},
-    {count: 23, points: 17},
+    {count: 21, points: 15.0},
+    {count: 22, points: 16.0},
+    {count: 23, points: 17.0},
     {count: 24, points: 17.2},
     {count: 25, points: 17.6},
     {count: 26, points: 17.8},
-    {count: 27, points: 18},
-    {count: 28, points: 19},
+    {count: 27, points: 18.0},
+    {count: 28, points: 19.0},
     {count: 29, points: 19.2},
     {count: 30, points: 19.4},
     {count: 31, points: 19.7},
-    {count: 32, points: 20},
+    {count: 32, points: 20.0},
   
   ]; // sit ups scoresheet
   
 let fRtScoreSheet55_59 = [
-    {timeR: moment('13:15', format), points: 60},
+    {timeR: moment('13:15', format), points: 60.0},
     {timeR: moment('14:01', format), points: 59.5},
-    {timeR: moment('14:26', format), points: 59},
+    {timeR: moment('14:26', format), points: 59.0},
     {timeR: moment('14:53', format), points: 58.5},
-    {timeR: moment('15:21', format), points: 58},
+    {timeR: moment('15:21', format), points: 58.0},
     {timeR: moment('15:51', format), points: 57.5},
-    {timeR: moment('16:23', format), points: 57},
+    {timeR: moment('16:23', format), points: 57.0},
     {timeR: moment('16:58', format), points: 56.5},
-    {timeR: moment('17:35', format), points: 56},
+    {timeR: moment('17:35', format), points: 56.0},
     {timeR: moment('18:15', format), points: 55.5},
-    {timeR: moment('18:57', format), points: 55},
+    {timeR: moment('18:57', format), points: 55.0},
     {timeR: moment('19:44', format), points: 53.5},
-    {timeR: moment('20:34', format), points: 52},
-    {timeR: moment('21:29', format), points: 49},
-    {timeR: moment('22:29', format), points: 46},
-    {timeR: moment('23:35', format), points: 43},
-    {timeR: moment('24:47', format), points: 39},
-    {timeR: moment('26:07', format), points: 35},
-    {timeR: moment('59:59', format), points: 0}
+    {timeR: moment('20:34', format), points: 52.0},
+    {timeR: moment('21:29', format), points: 49.0},
+    {timeR: moment('22:29', format), points: 46.0},
+    {timeR: moment('23:35', format), points: 43.0},
+    {timeR: moment('24:47', format), points: 39.0},
+    {timeR: moment('26:07', format), points: 35.0},
+    {timeR: moment('59:59', format), points: 0.0}
   
   ]; // run time scoresheet
 
+  var fWtScoreSheet55_59 = [
+    {timeW: moment('18:12', format), points: 60.0},
+    {timeW: moment('59:59', format), points: 0.0}
+  ]; //walk test female 55-59
+
 /* female 60 and up */
 let fPuScoreSheet60 = [
-    {count: 4, points: 1},
-    {count: 5, points: 4},
-    {count: 6, points: 7},
-    {count: 7, points: 10},
+    {count: 4, points: 1.0},
+    {count: 5, points: 4.0},
+    {count: 6, points: 7.0},
+    {count: 7, points: 10.0},
     {count: 8, points: 10.6},
     {count: 9, points: 11.4},
-    {count: 10, points: 12},
-    {count: 11, points: 13},
-    {count: 12, points: 14},
-    {count: 13, points: 15},
-    {count: 14, points: 16},
-    {count: 15, points: 17},
+    {count: 10, points: 12.0},
+    {count: 11, points: 13.0},
+    {count: 12, points: 14.0},
+    {count: 13, points: 15.0},
+    {count: 14, points: 16.0},
+    {count: 15, points: 17.0},
     {count: 16, points: 17.6},
-    {count: 17, points: 18},
+    {count: 17, points: 18.0},
     {count: 18, points: 18.8},
-    {count: 19, points: 19},
+    {count: 19, points: 19.0},
     {count: 20, points: 19.5},
-    {count: 21, points: 20},
+    {count: 21, points: 20.0},
   
   ]; //push ups scoresheet
   
 let fSuScoreSheet60 = [
-    {count: 8, points: 3},
-    {count: 9, points: 6},
-    {count: 10, points: 9},
-    {count: 11, points: 12},
-    {count: 12, points: 13},
-    {count: 13, points: 14},
+    {count: 8, points: 3.0},
+    {count: 9, points: 6.0},
+    {count: 10, points: 9.0},
+    {count: 11, points: 12.0},
+    {count: 12, points: 13.0},
+    {count: 13, points: 14.0},
     {count: 14, points: 14.6},
-    {count: 15, points: 15},
+    {count: 15, points: 15.0},
     {count: 16, points: 15.6},
-    {count: 17, points: 16},
+    {count: 17, points: 16.0},
     {count: 18, points: 16.4},
     {count: 19, points: 16.6},
     {count: 20, points: 16.8},
-    {count: 21, points: 17},
+    {count: 21, points: 17.0},
     {count: 22, points: 17.2},
     {count: 23, points: 17.4},
     {count: 24, points: 17.6},
     {count: 25, points: 17.8},
-    {count: 26, points: 18},
+    {count: 26, points: 18.0},
     {count: 27, points: 18.8},
-    {count: 28, points: 19},
+    {count: 28, points: 19.0},
     {count: 29, points: 19.4},
     {count: 30, points: 19.7},
-    {count: 31, points: 20},
+    {count: 31, points: 20.0},
   
   ]; // sit ups scoresheet
   
 let fRtScoreSheet60 = [ 
-    {timeR: moment('14:01', format), points: 60},
+    {timeR: moment('14:01', format), points: 60.0},
     {timeR: moment('14:53', format), points: 59.5},
-    {timeR: moment('15:21', format), points: 59},
+    {timeR: moment('15:21', format), points: 59.0},
     {timeR: moment('15:51', format), points: 58.5},
-    {timeR: moment('16:23', format), points: 58},
+    {timeR: moment('16:23', format), points: 58.0},
     {timeR: moment('16:58', format), points: 57.5},
-    {timeR: moment('17:35', format), points: 57},
+    {timeR: moment('17:35', format), points: 57.0},
     {timeR: moment('18:15', format), points: 56.5},
-    {timeR: moment('18:57', format), points: 56},
+    {timeR: moment('18:57', format), points: 56.0},
     {timeR: moment('19:44', format), points: 55.5},
-    {timeR: moment('20:34', format), points: 54},
+    {timeR: moment('20:34', format), points: 54.0},
     {timeR: moment('21:29', format), points: 52.5},
-    {timeR: moment('22:29', format), points: 51},
-    {timeR: moment('23:35', format), points: 47},
-    {timeR: moment('24:47', format), points: 43},
-    {timeR: moment('26:07', format), points: 39},
-    {timeR: moment('27:28', format), points: 35},
-    {timeR: moment('59:59', format), points: 0}
+    {timeR: moment('22:29', format), points: 51.0},
+    {timeR: moment('23:35', format), points: 47.0},
+    {timeR: moment('24:47', format), points: 43.0},
+    {timeR: moment('26:07', format), points: 39.0},
+    {timeR: moment('27:28', format), points: 35.0},
+    {timeR: moment('59:59', format), points: 0.0}
   
   ]; //run time scoresheet
+
+  var fWtScoreSheet60 = [
+    {timeW: moment('18:54', format), points: 60.0},
+    {timeW: moment('59:59', format), points: 0.0}
+  ]; //walk test female 60
 
 /* ***************************************** */
 /* ***************************************** */
@@ -1553,14 +1645,14 @@ function myfunction(){
     //console.log(getInputs.length);
     var gridValues = [];
     var waiverValue = [];
-    console.log(waiverValue)
+    //console.log(waiverValue)
 
 
     /****** Parse the inputs and changed them into correct types ******/
     for(var i = 0; i<getInputs.length; i++){
         gridValues.push(getInputs[i].value)
     }
-    console.log(gridValues);
+    //console.log(gridValues);
     var gender = gridValues[0];
     var age =parseInt(gridValues[1]);
     var minutes = parseInt(gridValues[2]);
@@ -1576,41 +1668,57 @@ function myfunction(){
         seconds = '0'+ seconds;
     }
     var runTime = minutes +":" + seconds;
-    console.log("Before moments: " + runTime);
+    //console.log("Before moments: " + runTime);
     var newRunTime = moment(runTime,format);
-    console.log("After moment: " + newRunTime);
-
+    //console.log("After moment: " + newRunTime);
+    
     
     var scoreSheetArr = ageGetter(age, gender);
     //console.log(scoreSheetArr);
-    console.log("pushups: "+ pushUps+ " situps: "+sitUps);
+    //console.log("pushups: "+ pushUps+ " situps: "+sitUps);
     /****** runs each function to get the score and age ******/
     //console.log(ageGetter(age));
-    var runScore = runGetter(newRunTime, scoreSheetArr[2]);
-    var pushUpsScore = pushUpsGetter(pushUps, scoreSheetArr[0]);
-    var sitUpsScore = sitUpsGetter(sitUps, scoreSheetArr[1]);
-    console.log("runScore: " + runScore + " pushupScore: " + pushUpsScore + " situpScore: "+ sitUpsScore);
-    //console.log("runscore: "+ runScore+ "\npushupscore: " + pushUpsScore+ "\nsitupscore: " + sitUpsScore);
+
+
+    //console.log("runScore: " + runScore + " pushupScore: " + pushUpsScore + " situpScore: "+ sitUpsScore);
+    
     /****** Goes through the waiver and checks if it is true or false ******/ 
     for(var i = 0; i<getWaiver.length; i++){
         waiverValue.push(getWaiver[i].checked)
     }
+    var pushUpsScore = pushUpsGetter(pushUps, scoreSheetArr[0]);
+    var sitUpsScore = sitUpsGetter(sitUps, scoreSheetArr[1]);
+    //console.log(waiverValue[0]);
+    if (waiverValue[0] == true) {
+      //console.log("we are in the if for run ischeck");
+      var runScore = runGetter(newRunTime, scoreSheetArr[2]);
+    } else if (waiverValue[1] == true){
+      //console.log("we are in the elif for walk ischeck");
+      //console.log(typeof newRunTime);
+      var runScore = walkGetter(newRunTime, scoreSheetArr[3]);
+      runScore = parseFloat(runScore);
+      //console.log(typeof runScore);
+    }
+
+    //console.log("runscore: "+ runScore+ "\npushupscore: " + pushUpsScore+ "\nsitupscore: " + sitUpsScore);
     //let exemptWaiver = [waiverValue[2],waiverValue[3], waiverValue[4]];
     //console.log(getWaiver);
     //console.log(exemptWaiver);
-    console.log(waiverValue);
-    console.log("right before the final score")
-    var fluff = finalScore(pushUpsScore,sitUpsScore, runScore, waiverValue)
-    console.log(fluff);
-    //console.log(typeof fluff);
+    //console.log(waiverValue);
+    //console.log("right before the final score")
+    var fluffy = finalScore(pushUpsScore, sitUpsScore, runScore, waiverValue);
+    //console.log("fluffy" + fluffy + "type of " + typeof fluffy);
+    //var fluff = fluffy.toFixed(1);
+    //console.log(fluffy);
+    //console.log(typeof fluffy);
     if(fluff < 75) {
-      window.alert('Sorry, you failed with a unsatisfactory score of ' + fluff)
+      window.alert('Sorry, you failed with a unsatisfactory score of ' + fluff + '\nRun/Walk Score: ' + runScore + '\nSit Ups: ' + sitUpsScore + '\nPush Ups: ' + pushUpsScore)
     } else if(fluff >= 75 && fluff < 90) {
-      window.alert('You passed with a satisfactory score of ' + fluff)
+      window.alert('You passed with a satisfactory score of ' + fluff + '\nRun/Walk Score: ' + runScore + '\nSit Ups Score: ' + sitUpsScore + '\nPush Ups Score: ' + pushUpsScore)
     } else if(fluff >= 90) {
-      window.alert('Hooray, you passed with an excellent score of ' + fluff)
+      window.alert('Horay, you passed with an excellent score of ' + fluff + '\nRun/Walk Score: ' + runScore + '\nSit Ups Score: ' + sitUpsScore + '\nPush Ups Score: ' + pushUpsScore)
     }
-    location.reload();
+    //location.reload();
 }
 
 
@@ -1620,60 +1728,60 @@ function ageGetter(inputAge, inputGender) {
     
    if(inputGender == 'false') {
       if (inputAge < 25) {
-        scoreSheetArr.push(mPuScoreSheet17_24, mSuScoreSheet17_24, mRtScoreSheet17_24);
+        scoreSheetArr.push(mPuScoreSheet17_24, mSuScoreSheet17_24, mRtScoreSheet17_24, mWtScoreSheet17_24);
           return scoreSheetArr;
       } else if (inputAge <= 29 && inputAge >= 25) {
-        scoreSheetArr.push(mPuScoreSheet25_29, mSuScoreSheet25_29, mRtScoreSheet25_29)
+        scoreSheetArr.push(mPuScoreSheet25_29, mSuScoreSheet25_29, mRtScoreSheet25_29, mWtScoreSheet25_29)
           return scoreSheetArr;
       } else if (inputAge <= 34 && inputAge >= 30) {
-        scoreSheetArr.push(mPuScoreSheet30_34, mSuScoreSheet30_34, mRtScoreSheet30_34)
+        scoreSheetArr.push(mPuScoreSheet30_34, mSuScoreSheet30_34, mRtScoreSheet30_34, mWtScoreSheet30_34)
           return scoreSheetArr;
       } else if (inputAge <= 39 && inputAge >= 35) {
-        scoreSheetArr.push(mPuScoreSheet35_39, mSuScoreSheet35_39, mRtScoreSheet35_39)
+        scoreSheetArr.push(mPuScoreSheet35_39, mSuScoreSheet35_39, mRtScoreSheet35_39, mWtScoreSheet35_39)
           return scoreSheetArr;
       } else if (inputAge <= 44 && inputAge >= 40) {
-        scoreSheetArr.push(mPuScoreSheet40_44, mSuScoreSheet40_44, mRtScoreSheet40_44)
+        scoreSheetArr.push(mPuScoreSheet40_44, mSuScoreSheet40_44, mRtScoreSheet40_44, mWtScoreSheet40_44)
           return scoreSheetArr;
       } else if (inputAge <= 49 && inputAge >= 45) {
-        scoreSheetArr.push(mPuScoreSheet45_49, mSuScoreSheet45_49, mRtScoreSheet45_49)
+        scoreSheetArr.push(mPuScoreSheet45_49, mSuScoreSheet45_49, mRtScoreSheet45_49, mWtScoreSheet45_49)
           return scoreSheetArr;
       } else if (inputAge <= 54 && inputAge >= 50) {
-        scoreSheetArr.push(mPuScoreSheet50_54, mSuScoreSheet50_54, mRtScoreSheet50_54)
+        scoreSheetArr.push(mPuScoreSheet50_54, mSuScoreSheet50_54, mRtScoreSheet50_54, mWtScoreSheet50_54)
           return scoreSheetArr;
       } else if (inputAge <= 59 && inputAge >= 55) {
-        scoreSheetArr.push(mPuScoreSheet55_59, mSuScoreSheet55_59, mRtScoreSheet55_59)
+        scoreSheetArr.push(mPuScoreSheet55_59, mSuScoreSheet55_59, mRtScoreSheet55_59, mWtScoreSheet55_59)
           return scoreSheetArr;
       } else if (inputAge >= 60) {
-        scoreSheetArr.push(mPuScoreSheet60, mSuScoreSheet60, mRtScoreSheet60)
+        scoreSheetArr.push(mPuScoreSheet60, mSuScoreSheet60, mRtScoreSheet60, mWtScoreSheet60)
           return scoreSheetArr;
       }
     } else {
         if (inputAge < 25) {
-      scoreSheetArr.push(fPuScoreSheet17_24, fSuScoreSheet17_24, fRtScoreSheet17_24);
+      scoreSheetArr.push(fPuScoreSheet17_24, fSuScoreSheet17_24, fRtScoreSheet17_24, fWtScoreSheet17_24);
         return scoreSheetArr;
     } else if (inputAge <= 29 && inputAge >= 25) {
-      scoreSheetArr.push(fPuScoreSheet25_29, fSuScoreSheet25_29, fRtScoreSheet25_29)
+      scoreSheetArr.push(fPuScoreSheet25_29, fSuScoreSheet25_29, fRtScoreSheet25_29, fWtScoreSheet25_29)
         return scoreSheetArr;
     } else if (inputAge <= 34 && inputAge >= 30) {
-      scoreSheetArr.push(fPuScoreSheet30_34, fSuScoreSheet30_34, fRtScoreSheet30_34)
+      scoreSheetArr.push(fPuScoreSheet30_34, fSuScoreSheet30_34, fRtScoreSheet30_34, fWtScoreSheet30_34)
         return scoreSheetArr;
     } else if (inputAge <= 39 && inputAge >= 35) {
-      scoreSheetArr.push(fPuScoreSheet35_39, fSuScoreSheet35_39, fRtScoreSheet35_39)
+      scoreSheetArr.push(fPuScoreSheet35_39, fSuScoreSheet35_39, fRtScoreSheet35_39, fWtScoreSheet35_39)
         return scoreSheetArr;
     } else if (inputAge <= 44 && inputAge >= 40) {
-      scoreSheetArr.push(fPuScoreSheet40_44, fSuScoreSheet40_44, fRtScoreSheet40_44)
+      scoreSheetArr.push(fPuScoreSheet40_44, fSuScoreSheet40_44, fRtScoreSheet40_44, fWtScoreSheet40_44)
         return scoreSheetArr;
     } else if (inputAge <= 49 && inputAge >= 45) {
-      scoreSheetArr.push(fPuScoreSheet45_49, fSuScoreSheet45_49, fRtScoreSheet45_49)
+      scoreSheetArr.push(fPuScoreSheet45_49, fSuScoreSheet45_49, fRtScoreSheet45_49, fWtScoreSheet45_49)
         return scoreSheetArr;
     } else if (inputAge <= 54 && inputAge >= 50) {
-      scoreSheetArr.push(fPuScoreSheet50_54, fSuScoreSheet50_54, fRtScoreSheet50_54)
+      scoreSheetArr.push(fPuScoreSheet50_54, fSuScoreSheet50_54, fRtScoreSheet50_54, fWtScoreSheet50_54)
         return scoreSheetArr;
     } else if (inputAge <= 59 && inputAge >= 55) {
-      scoreSheetArr.push(fPuScoreSheet55_59, fSuScoreSheet55_59, fRtScoreSheet55_59)
+      scoreSheetArr.push(fPuScoreSheet55_59, fSuScoreSheet55_59, fRtScoreSheet55_59, fWtScoreSheet55_59)
         return scoreSheetArr;
     } else if (inputAge >= 60) {
-      scoreSheetArr.push(fPuScoreSheet60, fSuScoreSheet60, fRtScoreSheet60)
+      scoreSheetArr.push(fPuScoreSheet60, fSuScoreSheet60, fRtScoreSheet60, fWtScoreSheet60)
         return scoreSheetArr;
     };
   
@@ -1684,11 +1792,12 @@ function ageGetter(inputAge, inputGender) {
 function pushUpsGetter(pushUps, scoreSheet) {
     //onsole.log("pushups from pushupsGetter"+ pushUps);
     if(pushUps < scoreSheet[0].count || pushUps == null || pushUps == undefined || isNaN(pushUps) === true){
-
         return 0
-    } else if(pushUps > scoreSheet[scoreSheet.length - 1].count){
+    } 
+    else if(pushUps > scoreSheet[scoreSheet.length - 1].count){
       return 20
-    } else{
+    } 
+    else{
         for(var i = 0; i<scoreSheet.length; i++){
             if(pushUps == scoreSheet[i].count){
             return scoreSheet[i].points
@@ -1716,7 +1825,7 @@ function sitUpsGetter(sitUps, scoreSheet){
 function runGetter(runScore, runScoreSheet){
     /* let score = 0; */
     let zeroSaver = moment('00:01', format)
-    console.log("inside run getter - runscore: " +runScore);
+    //console.log("inside run getter - runscore: " +runScore);
     if(runScore < zeroSaver || isNaN(runScore) === true) {
         return 0;
     } 
@@ -1731,7 +1840,8 @@ function runGetter(runScore, runScoreSheet){
     /* return score; */
 };
 
-function walkGetter (walkScore, walkScoreSheet) {
+
+function walkGetter(walkScore, walkScoreSheet) {
   let zeroSaver = moment('00:01', format)
   if(walkScore < zeroSaver || isNaN(walkScore) === true){
     return 0;
@@ -1739,63 +1849,21 @@ function walkGetter (walkScore, walkScoreSheet) {
     for(var i = 0; i <= walkScoreSheet.length; i++){
       if(walkScore.isBefore(walkScoreSheet[i].timeW)){
         let walk = walkScoreSheet[i].points
+        return walk;
       }
     }
   }
 }
 
-/* ***************************************** Old finalScore Function *****************************************
-function finalScore(RunTimeGetter, SitUpsGetter, PushUpsGetter, waiver){
-    var TotalScore = RunTimeGetter + SitUpsGetter + PushUpsGetter;
-    // *** index 0 is for run, 1 is for walk, 2 is for exempt run, 3 is situps, 4 is push ups *** //
-    //exempt run
-    if (waiver[0] == false && waiver[1] == false && waiver[2] == true && waiver[3] == false && waiver[4] == false) {
-        TotalScore = (TotalScore / 40) * 100
-        return TotalScore;
-      } 
-    //exempt run and situps
-    else if (waiver[0] == false && waiver[1] == false && waiver[2] == true && waiver[3] == true && waiver[4] == false) {
-        TotalScore = (TotalScore / 20) * 100
-        return TotalScore;
-    } 
-    //exempt for situps
-    else if((waiver[0] == true && waiver[1] == false && waiver[2] == false && waiver[3] == true && waiver[4] === false ) || (waiver[0] == false && waiver[1] == true && waiver[2] == false && waiver[3] == true && waiver[4] === false)) {
-        TotalScore = (TotalScore / 80) * 100
-        return TotalScore;
-    } 
-    //exempt run, situps and pushups
-    else if (waiver[0] == false && waiver[1] == false && waiver[2] == true && waiver[3] == true && waiver[4] == true) {
-        TotalScore = 0 /// Put alert to notify user action not allowed
-        return TotalScore;
-    } 
-    //exempt from run and pushups
-    else if (waiver[0] == false && waiver[1] == false && waiver[2] == true && waiver[3] == false && waiver[4] == true) {
-        TotalScore = (TotalScore / 20) * 100
-        return TotalScore;
-    } 
-    //exempt situps and pushups
-    else if (waiver[0] == true && waiver[1] == false && waiver[2] == false && waiver[3] == true && waiver[4] == true) {
-        TotalScore = (TotalScore / 60) * 100
-        return TotalScore;
-    } 
-    //exempt pushups
-    else if (waiver[0] == true && waiver[1] == false && waiver[2] == false && waiver[3] == false && waiver[4] == true) {
-        TotalScore = (TotalScore / 80) * 100 // fix the equation
-        return TotalScore;
-    } 
-    // no exemptions
-    else {
-      return TotalScore;
-    };
 
-} */ 
-
-
-
-
-function finalScore(runTimeGetter, sitUpsGetter, pushUpsGetter, waiver){
+function finalScore(pushUpsGetter, sitUpsGetter, runTimeGetter, waiver){
+  //console.log('sitUpsGetter ' + sitUpsGetter);
+  //console.log('pushUpsGetter ' + pushUpsGetter);
+  runTimeGetter = parseFloat(runTimeGetter);
+  //console.log('runTimeGetter ' + runTimeGetter + "typeof" +typeof runTimeGetter );
+  //console.log('waiver ' + waiver)
   var TotalScore = runTimeGetter + sitUpsGetter + pushUpsGetter;
-// run with push/sit ups table
+  // run with push/sit ups table
   if(waiver[0] == true) {
   // exempt sit ups  
       if(waiver[3] == true && waiver[4] == false){
@@ -1809,29 +1877,37 @@ function finalScore(runTimeGetter, sitUpsGetter, pushUpsGetter, waiver){
           }
   // exempt push ups and sit ups
       else if(waiver[3] == true && waiver[4] == true){
-        console.log("i made it to exempt push ups and situps");
+        //console.log("i made it to exempt push ups and situps");
           TotalScore = (TotalScore / 60) * 100
           return TotalScore; 
+      } else {
+        return TotalScore;
       }
   }
 // walk with push/sit ups table
   else if(waiver[1] == true){
   // exempt sit ups
       if(waiver[3] == true && waiver[4] == false){
-          TotalScore = (TotalScore / 80) * 100
+          TotalScore = (TotalScore / 20) * 100
           return TotalScore;
       }
   // exempt push ups
       else if(waiver[3] == false && waiver[4] == true) {
-          TotalScore = (TotalScore / 80) * 100
+          TotalScore = (TotalScore / 20) * 100
           return TotalScore; 
       }
   // exempt push ups and sit ups
       else if(waiver[3] == true && waiver[4] == true){
-          TotalScore = (TotalScore / 60) * 100
+        if (TotalScore == 60){
+          window.alert('You passed!!!');
+        } else {
+          window.alert('Sorry, you failed.');
+        }
+      } else {
+          TotalScore = ((pushUpsGetter + sitUpsGetter) / 40) * 100;
           return TotalScore;
-      }
   }
+}
 // exempt run with push/sit ups table
   else if(waiver[2] == true){
   // exempt sit ups
@@ -1846,11 +1922,13 @@ function finalScore(runTimeGetter, sitUpsGetter, pushUpsGetter, waiver){
       }
   // exempt push ups and sit ups
       else if(waiver[3] == true && waiver[4] == true){
-          TotalScore = 0 /* Put alert to notify user action not allowed*/
-          return TotalScore;
+          return TotalScore = 0.0 /* Put alert to notify user action not allowed*/
+          window.alert('You are exempt from taking this test');
+      } else {
+        return TotalScore = (TotalScore / 40) * 100;
       }
-  } else {
-      return TotalScore;
+  } else { 
+    return TotalScore;
   }
 };
 
@@ -1989,79 +2067,99 @@ export {
     mPuScoreSheet17_24,
     mSuScoreSheet17_24,
     mRtScoreSheet17_24,
+    mWtScoreSheet17_24,
     
     mPuScoreSheet25_29,
     mSuScoreSheet25_29,
     mRtScoreSheet25_29,
+    mWtScoreSheet25_29,
     
     mPuScoreSheet30_34,
     mSuScoreSheet30_34,
     mRtScoreSheet30_34,
+    mWtScoreSheet30_34,
 
     mPuScoreSheet35_39,
     mSuScoreSheet35_39,
     mRtScoreSheet35_39,
+    mWtScoreSheet35_39,
 
     mPuScoreSheet40_44,
     mSuScoreSheet40_44,
     mRtScoreSheet40_44,
+    mWtScoreSheet40_44,
 
     mPuScoreSheet45_49,
     mSuScoreSheet45_49,
     mRtScoreSheet45_49,
+    mWtScoreSheet45_49,
 
     mPuScoreSheet50_54,
     mSuScoreSheet50_54,
     mRtScoreSheet50_54,
+    mWtScoreSheet50_54,
 
     mPuScoreSheet55_59,
     mSuScoreSheet55_59,
     mRtScoreSheet55_59,
+    mWtScoreSheet55_59,
 
     mPuScoreSheet60,
     mSuScoreSheet60,
     mRtScoreSheet60,
+    mWtScoreSheet60,
+
 
     fPuScoreSheet17_24,
     fSuScoreSheet17_24,
     fRtScoreSheet17_24,
+    fWtScoreSheet17_24,
 
     fPuScoreSheet25_29,
     fSuScoreSheet25_29,
     fRtScoreSheet25_29,
+    fWtScoreSheet25_29,
 
     fPuScoreSheet30_34,
     fSuScoreSheet30_34,
     fRtScoreSheet30_34,
+    fWtScoreSheet30_34,
 
     fPuScoreSheet35_39,
     fSuScoreSheet35_39,
     fRtScoreSheet35_39,
+    fWtScoreSheet35_39,
 
     fPuScoreSheet40_44,
     fSuScoreSheet40_44,
     fRtScoreSheet40_44,
+    fWtScoreSheet40_44,
 
     fPuScoreSheet45_49,
     fSuScoreSheet45_49,
     fRtScoreSheet45_49,
+    fWtScoreSheet45_49,
 
     fPuScoreSheet50_54,
     fSuScoreSheet50_54,
     fRtScoreSheet50_54,
+    fWtScoreSheet50_54,
 
     fPuScoreSheet55_59,
     fSuScoreSheet55_59,
     fRtScoreSheet55_59,
+    fWtScoreSheet55_59,
 
     fPuScoreSheet60,
     fSuScoreSheet60,
     fRtScoreSheet60,
+    fWtScoreSheet60,
 
     //GenderGetter,
     pushUpsGetter,
     sitUpsGetter,
     runGetter,
-    finalScore
+    finalScore,
+    walkGetter
 };
 

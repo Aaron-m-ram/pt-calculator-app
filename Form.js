@@ -2,7 +2,7 @@
 
 //import { run } from "jest";
 
-//import moment from 'moment';
+import moment from 'moment';
 var format = 'mm:ss' //format for moments
 
 /************* BIG DATABASE ******************/
@@ -1683,7 +1683,7 @@ function myfunction(){
     }
 
     var fluffy = finalScore(pushUpsScore, sitUpsScore, runScore, waiverValue);
-    var fluff = fluffy.toFixed(1);
+    var fluff = Math.round(fluffy*10)/10;
     if(fluff < 75) {
       window.alert('Sorry, you failed with a unsatisfactory score of ' + fluff + '\nRun/Walk Score: ' + runScore + '\nSit Ups: ' + sitUpsScore + '\nPush Ups: ' + pushUpsScore)
     } else if(fluff >= 75 && fluff < 90) {
@@ -1848,7 +1848,7 @@ function finalScore(pushUpsGetter, sitUpsGetter, runTimeGetter, waiver){
       } else {
         return TotalScore;
       }
-  }
+  } // ********* walk is a pass or fail that awards no points ********* //
 // walk with push/sit ups table
   else if(waiver[1] == true){
   // exempt sit ups
@@ -1869,10 +1869,10 @@ function finalScore(pushUpsGetter, sitUpsGetter, runTimeGetter, waiver){
           window.alert('Sorry, you failed.');
         }
       } else {
-          TotalScore = ((pushUpsGetter + sitUpsGetter) / 40) * 100;
-          return TotalScore;
-  }
-}
+        TotalScore = ((sitUpsGetter + pushUpsGetter) / 40) * 100;
+        return TotalScore;
+      }
+} 
 // exempt run with push/sit ups table
   else if(waiver[2] == true){
   // exempt sit ups
@@ -1892,8 +1892,6 @@ function finalScore(pushUpsGetter, sitUpsGetter, runTimeGetter, waiver){
       } else {
         return TotalScore = (TotalScore / 40) * 100;
       }
-  } else { 
-    return TotalScore;
   }
 };
 
@@ -1901,15 +1899,6 @@ function finalScore(pushUpsGetter, sitUpsGetter, runTimeGetter, waiver){
 // Scoresheets //
 
 document.addEventListener('DOMContentLoaded', function () {
-
-
-
-
-
-
-
-
-
 //run/walk waiver === true makes run time go gray
 var exemptClick = document.getElementById("Exempt");
 var walkTimeClick = document.getElementById("WalkTime");
@@ -2006,9 +1995,6 @@ function addNewSitUpClassFunc(){
 function returnOldSitUpClass(){
     var addSitUpOldClass = document.getElementById("sitUpsInput").classList.add('input');
 }
-
-
-
 
 });
 

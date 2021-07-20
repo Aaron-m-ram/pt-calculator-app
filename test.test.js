@@ -5,7 +5,7 @@
 
 
 import { describe, expect, it } from "@jest/globals";
-//import moment from 'moment';
+import moment from 'moment';
 var format = 'mm:ss';
 import {
   mPuScoreSheet17_24,
@@ -1609,7 +1609,7 @@ describe("ageGetter", () => {
 describe("finalScore", () => {
   // No waviers 
   it('returns 100 when there is no waivers', () => {
-    expect(finalScore(60,20,20, [false,false,false])).toEqual(100)
+    expect(finalScore(60,20,20, [true, false, false,false,false])).toEqual(100)
   });
   // Waiver for run
   it('returns a 100 when there is a run waiver', () => {
@@ -1639,13 +1639,22 @@ describe("finalScore", () => {
   it('returns 100 when there is a push up waiver', () => {
     expect(finalScore(60,20,0, [true,false,false,false,true])).toEqual(100)
   });
+  it('returns 100 when there is a walk and push up waiver', () => {
+    expect(finalScore(0,20,0, [false,true,false,false,true])).toEqual(100)
+  });
+  it('returns 100 when there is a walk and sit up waiver', () => {
+    expect(finalScore(0,0,20, [false,true,false,true,false])).toEqual(100)
+  });
+  it('returns 100 when there is a walk waiver', () => {
+    expect(finalScore(20,20,60, [false,true,false,false,false])).toEqual(100)
+  });
 });
 
 // *** Final score with random numbers *** //
 describe("finalScore", () => {
   // No waviers 
   it('returns 68 when there is no waivers', () => {
-    expect(finalScore(35,15,18, [false,false,false])).toEqual(68)
+    expect(finalScore(35,15,18, [true,false,false, false, false])).toEqual(68)
   });
   // Waiver for run
   it('returns 75 when there is a run waiver', () => {
